@@ -1,0 +1,25 @@
+{
+  "name": "Revision",
+  "short_name": "Revision",
+  "description": "Year 7 Science revision quiz app",
+  "start_url": "/revision/",
+  "scope": "/revision/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#00060a",
+  "theme_color": "#00060a",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
