@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NEURO.EXE // Physics 2 Rev // Yr7</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cy: #00f5ff;
+  --bl: #0066ff;
+  --vi: #aa00ff;
+  --go: #00ff99;
+  --re: #ff2255;
+  --am: #f0c000;
+  --bg: #00060a;
+  --tx: #b0e8f0;
+  --mu: #1e4455;
+}
+
+*{box-sizing:border-box;margin:0;padding:0;}
+
+html,body{
+  min-height:100vh;
+  background:var(--bg);
+  color:var(--tx);
+  font-family:'Share Tech Mono','Courier New',monospace;
+  overflow-x:hidden;
+}
+
+/* ── CANVAS ── */
+#bg{
+  position:fixed;inset:0;z-index:0;pointer-events:none;
+}
+
+/* ── SCANLINES ── */
+.scanlines{
+  position:fixed;inset:0;z-index:1;pointer-events:none;
+  background:repeating-linear-gradient(
+    to bottom,
+    transparent 0,transparent 3px,
+    rgba(0,0,0,0.18) 3px,rgba(0,0,0,0.18) 4px
+  );
+}
+
+/* moving beam */
+.beam{
+  position:fixed;left:0;right:0;height:2px;z-index:2;pointer-events:none;
+  background:linear-gradient(90deg,transparent 0%,rgba(0,245,255,0.5) 40%,rgba(170,0,255,0.5) 60%,transparent 100%);
+  animation:beam 5s linear infinite;
+  filter:blur(1px);
+}
+@keyframes beam{from{top:-2px}to{top:100vh}}
+
+/* vignette */
+.vig{
+  position:fixed;inset:0;z-index:1;pointer-events:none;
+  background:radial-gradient(ellipse at 50% 50%,transparent 45%,rgba(0,0,0,0.75) 100%);
+}
+
+/* ── HUD CORNERS (decorative fixed) ── */
+.hud-corner{
+  position:fixed;z-index:3;pointer-events:none;width:60px;height:60px;
+}
+.hud-corner::before,.hud-corner::after{
+  content:'';position:absolute;background:var(--cy);
+  box-shadow:0 0 6px var(--cy),0 0 12px rgba(0,245,255,0.4);
+}
+.hud-corner::before{width:2px;height:30px;}
+.hud-corner::after{width:30px;height:2px;}
+.hud-corner.tl{top:14px;left:14px;}
+.hud-corner.tl::before{top:0;left:0;}
+.hud-corner.tl::after{top:0;left:0;}
+.hud-corner.tr{top:14px;right:14px;}
+.hud-corner.tr::before{top:0;right:0;}
+.hud-corner.tr::after{top:0;right:0;}
+.hud-corner.bl{bottom:14px;left:14px;}
+.hud-corner.bl::before{bottom:0;left:0;}
+.hud-corner.bl::after{bottom:0;left:0;}
+.hud-corner.br{bottom:14px;right:14px;}
+.hud-corner.br::before{bottom:0;right:0;}
+.hud-corner.br::after{bottom:0;right:0;}
+
+/* ── SCOREBOARD ── */
+.sb{
+  position:fixed;top:18px;right:18px;z-index:10;
+  width:220px;
+  background:rgba(0,6,10,0.88);
+  border:1px solid var(--cy);
+  padding:14px 16px 12px;
+  animation:plasma 5s ease-in-out infinite;
+  clip-path:polygon(0 0,calc(100% - 16px) 0,100% 16px,100% 100%,16px 100%,0 calc(100% - 16px));
+}
+.sb::after{
+  content:'';position:absolute;inset:3px;
+  border:1px solid rgba(0,245,255,0.1);
+  clip-path:polygon(0 0,calc(100% - 13px) 0,100% 13px,100% 100%,13px 100%,0 calc(100% - 13px));
+  pointer-events:none;
+}
+
+@keyframes plasma{
+  0%,100%{box-shadow:0 0 10px rgba(0,245,255,0.5),0 0 30px rgba(0,245,255,0.15),inset 0 0 20px rgba(0,245,255,0.04);border-color:var(--cy);}
+  40%{box-shadow:0 0 10px rgba(170,0,255,0.5),0 0 30px rgba(170,0,255,0.15),inset 0 0 20px rgba(170,0,255,0.04);border-color:var(--vi);}
+  70%{box-shadow:0 0 10px rgba(0,102,255,0.6),0 0 30px rgba(0,102,255,0.18),inset 0 0 20px rgba(0,102,255,0.05);border-color:var(--bl);}
+}
+
+.sb-hd{
+  font-family:'Orbitron',monospace;font-size:9px;letter-spacing:3px;
+  color:var(--cy);text-shadow:0 0 8px var(--cy);
+  text-transform:uppercase;margin-bottom:10px;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.sb-hd::after{content:'●';color:var(--go);text-shadow:0 0 6px var(--go);animation:blink 1.2s step-end infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+
+.sb-row{
+  display:flex;justify-content:space-between;align-items:baseline;
+  margin-bottom:5px;
+}
+.sb-lbl{color:var(--mu);font-size:10px;letter-spacing:2px;}
+.sb-val{
+  font-family:'Orbitron',monospace;font-size:22px;font-weight:700;
+  color:var(--am);text-shadow:0 0 10px var(--am),0 0 20px rgba(240,192,0,0.3);
+}
+.sb-val.sm{font-size:13px;color:var(--cy);text-shadow:0 0 8px var(--cy);}
+
+.sb-bar{
+  height:3px;margin-top:10px;
+  background:rgba(0,245,255,0.06);
+  border:1px solid rgba(0,245,255,0.15);
+  position:relative;overflow:visible;
+}
+.sb-fill{
+  height:100%;
+  background:linear-gradient(90deg,var(--bl),var(--cy),var(--vi));
+  box-shadow:0 0 8px var(--cy),0 0 16px rgba(0,245,255,0.4);
+  transition:width .5s cubic-bezier(.4,0,.2,1);
+  width:0;position:relative;
+}
+.sb-fill::after{
+  content:'';position:absolute;right:-4px;top:-4px;
+  width:8px;height:8px;border-radius:50%;
+  background:#fff;box-shadow:0 0 8px var(--cy),0 0 16px var(--cy);
+}
+.sb-prog{
+  display:flex;justify-content:space-between;
+  margin-top:6px;font-size:10px;color:var(--mu);letter-spacing:1px;
+}
+.sb-prog span{color:var(--cy);text-shadow:0 0 6px var(--cy);}
+
+/* ── CONTAINER ── */
+.wrap{
+  position:relative;z-index:5;
+  max-width:780px;margin:0 auto;
+  padding:56px 22px 80px;
+}
+
+/* ── HEADER ── */
+header{text-align:center;margin-bottom:36px;}
+
+.status-bar{
+  font-size:9px;letter-spacing:3px;color:var(--mu);
+  margin-bottom:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+
+header h1{
+  font-family:'Orbitron',monospace;font-weight:900;
+  font-size:clamp(22px,5vw,40px);letter-spacing:6px;text-transform:uppercase;
+  color:var(--cy);
+  text-shadow:0 0 12px var(--cy),0 0 30px rgba(0,245,255,0.5),0 0 70px rgba(0,245,255,0.2);
+  animation:flicker 9s infinite;
+}
+@keyframes flicker{
+  0%,17%,19%,21%,23%,60%,100%{
+    text-shadow:0 0 12px var(--cy),0 0 30px rgba(0,245,255,0.5),0 0 70px rgba(0,245,255,0.2);
+    opacity:1;
+  }
+  18%,22%{text-shadow:none;opacity:.7;}
+}
+
+.sub{
+  margin-top:8px;font-size:11px;color:var(--mu);letter-spacing:3px;
+}
+.sub b{color:var(--cy);text-shadow:0 0 6px var(--cy);font-weight:normal;}
+
+.hline{
+  height:1px;
+  background:linear-gradient(90deg,transparent 0%,var(--bl) 20%,var(--cy) 50%,var(--vi) 80%,transparent 100%);
+  margin:16px 0;
+  box-shadow:0 0 8px var(--cy);
+  animation:hpulse 3s ease-in-out infinite;
+}
+@keyframes hpulse{0%,100%{opacity:.5}50%{opacity:1}}
+
+/* ── CARD ── */
+.card{
+  position:relative;
+  background:rgba(0,6,10,0.93);
+  border:1px solid var(--cy);
+  padding:30px 26px 26px;
+  clip-path:polygon(0 0,calc(100% - 22px) 0,100% 22px,100% 100%,22px 100%,0 calc(100% - 22px));
+  animation:cardin .4s cubic-bezier(.2,.9,.3,1.1), plasma 5s 1s ease-in-out infinite;
+  background-image:
+    linear-gradient(rgba(0,245,255,0.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,245,255,0.025) 1px,transparent 1px);
+  background-size:44px 44px;
+}
+
+/* inner chamfer echo */
+.card::before{
+  content:'';position:absolute;inset:4px;pointer-events:none;
+  border:1px solid rgba(0,245,255,0.07);
+  clip-path:polygon(0 0,calc(100% - 19px) 0,100% 19px,100% 100%,19px 100%,0 calc(100% - 19px));
+}
+
+/* top-right corner bracket tick */
+.card::after{
+  content:'';position:absolute;top:0;right:22px;
+  width:18px;height:2px;
+  background:var(--cy);
+  box-shadow:0 0 8px var(--cy);
+}
+
+@keyframes cardin{
+  from{opacity:0;transform:translateY(14px) scale(.97);filter:blur(3px);}
+  to{opacity:1;transform:translateY(0) scale(1);filter:blur(0);}
+}
+
+/* ── QUESTION NUMBER ── */
+.q-num{
+  font-family:'Orbitron',monospace;font-size:9px;letter-spacing:4px;
+  color:var(--vi);text-shadow:0 0 8px var(--vi);
+  text-transform:uppercase;margin-bottom:14px;
+  display:flex;align-items:center;gap:8px;
+}
+.q-num::before{
+  content:'';display:inline-block;width:20px;height:1px;
+  background:var(--vi);box-shadow:0 0 6px var(--vi);
+}
+
+/* ── QUESTION TEXT ── */
+.q-text{
+  font-size:17px;line-height:1.65;margin-bottom:22px;
+  color:#d8f4ff;text-shadow:0 0 3px rgba(0,245,255,0.15);
+}
+.q-text em{color:var(--cy);font-style:normal;text-shadow:0 0 8px var(--cy);}
+.q-text strong{color:var(--am);font-weight:normal;text-shadow:0 0 6px var(--am);}
+.q-text code{
+  background:rgba(0,245,255,0.06);
+  border:1px solid rgba(0,245,255,0.28);
+  color:var(--am);text-shadow:0 0 6px rgba(240,192,0,.4);
+  padding:1px 7px;font-family:'Share Tech Mono',monospace;font-size:.9em;
+}
+.q-text pre{
+  background:rgba(0,0,0,.55);
+  border:1px solid rgba(0,245,255,0.2);
+  border-left:3px solid var(--cy);
+  padding:12px 14px;margin:10px 0 0;
+  font-family:'Share Tech Mono',monospace;font-size:13px;
+  color:var(--am);text-shadow:0 0 5px rgba(240,192,0,.3);
+  overflow-x:auto;
+  box-shadow:inset 0 0 20px rgba(0,0,0,.4),0 0 8px rgba(0,245,255,.08);
+}
+
+/* ── OPTIONS ── */
+.opts{display:grid;gap:9px;}
+
+.opt{
+  position:relative;overflow:hidden;
+  background:rgba(0,6,10,.7);
+  border:1px solid rgba(0,245,255,.2);
+  color:var(--tx);text-align:left;
+  padding:12px 14px;
+  font-family:'Share Tech Mono',monospace;font-size:14px;
+  cursor:pointer;
+  display:flex;align-items:center;gap:14px;
+  transition:all .2s;
+  clip-path:polygon(0 0,calc(100% - 8px) 0,100% 8px,100% 100%,8px 100%,0 calc(100% - 8px));
+}
+.opt::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(0,245,255,.05) 0%,transparent 60%);
+  opacity:0;transition:opacity .2s;
+}
+.opt:hover:not(:disabled){
+  border-color:var(--cy);background:rgba(0,245,255,.07);
+  box-shadow:0 0 14px rgba(0,245,255,.2),inset 0 0 14px rgba(0,245,255,.04);
+  transform:translateX(5px);color:#fff;
+}
+.opt:hover:not(:disabled)::before{opacity:1;}
+.opt:hover:not(:disabled) .ltr{background:var(--cy);color:var(--bg);text-shadow:none;border-color:var(--cy);}
+.opt:disabled{cursor:default;}
+
+.ltr{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:26px;height:26px;flex-shrink:0;
+  border:1px solid rgba(0,245,255,.4);
+  font-family:'Orbitron',monospace;font-size:10px;font-weight:700;
+  color:var(--cy);text-shadow:0 0 6px var(--cy);
+  transition:all .2s;
+}
+
+.opt.correct{
+  background:rgba(0,255,153,.09);border-color:var(--go);color:#c0ffdf;
+  box-shadow:0 0 16px rgba(0,255,153,.25),inset 0 0 16px rgba(0,255,153,.04);
+  animation:correct-flash .45s ease;
+}
+@keyframes correct-flash{0%{background:rgba(0,255,153,.35)}100%{background:rgba(0,255,153,.09)}}
+.opt.correct .ltr{background:var(--go);color:#001a08;border-color:var(--go);box-shadow:0 0 10px var(--go);text-shadow:none;}
+
+.opt.wrong{
+  background:rgba(255,34,85,.09);border-color:var(--re);color:#ffd0d8;
+  box-shadow:0 0 16px rgba(255,34,85,.25),inset 0 0 16px rgba(255,34,85,.04);
+  animation:wrong-shake .35s ease;
+}
+@keyframes wrong-shake{
+  0%,100%{transform:translateX(0)}
+  20%{transform:translateX(-5px)}40%{transform:translateX(5px)}
+  60%{transform:translateX(-3px)}80%{transform:translateX(3px)}
+}
+.opt.wrong .ltr{background:var(--re);color:#1a0005;border-color:var(--re);box-shadow:0 0 10px var(--re);text-shadow:none;}
+
+/* ── FEEDBACK ── */
+.fb{
+  margin-top:14px;padding:12px 14px;font-size:13px;line-height:1.6;
+  display:none;border-left:3px solid var(--cy);background:rgba(0,0,0,.4);
+}
+.fb.show{display:block;animation:fade-up .3s ease;}
+.fb.good{border-color:var(--go);background:rgba(0,255,153,.04);box-shadow:0 0 8px rgba(0,255,153,.1);}
+.fb.bad{border-color:var(--re);background:rgba(255,34,85,.04);box-shadow:0 0 8px rgba(255,34,85,.1);}
+.fb strong{
+  font-family:'Orbitron',monospace;font-size:10px;letter-spacing:2px;
+  display:block;margin-bottom:5px;
+}
+.fb.good strong{color:var(--go);text-shadow:0 0 8px var(--go);}
+.fb.bad strong{color:var(--re);text-shadow:0 0 8px var(--re);}
+.fb code{
+  background:rgba(0,245,255,.06);border:1px solid rgba(0,245,255,.25);
+  color:var(--am);padding:0 5px;font-size:.9em;
+}
+@keyframes fade-up{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── ACTIONS ── */
+.acts{margin-top:18px;display:flex;justify-content:flex-end;gap:10px;}
+
+.btn{
+  position:relative;overflow:hidden;
+  font-family:'Orbitron',monospace;font-size:11px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;
+  color:var(--cy);background:transparent;
+  border:1px solid var(--cy);padding:12px 22px;cursor:pointer;
+  box-shadow:0 0 10px rgba(0,245,255,.2),inset 0 0 10px rgba(0,245,255,.02);
+  text-shadow:0 0 8px var(--cy);
+  clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));
+  transition:color .25s,text-shadow .25s,box-shadow .25s;
+}
+.btn::before{
+  content:'';position:absolute;inset:0;
+  background:var(--cy);transform:translateX(-110%);transition:transform .25s;z-index:-1;
+}
+.btn:hover{
+  color:var(--bg);text-shadow:none;
+  box-shadow:0 0 22px rgba(0,245,255,.7),0 0 44px rgba(0,245,255,.3);
+}
+.btn:hover::before{transform:translateX(0);}
+
+/* ── RESULTS ── */
+.results{text-align:center;padding:44px 28px;}
+.results h2{
+  font-family:'Orbitron',monospace;font-size:11px;letter-spacing:6px;
+  color:var(--mu);text-transform:uppercase;margin-bottom:20px;
+}
+.big-score{
+  font-family:'Orbitron',monospace;font-weight:900;font-size:clamp(52px,10vw,78px);
+  color:var(--cy);line-height:1;margin-bottom:6px;
+  text-shadow:0 0 20px var(--cy),0 0 60px rgba(0,245,255,.45),0 0 110px rgba(0,245,255,.2);
+  animation:score-glow 2.5s ease-in-out infinite;
+}
+@keyframes score-glow{
+  0%,100%{text-shadow:0 0 20px var(--cy),0 0 60px rgba(0,245,255,.45);}
+  50%{text-shadow:0 0 30px var(--cy),0 0 90px rgba(0,245,255,.7),0 0 130px rgba(0,245,255,.3);}
+}
+.res-pct{
+  font-family:'Orbitron',monospace;font-size:20px;
+  color:var(--am);text-shadow:0 0 12px var(--am);margin-bottom:8px;
+}
+.res-verdict{font-size:15px;margin:10px 0 6px;letter-spacing:1px;color:#cce8f0;}
+.res-streak{font-size:11px;color:var(--mu);letter-spacing:2px;margin-bottom:26px;}
+.res-streak span{color:var(--vi);text-shadow:0 0 8px var(--vi);font-family:'Orbitron',monospace;}
+.results .acts{justify-content:center;}
+
+/* ── GLITCH TRANSITION ── */
+.glitch{animation:glitch-in .35s ease forwards;}
+@keyframes glitch-in{
+  0%{opacity:0;transform:translateX(-8px) skewX(-2deg);filter:blur(3px);}
+  30%{opacity:.6;transform:translateX(5px) skewX(.8deg);filter:blur(1px);}
+  60%{opacity:.9;transform:translateX(-2px) skewX(0);filter:blur(0);}
+  100%{opacity:1;transform:translateX(0);}
+}
+
+@media(max-width:560px){
+  .sb{top:8px;right:8px;width:175px;padding:10px 12px;}
+  .sb-val{font-size:18px;}
+  .wrap{padding-top:100px;}
+  .card{padding:22px 16px;}
+  .hud-corner{display:none;}
+}
+</style>
+</head>
+<body>
+
+<canvas id="bg"></canvas>
+<div class="scanlines"></div>
+<div class="beam"></div>
+<div class="vig"></div>
+
+<!-- HUD corner brackets -->
+<div class="hud-corner tl"></div>
+<div class="hud-corner tr"></div>
+<div class="hud-corner bl"></div>
+<div class="hud-corner br"></div>
+
+<!-- Scoreboard -->
+<div class="sb">
+  <div class="sb-hd">// SYS_STATS</div>
+  <div class="sb-row">
+    <span class="sb-lbl">SCORE</span>
+    <span class="sb-val" id="score">00</span>
+  </div>
+  <div class="sb-row">
+    <span class="sb-lbl">ANSWERED</span>
+    <span class="sb-val sm" id="answered">0</span>
+  </div>
+  <div class="sb-row">
+    <span class="sb-lbl">STREAK</span>
+    <span class="sb-val sm" id="streak">0</span>
+  </div>
+  <div class="sb-bar"><div class="sb-fill" id="bar-fill"></div></div>
+  <div class="sb-prog">
+    <span>Q&thinsp;<span id="q-current">01</span></span>
+    <span>OF&thinsp;<span id="q-total">--</span></span>
+  </div>
+</div>
+
+<div class="wrap">
+  <header>
+    <div class="status-bar">// IDENTITY: YEAR_7 &nbsp;|&nbsp; MODULE: PHYSICS_2 &nbsp;|&nbsp; STATUS: ACTIVE //</div>
+    <h1>NEURO.EXE</h1>
+    <div class="sub">SPACE &amp; ELECTRICITY <b>|</b> END OF UNIT REVISION <b>|</b> YEAR 7</div>
+    <div class="hline"></div>
+  </header>
+  <div id="quiz-area"></div>
+</div>
+
+<script>
+// ── CANVAS BG: Tron grid + rotating wireframes + particles ──────────────────
+(function(){
+  const c = document.getElementById('bg');
+  const x = c.getContext('2d');
+  let W, H, t = 0;
+
+  function resize(){ W = c.width = innerWidth; H = c.height = innerHeight; }
+  resize(); addEventListener('resize', resize);
+
+  // Perspective grid (scrolling floor)
+  function drawGrid(){
+    const hz = H * 0.52, k = 4, nH = 22, nV = 14, sw = W * 0.56;
+    const scroll = (t * 0.007) % 1;
+    x.save();
+    for(let i = 0; i < nH; i++){
+      const frac = (i + scroll) / nH;
+      const p = (k * frac) / (1 + k * frac);
+      const sy = hz + (H - hz) * p;
+      if(sy > H || sy < hz) continue;
+      const prog = (sy - hz) / (H - hz);
+      const hw = sw * prog;
+      x.beginPath();
+      x.moveTo(W/2 - hw, sy); x.lineTo(W/2 + hw, sy);
+      x.strokeStyle = `rgba(0,180,230,${prog*0.45})`;
+      x.lineWidth = 0.5 + prog;
+      x.stroke();
+    }
+    for(let i = 0; i <= nV; i++){
+      const bx = W/2 - sw + 2*sw*(i/nV);
+      const dist = Math.abs(i/nV - 0.5)*2;
+      x.beginPath();
+      x.moveTo(W/2, hz); x.lineTo(bx, H);
+      x.strokeStyle = `rgba(0,180,230,${0.06 + 0.12*dist})`;
+      x.lineWidth = 0.5;
+      x.stroke();
+    }
+    x.beginPath();
+    x.moveTo(0, hz); x.lineTo(W, hz);
+    x.strokeStyle = 'rgba(0,245,255,0.08)';
+    x.lineWidth = 1;
+    x.stroke();
+    x.restore();
+  }
+
+  function rotXYZ(pts, rx, ry, rz){
+    return pts.map(([px,py,pz])=>{
+      let y1=py*Math.cos(rx)-pz*Math.sin(rx), z1=py*Math.sin(rx)+pz*Math.cos(rx);
+      let x2=px*Math.cos(ry)+z1*Math.sin(ry), z2=-px*Math.sin(ry)+z1*Math.cos(ry);
+      let x3=x2*Math.cos(rz)-y1*Math.sin(rz), y3=x2*Math.sin(rz)+y1*Math.cos(rz);
+      return [x3,y3,z2];
+    });
+  }
+  function proj(pts, cx, cy, sc, fov=260){
+    return pts.map(([px,py,pz])=>{
+      const f=fov/(fov+pz);
+      return {sx:cx+px*f*sc, sy:cy+py*f*sc, f};
+    });
+  }
+  function drawWF(pts3, edges, cx, cy, sc, r, g, b, fov=260){
+    const p=proj(pts3,cx,cy,sc,fov);
+    x.save(); x.shadowBlur=7;
+    edges.forEach(([a,b_])=>{
+      const pa=p[a],pb=p[b_];
+      const al=Math.min(0.8,((pa.f+pb.f)/2)*0.55+0.12);
+      x.beginPath(); x.moveTo(pa.sx,pa.sy); x.lineTo(pb.sx,pb.sy);
+      x.strokeStyle=`rgba(${r},${g},${b},${al.toFixed(2)})`;
+      x.shadowColor=`rgba(${r},${g},${b},0.45)`;
+      x.lineWidth=0.9; x.stroke();
+    });
+    x.restore();
+  }
+
+  const CV=[[-1,-1,-1],[1,-1,-1],[1,1,-1],[-1,1,-1],[-1,-1,1],[1,-1,1],[1,1,1],[-1,1,1]];
+  const CE=[[0,1],[1,2],[2,3],[3,0],[4,5],[5,6],[6,7],[7,4],[0,4],[1,5],[2,6],[3,7]];
+
+  const PH=(1+Math.sqrt(5))/2;
+  function nrm(v){const l=Math.hypot(...v);return v.map(n=>n/l);}
+  const IV=[[-1,PH,0],[1,PH,0],[-1,-PH,0],[1,-PH,0],[0,-1,PH],[0,1,PH],[0,-1,-PH],[0,1,-PH],[PH,0,-1],[PH,0,1],[-PH,0,-1],[-PH,0,1]].map(nrm);
+  const IE=[[0,1],[0,5],[0,7],[0,10],[0,11],[1,5],[1,7],[1,8],[1,9],[2,3],[2,4],[2,6],[2,10],[2,11],[3,4],[3,6],[3,8],[3,9],[4,5],[4,9],[4,11],[5,9],[5,11],[6,7],[6,8],[6,10],[7,8],[7,10],[8,9],[9,11],[10,11]];
+
+  function mkTorus(R,r,nU,nV){
+    const v=[],e=[];
+    for(let u=0;u<nU;u++) for(let i=0;i<nV;i++){
+      const a=(u/nU)*Math.PI*2, b=(i/nV)*Math.PI*2;
+      v.push([(R+r*Math.cos(b))*Math.cos(a),(R+r*Math.cos(b))*Math.sin(a),r*Math.sin(b)]);
+      e.push([u*nV+i,((u+1)%nU)*nV+i]);
+      e.push([u*nV+i,u*nV+(i+1)%nV]);
+    }
+    return{v,e};
+  }
+  const TR=mkTorus(1.2,0.42,13,8);
+
+  const OV=[[0,1.3,0],[1,0,0],[0,0,1],[-1,0,0],[0,0,-1],[0,-1.3,0]];
+  const OE=[[0,1],[0,2],[0,3],[0,4],[5,1],[5,2],[5,3],[5,4],[1,2],[2,3],[3,4],[4,1]];
+
+  const PARTS=Array.from({length:55},()=>({
+    x:Math.random(),y:Math.random(),
+    vx:(Math.random()-.5)*.00018,vy:(Math.random()-.5)*.00018
+  }));
+  function drawParticles(){
+    x.save();
+    PARTS.forEach(p=>{
+      p.x=(p.x+p.vx+1)%1; p.y=(p.y+p.vy+1)%1;
+      x.beginPath();
+      x.arc(p.x*W,p.y*H,1,0,Math.PI*2);
+      x.fillStyle='rgba(0,245,255,0.35)';
+      x.fill();
+    });
+    for(let i=0;i<PARTS.length;i++) for(let j=i+1;j<PARTS.length;j++){
+      const dx=(PARTS[i].x-PARTS[j].x)*W, dy=(PARTS[i].y-PARTS[j].y)*H;
+      const d=Math.sqrt(dx*dx+dy*dy);
+      if(d<90){
+        x.beginPath();
+        x.moveTo(PARTS[i].x*W,PARTS[i].y*H);
+        x.lineTo(PARTS[j].x*W,PARTS[j].y*H);
+        x.strokeStyle=`rgba(0,245,255,${((1-d/90)*0.1).toFixed(3)})`;
+        x.lineWidth=0.4; x.stroke();
+      }
+    }
+    x.restore();
+  }
+
+  function frame(){
+    x.clearRect(0,0,W,H);
+    drawGrid();
+    drawParticles();
+    const s=t*0.003;
+    drawWF(rotXYZ(TR.v, s*.4, s*.6, s*.25), TR.e, W*.11, H*.38, 52, 160,0,255);
+    drawWF(rotXYZ(CV, s*.8, s, s*.4), CE, W*.86, H*.22, 46, 0,120,255);
+    drawWF(rotXYZ(IV, s*.35, s*.55, s*.15), IE, W*.5, H*.08, 34, 0,230,255);
+    drawWF(rotXYZ(OV, s*.9, s*.3, s*.7), OE, W*.08, H*.72, 38, 80,180,255);
+    t++;
+    requestAnimationFrame(frame);
+  }
+  frame();
+})();
+
+// ── QUIZ ────────────────────────────────────────────────────────────────────
+const QUESTIONS = [
+
+  /* ── MAGNETIC FIELDS AND FIELD LINES ── */
+  {
+    q: "What is a <em>magnetic field</em>?",
+    options: [
+      "A region of space around a magnet where magnetic materials and other magnets experience a force",
+      "The electric current that flows through the metal of a permanent magnet to keep it magnetised",
+      "The region inside a magnet where the north and south poles cancel each other completely",
+      "A coating of charged particles on the surface of a magnet that produces the attractive force"
+    ],
+    answer: 0,
+    explain: "A magnetic field is a region of space where a force acts on magnetic materials and other magnets."
+  },
+  {
+    q: "In which direction do magnetic field lines point <em>outside</em> a bar magnet?",
+    options: [
+      "From the north pole to the south pole",
+      "From the south pole to the north pole",
+      "Outward from the centre of the magnet in all directions equally",
+      "Parallel to the long axis, running straight through the middle of the magnet"
+    ],
+    answer: 0,
+    explain: "Outside the magnet, field lines point from north pole to south pole. Inside, they point from south to north."
+  },
+  {
+    q: "Where is the magnetic field of a bar magnet <em>strongest</em>?",
+    options: [
+      "At the two poles (the ends of the magnet)",
+      "At the exact centre of the magnet, where the domains are most concentrated",
+      "Halfway between each pole and the centre, where field lines are evenly spread",
+      "Equally distributed along the whole length of the magnet with no variation"
+    ],
+    answer: 0,
+    explain: "The field is strongest at the poles, where the field lines are closest together."
+  },
+  {
+    q: "What does it mean when magnetic field lines are drawn <em>closer together</em>?",
+    options: [
+      "The magnetic field is stronger in that region",
+      "The field lines are about to cross and cancel each other out",
+      "The magnet is a temporary magnet rather than a permanent one",
+      "The magnetic material in that region has a lower temperature than elsewhere"
+    ],
+    answer: 0,
+    explain: "Closer field lines show a stronger magnetic field. The field lines are densest at the poles."
+  },
+  {
+    q: "How many poles does every permanent magnet have?",
+    options: [
+      "Two: a north-seeking (north) pole and a south-seeking (south) pole",
+      "One: either north or south, depending on how the magnet was originally magnetised",
+      "Three: a north pole, a south pole, and a neutral zone at the midpoint",
+      "Four: one at each corner, arranged symmetrically around the magnetic material"
+    ],
+    answer: 0,
+    explain: "Every magnet has exactly two poles: a north pole and a south pole. You cannot isolate one pole."
+  },
+
+  /* ── ATTRACTION, REPULSION AND TESTING FOR MAGNETISM ── */
+  {
+    q: "Two bar magnets are brought together with their <em>north poles</em> facing each other. What happens?",
+    options: [
+      "They repel each other",
+      "They attract each other",
+      "Nothing happens, because identical poles have no effect on one another",
+      "They attract briefly, then switch to repulsion as they get very close together"
+    ],
+    answer: 0,
+    explain: "Like poles repel. Two north poles facing each other will push apart. Unlike poles attract."
+  },
+  {
+    q: "Which of the following materials is attracted to a magnet?",
+    options: [
+      "Iron (a ferromagnetic metal)",
+      "Copper (a non-ferromagnetic metal used in electrical wiring)",
+      "Plastic (a non-metallic insulating material used in packaging and components)",
+      "Aluminium (a lightweight metal used in foil, cans and aircraft frames)"
+    ],
+    answer: 0,
+    explain: "Only ferromagnetic materials (iron, steel, cobalt, nickel) are attracted to magnets. Copper and aluminium are metals but not magnetic."
+  },
+  {
+    q: "A student tests two objects with a bar magnet. Object A is attracted to both poles. Object B is attracted to one pole and repelled by the other. What does this tell us?",
+    options: [
+      "Object A is a magnetic material; Object B is itself a magnet",
+      "Object A is itself a magnet; Object B is a magnetic material",
+      "Both objects are permanent magnets with the same pole arrangement",
+      "Both objects are non-magnetic, and the student has made an error in the test"
+    ],
+    answer: 0,
+    explain: "A magnetic material is attracted to both poles of a magnet. A magnet will both attract and repel another magnet - that repulsion proves it has its own poles."
+  },
+  {
+    q: "Which of the following is <strong>NOT</strong> attracted to a magnet?",
+    options: [
+      "Gold (a noble metal with no ferromagnetic properties)",
+      "Steel (an iron alloy that is strongly ferromagnetic)",
+      "Cobalt (a ferromagnetic metal used in specialist magnets and alloys)",
+      "Nickel (a ferromagnetic metal found in coins and rechargeable batteries)"
+    ],
+    answer: 0,
+    explain: "Gold is non-magnetic. Steel, cobalt and nickel are all ferromagnetic and are attracted to magnets."
+  },
+  {
+    q: "A magnetic force acts...",
+    options: [
+      "Across a gap - magnets attract or repel without needing to touch the object",
+      "Only when the magnet is in direct physical contact with the object being attracted",
+      "Only downward, since magnetism is related to gravity and acts in the same direction",
+      "Only on objects that have been previously magnetised by contact with another magnet"
+    ],
+    answer: 0,
+    explain: "Magnetic forces are non-contact forces - they act across empty space without the objects needing to touch."
+  },
+
+  /* ── ELECTROMAGNETS ── */
+  {
+    q: "What is an <em>electromagnet</em>?",
+    options: [
+      "A coil of wire that produces a magnetic field when an electric current flows through it",
+      "A permanent magnet made stronger by rubbing it against another magnet repeatedly",
+      "A device that uses static electricity to attract objects in the way a bar magnet does",
+      "A magnet formed naturally in iron ore that always points toward magnetic north"
+    ],
+    answer: 0,
+    explain: "An electromagnet is a coil of wire (often wound around an iron core) that acts as a magnet when current flows through it."
+  },
+  {
+    q: "What is the main advantage of an electromagnet over a permanent magnet?",
+    options: [
+      "It can be switched on and off by controlling the electric current",
+      "It is always stronger than any permanent magnet at any distance",
+      "It requires no power source, so it costs nothing to run indefinitely",
+      "It attracts a wider range of materials, including wood, glass and non-ferrous metals"
+    ],
+    answer: 0,
+    explain: "The key advantage is that you can switch an electromagnet on and off - a permanent magnet always attracts."
+  },
+  {
+    q: "How can you make an electromagnet <em>stronger</em>? Select the best answer.",
+    options: [
+      "Increase the number of coil turns or increase the current through the wire",
+      "Cool the wire down to reduce resistance so the magnetic field stops leaking out",
+      "Reduce the number of turns so the field is more concentrated in a smaller space",
+      "Replace the iron core with a copper core, since copper conducts electricity better"
+    ],
+    answer: 0,
+    explain: "More turns of wire and a higher current both increase the strength of an electromagnet. An iron core also greatly increases strength."
+  },
+  {
+    q: "What is the role of an <em>iron core</em> inside an electromagnet?",
+    options: [
+      "It greatly increases the strength of the magnetic field produced by the coil",
+      "It prevents the current from flowing too fast, protecting the circuit from overload",
+      "It reduces the number of turns needed so the wire does not get too hot to touch",
+      "It stores electrical charge between pulses to keep the magnet working when current stops"
+    ],
+    answer: 0,
+    explain: "An iron core becomes magnetised when current flows and greatly amplifies the magnetic field of the coil."
+  },
+  {
+    q: "Which of these is a genuine use of an electromagnet?",
+    options: [
+      "A scrapyard crane that lifts metal and releases it by switching off the current",
+      "A bicycle dynamo that stores power in a magnet to light the lamp after pedalling stops",
+      "A solar panel that converts sunlight into a magnetic field to charge a battery",
+      "A thermometer that detects temperature by measuring changes in the magnet's field strength"
+    ],
+    answer: 0,
+    explain: "Scrapyard cranes use powerful electromagnets - the metal is dropped by switching the current off. This would be impossible with a permanent magnet."
+  },
+
+  /* ── CURRENT, VOLTAGE AND RESISTANCE ── */
+  {
+    q: "What is <em>electric current</em>?",
+    options: [
+      "The rate of flow of electric charge through a conductor",
+      "The energy stored in a battery before the circuit is switched on",
+      "The opposition to the flow of charge caused by the material in a component",
+      "The difference in electrical energy per unit charge between two points in a circuit"
+    ],
+    answer: 0,
+    explain: "Current is the rate of flow of electric charge. It is measured in amperes (A)."
+  },
+  {
+    q: "In which unit is electric current measured, and with which instrument?",
+    options: [
+      "Amperes (A), measured with an ammeter connected in series",
+      "Volts (V), measured with a voltmeter connected in parallel across the component",
+      "Ohms (Ω), measured with an ohmmeter or calculated from current and voltage",
+      "Watts (W), measured with a wattmeter connected to the power supply output"
+    ],
+    answer: 0,
+    explain: "Current is measured in amperes (A) using an ammeter. The ammeter must be connected in series so all the current flows through it."
+  },
+  {
+    q: "What does <em>voltage</em> (potential difference) measure?",
+    options: [
+      "The difference in electrical energy per unit charge between two points in a circuit",
+      "The total charge that has flowed around the circuit since it was switched on",
+      "The opposition a component offers to the flow of current through it",
+      "The speed at which electrons travel through the wire from negative to positive terminal"
+    ],
+    answer: 0,
+    explain: "Voltage (potential difference) measures the energy given to or taken from each unit of charge. It is measured in volts (V) using a voltmeter."
+  },
+  {
+    q: "What is <em>electrical resistance</em>?",
+    options: [
+      "The opposition to the flow of electric current through a conductor, measured in ohms (Ω)",
+      "The rate at which charge flows around the circuit, measured in amperes (A)",
+      "The energy transferred to the circuit by the power supply per second, measured in watts (W)",
+      "The difference in voltage between the positive and negative terminals of a battery"
+    ],
+    answer: 0,
+    explain: "Resistance is the opposition to current flow. Higher resistance means less current for the same voltage. It is measured in ohms (Ω)."
+  },
+  {
+    q: "An <em>ammeter</em> must be connected in <strong>series</strong> in a circuit. Why?",
+    options: [
+      "So that all the current being measured flows through the meter",
+      "So that it measures the full voltage across the component it is monitoring",
+      "So that its very high resistance does not affect the rest of the circuit",
+      "So that it can share the current equally between all the parallel branches"
+    ],
+    answer: 0,
+    explain: "An ammeter is in series so the current passes through it. It has very low resistance to avoid affecting the circuit."
+  },
+  {
+    q: "A <em>voltmeter</em> must be connected in <strong>parallel</strong> across a component. Why?",
+    options: [
+      "So that it measures the potential difference across that specific component",
+      "So that the full circuit current flows through it for the most accurate reading",
+      "So that it can draw a large current and record a higher, more reliable voltage",
+      "So that it adds its own resistance to the component and protects the circuit"
+    ],
+    answer: 0,
+    explain: "A voltmeter in parallel measures the voltage across a component. It has very high resistance so very little current flows through it."
+  },
+  {
+    q: "The voltage across a component stays the same, but its resistance is increased. What happens to the current through it?",
+    options: [
+      "The current decreases, because the higher resistance opposes the flow of charge more strongly",
+      "The current increases, because a higher resistance pushes more charge through the circuit",
+      "The current stays the same, because voltage and current always balance each other exactly",
+      "The current reverses direction every time the resistance changes by more than a small amount"
+    ],
+    answer: 0,
+    explain: "From V = IR: if V is fixed and R increases, I must decrease. Higher resistance means less current."
+  },
+
+  /* ── SERIES AND PARALLEL CIRCUITS ── */
+  {
+    q: "In a <em>series</em> circuit, how does current behave at different points around the loop?",
+    options: [
+      "The current is the same at every point in the circuit",
+      "The current is greatest near the positive terminal and falls steadily around the loop",
+      "The current is shared equally between each component based on its position",
+      "The current doubles each time it passes through an additional component in the chain"
+    ],
+    answer: 0,
+    explain: "In a series circuit there is only one path, so the same current flows everywhere. Current is conserved."
+  },
+  {
+    q: "A series circuit has three bulbs. One bulb breaks (goes open circuit). What happens to the other two?",
+    options: [
+      "All three bulbs go out, because the single current path is completely broken",
+      "The other two get brighter, because they receive more current without the broken bulb",
+      "The other two stay on, because each has its own independent current path",
+      "Only the bulb immediately after the break goes out; the rest continue working normally"
+    ],
+    answer: 0,
+    explain: "In series there is only one path. A break anywhere stops current flowing everywhere - all bulbs go out."
+  },
+  {
+    q: "In a <em>parallel</em> circuit, what is true about the voltage across each branch?",
+    options: [
+      "The voltage across each branch equals the supply voltage",
+      "The voltage splits equally between branches, regardless of their resistance",
+      "The voltages in each branch add up to give the total supply voltage",
+      "The voltage is highest in the branch with the lowest resistance in the circuit"
+    ],
+    answer: 0,
+    explain: "In parallel, each branch is directly connected to the supply, so each branch has the full supply voltage."
+  },
+  {
+    q: "In a parallel circuit, what happens to the current at a junction where the circuit splits?",
+    options: [
+      "The current splits between the branches, and the branch currents add up to the total",
+      "The current doubles at each junction, so more branches means a higher total current",
+      "The current stays equal in every branch, regardless of the resistance of each branch",
+      "The current is destroyed at the junction and rebuilt by the power supply for each branch"
+    ],
+    answer: 0,
+    explain: "At a parallel junction current splits. The sum of the branch currents equals the total current. Charge is conserved."
+  },
+  {
+    q: "Household lighting is wired in <em>parallel</em>. What is the main reason for this?",
+    options: [
+      "Each light gets the full mains voltage and works independently of the others",
+      "All lights share the mains voltage, so each draws less current and saves energy",
+      "Switching off one light turns them all off, which is safer in an emergency",
+      "All lights draw identical currents and are guaranteed to glow at the same brightness"
+    ],
+    answer: 0,
+    explain: "Parallel wiring means each light has the full 230V and can be switched independently - one failing does not affect the others."
+  },
+  {
+    q: "Identical bulbs are added one by one to a <em>series</em> circuit. What happens to the brightness of each bulb?",
+    options: [
+      "Each bulb gets dimmer, because adding more resistance reduces the current for all bulbs",
+      "Each bulb gets brighter, because adding bulbs gives the circuit more energy to share",
+      "Each bulb stays the same brightness, because the supply adjusts to keep current constant",
+      "Only the most recently added bulb gets dimmer; the originals stay the same as before"
+    ],
+    answer: 0,
+    explain: "Adding bulbs in series increases total resistance, which reduces current. Less current means less brightness for all bulbs."
+  },
+
+  /* ── ELECTROSTATIC CHARGE ── */
+  {
+    q: "How does a person become electrostatically charged in everyday life?",
+    options: [
+      "By friction: electrons transfer between surfaces when materials rub together",
+      "By conduction from the mains supply, which slowly builds up charge in the body",
+      "By radiation from the Sun, which deposits charged particles on the skin's surface",
+      "By standing near a strong magnetic field, which causes charge to separate in the body"
+    ],
+    answer: 0,
+    explain: "Static charge builds up through friction. When two materials rub together, electrons transfer from one to the other."
+  },
+  {
+    q: "When a plastic rod is rubbed with a cloth, which particles transfer between the two materials?",
+    options: [
+      "Electrons transfer from one material to the other",
+      "Protons transfer from one material to the other",
+      "Neutrons transfer from one material to the other",
+      "Protons and electrons transfer in equal amounts, leaving both materials uncharged"
+    ],
+    answer: 0,
+    explain: "Only electrons move during charging by friction. Protons and neutrons are locked inside the nucleus."
+  },
+  {
+    q: "A balloon is rubbed on hair. Afterwards the hair is attracted toward the balloon. Which statement is correct?",
+    options: [
+      "The balloon gained electrons (negative charge) and the hair lost electrons (positive charge)",
+      "The balloon and hair both gained negative charge, which is what causes attraction",
+      "The balloon and hair both gained positive charge, which is what causes attraction",
+      "The balloon lost electrons (negative charge) and the hair gained electrons (negative charge)"
+    ],
+    answer: 0,
+    explain: "The balloon gains electrons from the hair, becoming negatively charged. The hair is left positively charged. Opposite charges attract."
+  },
+  {
+    q: "Which of the following is a real example of electrostatic charge building up on a person?",
+    options: [
+      "Receiving a small shock after walking across a carpet and then touching a metal door handle",
+      "A metal pan heating up on a gas hob because metal conducts heat from the flame efficiently",
+      "A kettle boiling water by passing current through a heating element inside the appliance",
+      "A light bulb glowing because current flows through a thin wire filament, heating it brightly"
+    ],
+    answer: 0,
+    explain: "Walking on carpet builds up static charge by friction. Touching metal allows the charge to discharge suddenly as a small spark or shock."
+  },
+  {
+    q: "Like charges...",
+    options: [
+      "Repel each other; unlike (opposite) charges attract each other",
+      "Attract each other; unlike (opposite) charges repel each other",
+      "Have no effect on each other; only unlike charges produce a force",
+      "Attract at short distances but repel at long distances, similar to the behaviour of magnets"
+    ],
+    answer: 0,
+    explain: "Like charges (both positive or both negative) repel. Unlike charges (positive and negative) attract."
+  },
+
+  /* ── MOON PHASES AND ORBIT ── */
+  {
+    q: "What causes the <em>phases of the Moon</em>?",
+    options: [
+      "The Moon orbits Earth, so we see different amounts of its sunlit side from different positions",
+      "Earth's shadow falls across different portions of the Moon as it travels its orbit",
+      "The Moon rotates on its axis, gradually turning different lit and dark sides toward Earth",
+      "Other planets periodically block the Sun's light, leaving only part of the Moon illuminated"
+    ],
+    answer: 0,
+    explain: "Phases are caused by the changing angle between the Moon, Earth and Sun as the Moon orbits. We see different fractions of its sunlit half."
+  },
+  {
+    q: "During a <em>new Moon</em>, where is the Moon positioned relative to Earth and the Sun?",
+    options: [
+      "Between Earth and the Sun, so its lit side faces away from us",
+      "On the opposite side of Earth from the Sun, so its fully lit side faces us",
+      "At right angles to the Sun-Earth line, so exactly half of the lit side is visible",
+      "Beyond the Sun, on the far side of the Solar System from Earth's position"
+    ],
+    answer: 0,
+    explain: "At new Moon, the Moon is between Earth and the Sun. We see only its dark, unlit side - so it is invisible in the night sky."
+  },
+  {
+    q: "Approximately how long does one complete cycle of Moon phases take?",
+    options: [
+      "About 29.5 days (one lunar month)",
+      "About 365.25 days, the same time as one orbit of Earth around the Sun",
+      "About 7 days, which is why the main phase names appear roughly one week apart",
+      "About 24 hours, the same as the time it takes Earth to rotate once on its axis"
+    ],
+    answer: 0,
+    explain: "The Moon completes its orbit around Earth in about 29.5 days, which is one lunar month."
+  },
+  {
+    q: "What force keeps the Moon in its orbit around Earth?",
+    options: [
+      "Gravity, which pulls the Moon toward Earth while its orbital speed keeps it from falling in",
+      "Magnetism, since the Moon's iron core is attracted to Earth's own magnetic field",
+      "The normal contact force between the Moon and the upper layers of Earth's atmosphere",
+      "Air resistance, which slows the Moon enough to maintain its circular orbital path"
+    ],
+    answer: 0,
+    explain: "Gravity attracts the Moon toward Earth. The Moon's orbital speed means it continuously 'falls around' Earth rather than crashing into it."
+  },
+  {
+    q: "Which phase occurs when the Moon is on the <em>opposite side of Earth</em> from the Sun?",
+    options: [
+      "Full Moon - the entire lit side of the Moon faces toward Earth",
+      "New Moon - the Moon is between Earth and the Sun, hiding its lit side",
+      "First Quarter - half the lit side is visible on the right-hand edge",
+      "Last Quarter - half the lit side is visible on the left-hand edge"
+    ],
+    answer: 0,
+    explain: "At full Moon, Earth is between the Moon and the Sun. The sunlit side of the Moon faces directly toward us."
+  },
+
+  /* ── GRAVITATIONAL FIELD ── */
+  {
+    q: "A gravitational field is best defined as:",
+    options: [
+      "A region of space in which any object with mass experiences a gravitational force",
+      "The speed at which objects accelerate when falling freely near a planet's surface",
+      "The force of gravity on an object, equal to the object's weight divided by its mass",
+      "The curved path an object follows when moving under the influence of a central force"
+    ],
+    answer: 0,
+    explain: "A gravitational field is a region of space where masses experience a gravitational (attractive) force."
+  },
+  {
+    q: "What is the approximate gravitational field strength at Earth's surface?",
+    options: [
+      "10 N/kg (newtons per kilogram)",
+      "10 m/s - the speed an object reaches one second after being dropped from rest",
+      "100 N/kg - the force pulling every kilogram toward the centre of Earth",
+      "9.8 mph - the rate at which a falling object gains speed near Earth's surface"
+    ],
+    answer: 0,
+    explain: "Earth's gravitational field strength is approximately 10 N/kg (or more precisely 9.8 N/kg). This means every kilogram of mass experiences a 10 N force."
+  },
+  {
+    q: "An object has a mass of 5 kg. What is its <em>weight</em> on Earth? (use g = 10 N/kg)",
+    options: [
+      "50 N",
+      "5 N (the same as its mass, since weight and mass are equal on Earth's surface)",
+      "500 N (mass multiplied by the square of gravitational field strength)",
+      "0.5 N (mass divided by field strength, since weight is always less than mass)"
+    ],
+    answer: 0,
+    explain: "Weight = mass × gravitational field strength. W = 5 × 10 = 50 N. Mass (kg) and weight (N) are different quantities."
+  },
+  {
+    q: "How does gravitational field strength change as you move <em>further</em> from Earth?",
+    options: [
+      "It decreases, because the gravitational field gets weaker with distance from the planet",
+      "It increases, because you move away from other masses that previously opposed Earth's pull",
+      "It stays exactly the same regardless of distance, since gravity is a constant universal force",
+      "It first increases then decreases, reaching a maximum at the height of the ISS orbit"
+    ],
+    answer: 0,
+    explain: "Gravitational field strength decreases with distance from the planet. The further you are, the weaker the force on each kilogram of mass."
+  },
+  {
+    q: "What is the direction of the gravitational field around Earth?",
+    options: [
+      "Pointing inward toward the centre of Earth at every point around it",
+      "Pointing outward away from Earth's surface, since the field pushes objects into orbit",
+      "Always pointing downward in absolute terms, regardless of where you are on the planet",
+      "Pointing from the South Pole toward the North Pole along Earth's rotational axis"
+    ],
+    answer: 0,
+    explain: "Gravitational field lines point toward the centre of the mass (Earth). Gravity is always an attractive force."
+  },
+
+  /* ── INVESTIGATING CIRCUITS ── */
+  {
+    q: "A student investigates how <em>wire length</em> affects current. Which variables must be kept constant?",
+    options: [
+      "The voltage of the supply and the thickness (cross-sectional area) of the wire",
+      "The length of the wire, since that is the independent variable being deliberately changed",
+      "The current through the wire, since that is what changes in response to wire length",
+      "Both current and voltage, leaving only the wire material as the one variable to change"
+    ],
+    answer: 0,
+    explain: "The independent variable is wire length. Voltage and wire thickness must be kept constant (controlled variables) for a fair test."
+  },
+  {
+    q: "How should an <em>ammeter</em> be connected in a circuit, and why?",
+    options: [
+      "In series, so that all the current being measured passes through the meter",
+      "In parallel, so that the meter can measure the full voltage across the component",
+      "In parallel, so that it does not add resistance to the branch being investigated",
+      "In series across both terminals of the supply to get the most accurate reading possible"
+    ],
+    answer: 0,
+    explain: "An ammeter goes in series so all the current flows through it. It has very low resistance so it barely affects the circuit."
+  },
+  {
+    q: "A student measures current at several different voltages and plots a graph. Which result shows the component obeys <em>Ohm's Law</em>?",
+    options: [
+      "A straight line through the origin, showing current increases proportionally with voltage",
+      "A curve that flattens at high voltages, showing resistance rises as the component heats up",
+      "A curve that rises steeply at first then levels off as the material reaches saturation",
+      "A zigzag pattern showing the component switches between high and low resistance states"
+    ],
+    answer: 0,
+    explain: "Ohm's Law: V = IR. If resistance is constant, current is directly proportional to voltage - the graph is a straight line through the origin."
+  },
+  {
+    q: "Why is it important to switch off the power supply between readings when investigating circuits?",
+    options: [
+      "To prevent the wire overheating, which would change its resistance and make results unfair",
+      "To allow the ammeter time to reset to zero so each reading starts from the same baseline",
+      "To stop the current reversing direction, which would cause negative values on the meters",
+      "To let the voltmeter discharge fully so it gives an accurate reading on the next measurement"
+    ],
+    answer: 0,
+    explain: "Leaving current on heats the wire, which increases its resistance. Switching off between readings keeps the temperature (and resistance) constant."
+  },
+
+  /* ── HELIOCENTRIC AND GEOCENTRIC MODELS ── */
+  {
+    q: "What is the <em>geocentric</em> model of the Solar System?",
+    options: [
+      "The model in which Earth is at the centre and the Sun, Moon and planets orbit around it",
+      "The model in which the Sun is at the centre and all the planets, including Earth, orbit it",
+      "The model in which each planet orbits its own individual star in a separate region of space",
+      "The model in which the Moon is at the centre and the Earth and Sun orbit around it together"
+    ],
+    answer: 0,
+    explain: "Geocentric means Earth-centred. In this model (accepted for roughly 2000 years) the Sun, Moon and planets all orbit Earth."
+  },
+  {
+    q: "What is the <em>heliocentric</em> model of the Solar System?",
+    options: [
+      "The model in which the Sun is at the centre and Earth and the other planets orbit around it",
+      "The model in which Earth is at the centre and all other bodies orbit around our planet",
+      "The model in which each body in the Solar System orbits the most massive planet in it",
+      "The model in which the Sun and Earth orbit a shared central point located between them"
+    ],
+    answer: 0,
+    explain: "Heliocentric means Sun-centred. Earth and all other planets orbit the Sun. This is our current accepted model."
+  },
+  {
+    q: "Which scientist is most closely associated with promoting the <em>heliocentric</em> model?",
+    options: [
+      "Nicolaus Copernicus, who published the heliocentric model in 1543",
+      "Isaac Newton, who used his law of gravity to prove the geocentric model was correct",
+      "Aristotle, who proposed that the Sun was fixed at the centre while Earth orbited it",
+      "Ptolemy, who built the most detailed geocentric model using epicycles to match observations"
+    ],
+    answer: 0,
+    explain: "Copernicus published his heliocentric model in 1543. Galileo later provided strong observational evidence for it."
+  },
+  {
+    q: "Why did the geocentric model seem convincing to people for so long?",
+    options: [
+      "The Sun, Moon and stars visibly move across the sky each day, consistent with them orbiting Earth",
+      "Ancient scientists had measured Earth's orbit and found it was too small to cause any detectable parallax",
+      "The geocentric model correctly predicted every eclipse and planetary position with perfect accuracy",
+      "People could feel Earth spinning beneath their feet, confirming it was moving and everything else was still"
+    ],
+    answer: 0,
+    explain: "From Earth, it genuinely looks as though the Sun and stars move around us. Without instruments, the geocentric model matched everyday observations."
+  },
+  {
+    q: "Which observation most strongly supported the <em>heliocentric</em> model over the geocentric one?",
+    options: [
+      "Galileo's discovery of moons orbiting Jupiter, showing that not everything orbits Earth",
+      "The observation that the Sun rises in the east and sets in the west every day without fail",
+      "The fact that the Moon shows phases, which the geocentric model cannot explain at all",
+      "The observation that star patterns (constellations) appear unchanged throughout the whole year"
+    ],
+    answer: 0,
+    explain: "Galileo observed moons orbiting Jupiter - proof that not everything in the Solar System orbits Earth, undermining the geocentric model."
+  }
+
+];
+
+// ── STATE ───────────────────────────────────────────────────────────────────
+const state={order:[],index:0,score:0,answered:0,streak:0,bestStreak:0,locked:false};
+
+function shuffle(a){
+  const b=a.slice();
+  for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]];}
+  return b;
+}
+
+function pad(n){return String(n).padStart(2,'0');}
+
+function startQuiz(){
+  state.order=shuffle(QUESTIONS.map((_,i)=>i));
+  state.index=0;state.score=0;state.answered=0;state.streak=0;state.bestStreak=0;state.locked=false;
+  document.getElementById('q-total').textContent=pad(state.order.length);
+  renderQ();updateSB();
+}
+
+function updateSB(){
+  document.getElementById('score').textContent=pad(state.score);
+  document.getElementById('answered').textContent=pad(state.answered);
+  document.getElementById('streak').textContent=pad(state.streak);
+  document.getElementById('q-current').textContent=pad(Math.min(state.index+1,state.order.length));
+  document.getElementById('bar-fill').style.width=(state.index/state.order.length*100)+'%';
+}
+
+function renderQ(){
+  if(state.index>=state.order.length){renderResults();return;}
+  const q=QUESTIONS[state.order[state.index]];
+  const opts=shuffle(q.options.map((t,i)=>({t,ok:i===q.answer})));
+  const L=['A','B','C','D'];
+  const area=document.getElementById('quiz-area');
+  area.className='glitch';
+  area.innerHTML=`
+    <div class="card">
+      <div class="q-num">QUERY_${pad(state.index+1)}&nbsp;/&nbsp;${pad(state.order.length)}</div>
+      <div class="q-text">${q.q}</div>
+      <div class="opts">
+        ${opts.map((o,i)=>`
+          <button class="opt" data-ok="${o.ok}">
+            <span class="ltr">${L[i]}</span>
+            <span>${o.t}</span>
+          </button>`).join('')}
+      </div>
+      <div class="fb" id="fb"></div>
+      <div class="acts" id="acts"></div>
+    </div>`;
+  area.querySelectorAll('.opt').forEach(b=>b.addEventListener('click',()=>handleAns(b,q)));
+  setTimeout(()=>area.classList.remove('glitch'),400);
+  updateSB();
+}
+
+function handleAns(btn,q){
+  if(state.locked)return;
+  state.locked=true;
+  const ok=btn.dataset.ok==='true';
+  document.querySelectorAll('.opt').forEach(o=>{
+    o.disabled=true;
+    if(o.dataset.ok==='true')o.classList.add('correct');
+  });
+  if(!ok)btn.classList.add('wrong');
+  state.answered++;
+  if(ok){state.score++;state.streak++;if(state.streak>state.bestStreak)state.bestStreak=state.streak;}
+  else state.streak=0;
+
+  const fb=document.getElementById('fb');
+  fb.className='fb show '+(ok?'good':'bad');
+  fb.innerHTML=`<strong>${ok?'ACCESS GRANTED':'ACCESS DENIED'}</strong>${q.explain}`;
+
+  const isLast=state.index>=state.order.length-1;
+  document.getElementById('acts').innerHTML=
+    `<button class="btn" id="nxt">${isLast?'&gt;&gt; FINAL SCORE':'&gt;&gt; NEXT_QUERY'}</button>`;
+  document.getElementById('nxt').addEventListener('click',()=>{state.index++;state.locked=false;renderQ();});
+  updateSB();
+}
+
+function verdictFor(p){
+  if(p===100)return'PERFECT_RUN. ACCESS_LEVEL: MAXIMUM.';
+  if(p>=85)return'EXCELLENT. Neural pathways fully synced.';
+  if(p>=70)return'SOLID PERFORMANCE. A few nodes need reinforcement.';
+  if(p>=50)return'PARTIAL ACCESS. Review flagged definitions.';
+  if(p>=30)return'LOW SIGNAL. Re-scan the revision sheet.';
+  return'SYSTEM FAULT. Full reboot recommended.';
+}
+
+function renderResults(){
+  document.getElementById('q-current').textContent=pad(state.order.length);
+  document.getElementById('bar-fill').style.width='100%';
+  const tot=state.order.length, pct=Math.round(state.score/tot*100);
+  const area=document.getElementById('quiz-area');
+  area.className='glitch';
+  area.innerHTML=`
+    <div class="card results">
+      <div class="q-num">// SESSION_COMPLETE //</div>
+      <h2>SYSTEM REPORT</h2>
+      <div class="big-score">${pad(state.score)}&thinsp;/&thinsp;${pad(tot)}</div>
+      <div class="res-pct">${pct}%</div>
+      <div class="res-verdict">${verdictFor(pct)}</div>
+      <div class="res-streak">LONGEST_STREAK:&thinsp;<span>${pad(state.bestStreak)}</span></div>
+      <div class="acts"><button class="btn" id="rst">&gt;&gt; REINITIALISE</button></div>
+    </div>`;
+  document.getElementById('rst').addEventListener('click',startQuiz);
+  setTimeout(()=>area.classList.remove('glitch'),400);
+}
+
+startQuiz();
+</script>
+</body>
+</html>
