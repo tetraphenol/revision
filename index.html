@@ -10,7 +10,7 @@
 <meta name="apple-mobile-web-app-title" content="Revision">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
-<title>NEURO.EXE // Physics 2 Rev // Yr7</title>
+<title>CHLORO.EXE // Photosynthesis &amp; Respiration // Yr8</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
@@ -488,9 +488,9 @@ header h1{
 
 <div class="wrap">
   <header>
-    <div class="status-bar">// IDENTITY: YEAR_7 &nbsp;|&nbsp; MODULE: PHYSICS_2 &nbsp;|&nbsp; STATUS: ACTIVE //</div>
-    <h1>NEURO.EXE</h1>
-    <div class="sub">SPACE &amp; ELECTRICITY <b>|</b> END OF UNIT REVISION <b>|</b> YEAR 7</div>
+    <div class="status-bar">// IDENTITY: YEAR_8 &nbsp;|&nbsp; MODULE: MATERIAL_CYCLES_AND_ENERGY &nbsp;|&nbsp; STATUS: ACTIVE //</div>
+    <h1>CHLORO.EXE</h1>
+    <div class="sub">PHOTOSYNTHESIS &middot; RESPIRATION &middot; FERMENTATION <b>|</b> END OF UNIT REVISION <b>|</b> YEAR 8</div>
     <div class="hline"></div>
   </header>
   <div id="quiz-area"></div>
@@ -637,598 +637,848 @@ header h1{
 // ── QUIZ ────────────────────────────────────────────────────────────────────
 const QUESTIONS = [
 
-  /* ── MAGNETIC FIELDS AND FIELD LINES ── */
+  /* ── PHOTOSYNTHESIS: THE REACTION ── */
   {
-    q: "What is a <em>magnetic field</em>?",
+    q: "What is the word equation for <em>photosynthesis</em>?",
     options: [
-      "A region of space around a magnet where magnetic materials and other magnets experience a force",
-      "The electric current that flows through the metal of a permanent magnet to keep it magnetised",
-      "The region inside a magnet where the north and south poles cancel each other completely",
-      "A coating of charged particles on the surface of a magnet that produces the attractive force"
+      "carbon dioxide + water &rarr; glucose + oxygen",
+      "glucose + oxygen &rarr; carbon dioxide + water",
+      "carbon dioxide + oxygen &rarr; glucose + water",
+      "glucose + carbon dioxide &rarr; water + oxygen"
     ],
     answer: 0,
-    explain: "A magnetic field is a region of space where a force acts on magnetic materials and other magnets."
+    explain: "Carbon dioxide and water are the reactants; glucose and oxygen are the products. Light energy is transferred in, so it is written above the arrow, not as a reactant."
   },
   {
-    q: "In which direction do magnetic field lines point <em>outside</em> a bar magnet?",
+    q: "Where in a plant cell does photosynthesis take place?",
     options: [
-      "From the north pole to the south pole",
-      "From the south pole to the north pole",
-      "Outward from the centre of the magnet in all directions equally",
-      "Parallel to the long axis, running straight through the middle of the magnet"
+      "In the chloroplasts, which contain the green pigment chlorophyll",
+      "In the mitochondria, which are found in plant and animal cells",
+      "In the nucleus, which stores the genetic information for the cell",
+      "In the cell wall, which is made of cellulose and supports the cell"
     ],
     answer: 0,
-    explain: "Outside the magnet, field lines point from north pole to south pole. Inside, they point from south to north."
+    explain: "Chloroplasts contain chlorophyll. Cells with no chloroplasts, such as root cells, cannot photosynthesise."
   },
   {
-    q: "Where is the magnetic field of a bar magnet <em>strongest</em>?",
+    q: "What is the job of <em>chlorophyll</em>?",
     options: [
-      "At the two poles (the ends of the magnet)",
-      "At the exact centre of the magnet, where the domains are most concentrated",
-      "Halfway between each pole and the centre, where field lines are evenly spread",
-      "Equally distributed along the whole length of the magnet with no variation"
+      "It absorbs light energy and transfers it into the reaction",
+      "It absorbs carbon dioxide and carries it down into the stem",
+      "It stores the glucose made until the plant needs to use it up",
+      "It releases the waste oxygen through the surface of the leaf"
     ],
     answer: 0,
-    explain: "The field is strongest at the poles, where the field lines are closest together."
+    explain: "Chlorophyll is the green pigment that absorbs light energy. It reflects green light, which is why leaves look green."
   },
   {
-    q: "What does it mean when magnetic field lines are drawn <em>closer together</em>?",
+    q: "Where does a plant get the two <strong>reactants</strong> for photosynthesis?",
     options: [
-      "The magnetic field is stronger in that region",
-      "The field lines are about to cross and cancel each other out",
-      "The magnet is a temporary magnet rather than a permanent one",
-      "The magnetic material in that region has a lower temperature than elsewhere"
+      "Carbon dioxide from the air through the leaves, water from the soil",
+      "Carbon dioxide from the soil through the roots, water from the air",
+      "Oxygen from the air through the leaves, glucose from the soil water",
+      "Carbon dioxide and water are both taken from the soil by the roots"
     ],
     answer: 0,
-    explain: "Closer field lines show a stronger magnetic field. The field lines are densest at the poles."
+    explain: "Carbon dioxide diffuses in through the stomata; water is absorbed by root hair cells and carried up the xylem."
   },
   {
-    q: "How many poles does every permanent magnet have?",
+    q: "Which gas is released as a product of photosynthesis?",
     options: [
-      "Two: a north-seeking (north) pole and a south-seeking (south) pole",
-      "One: either north or south, depending on how the magnet was originally magnetised",
-      "Three: a north pole, a south pole, and a neutral zone at the midpoint",
-      "Four: one at each corner, arranged symmetrically around the magnetic material"
+      "Oxygen, which diffuses out of the leaf through the stomata",
+      "Carbon dioxide, which diffuses out through the leaf stomata",
+      "Nitrogen, which diffuses out through the waxy cuticle layer",
+      "Hydrogen, which diffuses out through the guard cells of leaf"
     ],
     answer: 0,
-    explain: "Every magnet has exactly two poles: a north pole and a south pole. You cannot isolate one pole."
-  },
-
-  /* ── ATTRACTION, REPULSION AND TESTING FOR MAGNETISM ── */
-  {
-    q: "Two bar magnets are brought together with their <em>north poles</em> facing each other. What happens?",
-    options: [
-      "They repel each other",
-      "They attract each other",
-      "Nothing happens, because identical poles have no effect on one another",
-      "They attract briefly, then switch to repulsion as they get very close together"
-    ],
-    answer: 0,
-    explain: "Like poles repel. Two north poles facing each other will push apart. Unlike poles attract."
+    explain: "Oxygen is a product of photosynthesis. Plants use some of it for their own respiration and the rest diffuses out."
   },
   {
-    q: "Which of the following materials is attracted to a magnet?",
+    q: "What supplies the energy for photosynthesis?",
     options: [
-      "Iron (a ferromagnetic metal)",
-      "Copper (a non-ferromagnetic metal used in electrical wiring)",
-      "Plastic (a non-metallic insulating material used in packaging and components)",
-      "Aluminium (a lightweight metal used in foil, cans and aircraft frames)"
+      "Light energy, usually from the Sun, absorbed by the chlorophyll",
+      "Heat energy from the warm soil, absorbed by the roots of a plant",
+      "Chemical energy from soil minerals, taken in by the root hair cells",
+      "Kinetic energy from the wind as it moves the leaves back and forth"
     ],
     answer: 0,
-    explain: "Only ferromagnetic materials (iron, steel, cobalt, nickel) are attracted to magnets. Copper and aluminium are metals but not magnetic."
+    explain: "Photosynthesis is powered by light energy. Sunlight is the usual source, but a lamp works just as well."
   },
   {
-    q: "A student tests two objects with a bar magnet. Object A is attracted to both poles. Object B is attracted to one pole and repelled by the other. What does this tell us?",
+    q: "Photosynthesis is described as an <em>endothermic</em> reaction. What does that mean?",
     options: [
-      "Object A is a magnetic material; Object B is itself a magnet",
-      "Object A is itself a magnet; Object B is a magnetic material",
-      "Both objects are permanent magnets with the same pole arrangement",
-      "Both objects are non-magnetic, and the student has made an error in the test"
+      "Energy is transferred from the surroundings into the reaction",
+      "Energy is transferred out of the reaction into the surroundings",
+      "The reaction gives out heat, so the leaf warms the air around it",
+      "The reaction only starts once the leaf is warmer than the air"
     ],
     answer: 0,
-    explain: "A magnetic material is attracted to both poles of a magnet. A magnet will both attract and repel another magnet - that repulsion proves it has its own poles."
+    explain: "Endothermic means energy is taken in from the surroundings - here, light energy is transferred into the glucose that is made."
   },
   {
-    q: "Which of the following is <strong>NOT</strong> attracted to a magnet?",
+    q: "Which is the correct <strong>balanced symbol equation</strong> for photosynthesis?",
     options: [
-      "Gold (a noble metal with no ferromagnetic properties)",
-      "Steel (an iron alloy that is strongly ferromagnetic)",
-      "Cobalt (a ferromagnetic metal used in specialist magnets and alloys)",
-      "Nickel (a ferromagnetic metal found in coins and rechargeable batteries)"
+      "6CO<sub>2</sub> + 6H<sub>2</sub>O &rarr; C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub>",
+      "C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub> &rarr; 6CO<sub>2</sub> + 6H<sub>2</sub>O",
+      "6CO<sub>2</sub> + 6O<sub>2</sub> &rarr; C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6H<sub>2</sub>O",
+      "6CO<sub>2</sub> + 12H<sub>2</sub>O &rarr; C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6H<sub>2</sub>"
     ],
     answer: 0,
-    explain: "Gold is non-magnetic. Steel, cobalt and nickel are all ferromagnetic and are attracted to magnets."
+    explain: "6CO&#8322; + 6H&#8322;O &rarr; C&#8326;H&#8321;&#8322;O&#8326; + 6O&#8322;. Note the reverse of this equation is aerobic respiration."
   },
   {
-    q: "A magnetic force acts...",
+    q: "Which organisms are able to photosynthesise?",
     options: [
-      "Across a gap - magnets attract or repel without needing to touch the object",
-      "Only when the magnet is in direct physical contact with the object being attracted",
-      "Only downward, since magnetism is related to gravity and acts in the same direction",
-      "Only on objects that have been previously magnetised by contact with another magnet"
+      "Plants, algae and some bacteria, because they contain chlorophyll",
+      "Only green flowering plants that grow on land, such as trees",
+      "All living organisms, because every cell has to make its own food",
+      "Plants and animals, but only while they are out in bright sunlight"
     ],
     answer: 0,
-    explain: "Magnetic forces are non-contact forces - they act across empty space without the objects needing to touch."
-  },
-
-  /* ── ELECTROMAGNETS ── */
-  {
-    q: "What is an <em>electromagnet</em>?",
-    options: [
-      "A coil of wire that produces a magnetic field when an electric current flows through it",
-      "A permanent magnet made stronger by rubbing it against another magnet repeatedly",
-      "A device that uses static electricity to attract objects in the way a bar magnet does",
-      "A magnet formed naturally in iron ore that always points toward magnetic north"
-    ],
-    answer: 0,
-    explain: "An electromagnet is a coil of wire (often wound around an iron core) that acts as a magnet when current flows through it."
+    explain: "Any organism containing chlorophyll can photosynthesise - plants, algae (including seaweed and phytoplankton) and some bacteria."
   },
   {
-    q: "What is the main advantage of an electromagnet over a permanent magnet?",
+    q: "Why are plants called <em>producers</em>?",
     options: [
-      "It can be switched on and off by controlling the electric current",
-      "It is always stronger than any permanent magnet at any distance",
-      "It requires no power source, so it costs nothing to run indefinitely",
-      "It attracts a wider range of materials, including wood, glass and non-ferrous metals"
+      "They make their own food, so other organisms depend on them",
+      "They are eaten by every animal, so they are listed first of all",
+      "They take in ready-made food from the soil around their roots",
+      "They grow more quickly than animals, so there are more of them"
     ],
     answer: 0,
-    explain: "The key advantage is that you can switch an electromagnet on and off - a permanent magnet always attracts."
+    explain: "Producers make their own food by photosynthesis. Every food chain starts with a producer because consumers cannot make food."
   },
   {
-    q: "How can you make an electromagnet <em>stronger</em>? Select the best answer.",
+    q: "Why does almost all life on Earth depend on photosynthesis?",
     options: [
-      "Increase the number of coil turns or increase the current through the wire",
-      "Cool the wire down to reduce resistance so the magnetic field stops leaking out",
-      "Reduce the number of turns so the field is more concentrated in a smaller space",
-      "Replace the iron core with a copper core, since copper conducts electricity better"
+      "It builds the food molecules that others eat and keeps oxygen in the air",
+      "It removes all the oxygen from the air and replaces it with carbon dioxide",
+      "It provides the mineral salts animals need to build their bones and teeth",
+      "It supplies the water animals drink and the warmth that keeps them alive"
     ],
     answer: 0,
-    explain: "More turns of wire and a higher current both increase the strength of an electromagnet. An iron core also greatly increases strength."
+    explain: "Photosynthetic organisms build organic molecules that are an energy store for the whole food web, and they maintain the balance of oxygen and carbon dioxide in the atmosphere."
   },
   {
-    q: "What is the role of an <em>iron core</em> inside an electromagnet?",
+    q: "Do plants respire?",
     options: [
-      "It greatly increases the strength of the magnetic field produced by the coil",
-      "It prevents the current from flowing too fast, protecting the circuit from overload",
-      "It reduces the number of turns needed so the wire does not get too hot to touch",
-      "It stores electrical charge between pulses to keep the magnet working when current stops"
+      "Yes - plants respire all the time, day and night, in every cell",
+      "No - plants photosynthesise instead, so they never need to respire",
+      "Yes - but only at night, when they cannot photosynthesise at all",
+      "Yes - but only in the roots, because roots cannot reach the light"
     ],
     answer: 0,
-    explain: "An iron core becomes magnetised when current flows and greatly amplifies the magnetic field of the coil."
+    explain: "Every living cell respires constantly. Plants both respire and photosynthesise; only photosynthesis needs light."
   },
   {
-    q: "Which of these is a genuine use of an electromagnet?",
+    q: "On a bright day a plant releases more oxygen than it takes in. Why?",
     options: [
-      "A scrapyard crane that lifts metal and releases it by switching off the current",
-      "A bicycle dynamo that stores power in a magnet to light the lamp after pedalling stops",
-      "A solar panel that converts sunlight into a magnetic field to charge a battery",
-      "A thermometer that detects temperature by measuring changes in the magnet's field strength"
+      "It photosynthesises faster than it respires, so oxygen is left over",
+      "It stops respiring in the light, so all the oxygen it makes escapes",
+      "It cannot absorb any oxygen in daylight as the stomata are shut then",
+      "Its roots take in extra oxygen from the soil and release it from leaves"
     ],
     answer: 0,
-    explain: "Scrapyard cranes use powerful electromagnets - the metal is dropped by switching the current off. This would be impossible with a permanent magnet."
+    explain: "In bright light the rate of photosynthesis is higher than the rate of respiration, so there is a net release of oxygen."
+  },
+  {
+    q: "What happens in a plant's leaves at night?",
+    options: [
+      "It only respires, so it takes in oxygen and gives out carbon dioxide",
+      "It only photosynthesises, so it takes in carbon dioxide and gives out oxygen",
+      "It does neither, because both of these processes need light energy",
+      "It does both equally, so no gases enter or leave the leaf at all"
+    ],
+    answer: 0,
+    explain: "Photosynthesis stops in the dark but respiration continues, so at night there is a net intake of oxygen and release of carbon dioxide."
   },
 
-  /* ── CURRENT, VOLTAGE AND RESISTANCE ── */
+  /* ── LEAF ADAPTATIONS AND TRANSPORT ── */
   {
-    q: "What is <em>electric current</em>?",
+    q: "Why are most leaves <strong>broad and flat</strong>?",
     options: [
-      "The rate of flow of electric charge through a conductor",
-      "The energy stored in a battery before the circuit is switched on",
-      "The opposition to the flow of charge caused by the material in a component",
-      "The difference in electrical energy per unit charge between two points in a circuit"
+      "A large surface area absorbs as much light as possible",
+      "A large surface area loses as much water as possible",
+      "A flat shape lets the rain run off the leaf very quickly",
+      "A flat shape supports the weight of the stem beneath it"
     ],
     answer: 0,
-    explain: "Current is the rate of flow of electric charge. It is measured in amperes (A)."
+    explain: "A large surface area means more light can be absorbed by the chlorophyll, raising the rate of photosynthesis."
   },
   {
-    q: "In which unit is electric current measured, and with which instrument?",
+    q: "Why are most leaves <strong>thin</strong>?",
     options: [
-      "Amperes (A), measured with an ammeter connected in series",
-      "Volts (V), measured with a voltmeter connected in parallel across the component",
-      "Ohms (Ω), measured with an ohmmeter or calculated from current and voltage",
-      "Watts (W), measured with a wattmeter connected to the power supply output"
+      "Gases have only a short distance to diffuse to reach the cells",
+      "Water has only a short distance to travel to reach the cuticle",
+      "Thin leaves are lighter, so the branches do not bend and snap",
+      "Thin leaves let the light pass straight through without stopping"
     ],
     answer: 0,
-    explain: "Current is measured in amperes (A) using an ammeter. The ammeter must be connected in series so all the current flows through it."
+    explain: "A short diffusion distance means carbon dioxide reaches the photosynthesising cells quickly, and oxygen leaves quickly."
   },
   {
-    q: "What does <em>voltage</em> (potential difference) measure?",
+    q: "How are <em>palisade cells</em> adapted for photosynthesis?",
     options: [
-      "The difference in electrical energy per unit charge between two points in a circuit",
-      "The total charge that has flowed around the circuit since it was switched on",
-      "The opposition a component offers to the flow of current through it",
-      "The speed at which electrons travel through the wire from negative to positive terminal"
+      "Packed with chloroplasts and near the top surface of the leaf",
+      "Packed with mitochondria and near the lower surface of a leaf",
+      "They have no chloroplasts and form the outer protective layer",
+      "They are hollow tubes carrying water up the stem to the leaf"
     ],
     answer: 0,
-    explain: "Voltage (potential difference) measures the energy given to or taken from each unit of charge. It is measured in volts (V) using a voltmeter."
+    explain: "Palisade cells sit near the upper surface where light is strongest, and are packed with chloroplasts to absorb it."
   },
   {
-    q: "What is <em>electrical resistance</em>?",
+    q: "What are <em>stomata</em>?",
     options: [
-      "The opposition to the flow of electric current through a conductor, measured in ohms (Ω)",
-      "The rate at which charge flows around the circuit, measured in amperes (A)",
-      "The energy transferred to the circuit by the power supply per second, measured in watts (W)",
-      "The difference in voltage between the positive and negative terminals of a battery"
+      "Tiny pores that let carbon dioxide in and oxygen and vapour out",
+      "Tiny pores that take water in from the soil and carry it upwards",
+      "Green cells that absorb the light energy needed to make glucose",
+      "Waxy cells that stop the leaf losing any water at all on hot days"
     ],
     answer: 0,
-    explain: "Resistance is the opposition to current flow. Higher resistance means less current for the same voltage. It is measured in ohms (Ω)."
+    explain: "Stomata are pores, mostly on the underside of the leaf, that allow gas exchange with the air around the leaf."
   },
   {
-    q: "An <em>ammeter</em> must be connected in <strong>series</strong> in a circuit. Why?",
+    q: "What do <em>guard cells</em> do?",
     options: [
-      "So that all the current being measured flows through the meter",
-      "So that it measures the full voltage across the component it is monitoring",
-      "So that its very high resistance does not affect the rest of the circuit",
-      "So that it can share the current equally between all the parallel branches"
+      "They open and close the stomata to control gases and water loss",
+      "They absorb light energy and pass it to the palisade cells below",
+      "They carry sugars out of the leaf to the rest of the growing plant",
+      "They protect the leaf from insects by making a bitter tasting poison"
     ],
     answer: 0,
-    explain: "An ammeter is in series so the current passes through it. It has very low resistance to avoid affecting the circuit."
+    explain: "Guard cells change shape to open the stomata in the light and close them when water is short, balancing gas exchange against water loss."
   },
   {
-    q: "A <em>voltmeter</em> must be connected in <strong>parallel</strong> across a component. Why?",
+    q: "Why are most stomata found on the <strong>lower</strong> surface of a leaf?",
     options: [
-      "So that it measures the potential difference across that specific component",
-      "So that the full circuit current flows through it for the most accurate reading",
-      "So that it can draw a large current and record a higher, more reliable voltage",
-      "So that it adds its own resistance to the component and protects the circuit"
+      "The underside is shaded and cooler, so less water is lost",
+      "The upper side is sunlit and warmer, so more light is caught",
+      "The wind can blow across the underside of the leaf much more",
+      "The veins are on the underside, so water can escape from there"
     ],
     answer: 0,
-    explain: "A voltmeter in parallel measures the voltage across a component. It has very high resistance so very little current flows through it."
+    explain: "Keeping stomata on the shaded, cooler underside allows gas exchange while reducing water loss by evaporation."
   },
   {
-    q: "The voltage across a component stays the same, but its resistance is increased. What happens to the current through it?",
+    q: "What do the <em>xylem</em> and <em>phloem</em> in a leaf vein do?",
     options: [
-      "The current decreases, because the higher resistance opposes the flow of charge more strongly",
-      "The current increases, because a higher resistance pushes more charge through the circuit",
-      "The current stays the same, because voltage and current always balance each other exactly",
-      "The current reverses direction every time the resistance changes by more than a small amount"
+      "Xylem brings water to the leaf; phloem carries sugars away",
+      "Phloem brings water to the leaf; xylem carries sugars away",
+      "Both xylem and phloem carry water from the roots to the leaf",
+      "Xylem brings oxygen to the leaf; phloem takes carbon dioxide"
     ],
     answer: 0,
-    explain: "From V = IR: if V is fixed and R increases, I must decrease. Higher resistance means less current."
-  },
-
-  /* ── SERIES AND PARALLEL CIRCUITS ── */
-  {
-    q: "In a <em>series</em> circuit, how does current behave at different points around the loop?",
-    options: [
-      "The current is the same at every point in the circuit",
-      "The current is greatest near the positive terminal and falls steadily around the loop",
-      "The current is shared equally between each component based on its position",
-      "The current doubles each time it passes through an additional component in the chain"
-    ],
-    answer: 0,
-    explain: "In a series circuit there is only one path, so the same current flows everywhere. Current is conserved."
+    explain: "Xylem transports water and dissolved minerals up from the roots; phloem transports dissolved sugars to the rest of the plant."
   },
   {
-    q: "A series circuit has three bulbs. One bulb breaks (goes open circuit). What happens to the other two?",
+    q: "What is the job of the <em>waxy cuticle</em> on a leaf?",
     options: [
-      "All three bulbs go out, because the single current path is completely broken",
-      "The other two get brighter, because they receive more current without the broken bulb",
-      "The other two stay on, because each has its own independent current path",
-      "Only the bulb immediately after the break goes out; the rest continue working normally"
+      "A waterproof layer that reduces water loss from the leaf",
+      "A green layer that absorbs light energy to make glucose",
+      "A layer of pores that lets carbon dioxide into the leaf",
+      "A store of starch that the plant can use up during a night"
     ],
     answer: 0,
-    explain: "In series there is only one path. A break anywhere stops current flowing everywhere - all bulbs go out."
+    explain: "The cuticle is a transparent waterproof layer. It cuts water loss without blocking the light reaching the palisade cells."
   },
   {
-    q: "In a <em>parallel</em> circuit, what is true about the voltage across each branch?",
+    q: "Why does the spongy layer of a leaf contain <strong>air spaces</strong>?",
     options: [
-      "The voltage across each branch equals the supply voltage",
-      "The voltage splits equally between branches, regardless of their resistance",
-      "The voltages in each branch add up to give the total supply voltage",
-      "The voltage is highest in the branch with the lowest resistance in the circuit"
+      "They let gases diffuse quickly between the stomata and cells",
+      "They store the water the plant will need on a hot and dry day",
+      "They make the leaf light enough to be held up by a thin stalk",
+      "They trap light and reflect it up onto the palisade cells above"
     ],
     answer: 0,
-    explain: "In parallel, each branch is directly connected to the supply, so each branch has the full supply voltage."
-  },
-  {
-    q: "In a parallel circuit, what happens to the current at a junction where the circuit splits?",
-    options: [
-      "The current splits between the branches, and the branch currents add up to the total",
-      "The current doubles at each junction, so more branches means a higher total current",
-      "The current stays equal in every branch, regardless of the resistance of each branch",
-      "The current is destroyed at the junction and rebuilt by the power supply for each branch"
-    ],
-    answer: 0,
-    explain: "At a parallel junction current splits. The sum of the branch currents equals the total current. Charge is conserved."
-  },
-  {
-    q: "Household lighting is wired in <em>parallel</em>. What is the main reason for this?",
-    options: [
-      "Each light gets the full mains voltage and works independently of the others",
-      "All lights share the mains voltage, so each draws less current and saves energy",
-      "Switching off one light turns them all off, which is safer in an emergency",
-      "All lights draw identical currents and are guaranteed to glow at the same brightness"
-    ],
-    answer: 0,
-    explain: "Parallel wiring means each light has the full 230V and can be switched independently - one failing does not affect the others."
-  },
-  {
-    q: "Identical bulbs are added one by one to a <em>series</em> circuit. What happens to the brightness of each bulb?",
-    options: [
-      "Each bulb gets dimmer, because adding more resistance reduces the current for all bulbs",
-      "Each bulb gets brighter, because adding bulbs gives the circuit more energy to share",
-      "Each bulb stays the same brightness, because the supply adjusts to keep current constant",
-      "Only the most recently added bulb gets dimmer; the originals stay the same as before"
-    ],
-    answer: 0,
-    explain: "Adding bulbs in series increases total resistance, which reduces current. Less current means less brightness for all bulbs."
+    explain: "The air spaces give a large internal surface area and let carbon dioxide diffuse rapidly to every photosynthesising cell."
   },
 
-  /* ── ELECTROSTATIC CHARGE ── */
+  /* ── TESTING A LEAF FOR STARCH ── */
   {
-    q: "How does a person become electrostatically charged in everyday life?",
+    q: "When testing a leaf for starch, why is it <strong>boiled in water</strong> first?",
     options: [
-      "By friction: electrons transfer between surfaces when materials rub together",
-      "By conduction from the mains supply, which slowly builds up charge in the body",
-      "By radiation from the Sun, which deposits charged particles on the skin's surface",
-      "By standing near a strong magnetic field, which causes charge to separate in the body"
+      "It kills the leaf and breaks down the membranes in its cells",
+      "It removes the green chlorophyll from the cells of the leaf",
+      "It adds the starch that the iodine solution then reacts with",
+      "It washes the waxy cuticle off the outer surface of the leaf"
     ],
     answer: 0,
-    explain: "Static charge builds up through friction. When two materials rub together, electrons transfer from one to the other."
+    explain: "Boiling kills the leaf, stopping any further reactions, and breaks down cell membranes so the ethanol and iodine can get in."
   },
   {
-    q: "When a plastic rod is rubbed with a cloth, which particles transfer between the two materials?",
+    q: "Why is the leaf then placed in <strong>hot ethanol</strong>?",
     options: [
-      "Electrons transfer from one material to the other",
-      "Protons transfer from one material to the other",
-      "Neutrons transfer from one material to the other",
-      "Protons and electrons transfer in equal amounts, leaving both materials uncharged"
+      "The ethanol removes chlorophyll so a colour change can be seen",
+      "The ethanol kills the leaf so that photosynthesis stops at once",
+      "The ethanol adds a stain that turns blue-black if starch is there",
+      "The ethanol softens the leaf so that iodine can soak through it"
     ],
     answer: 0,
-    explain: "Only electrons move during charging by friction. Protons and neutrons are locked inside the nucleus."
+    explain: "Ethanol dissolves out the green chlorophyll, leaving a pale leaf on which the iodine colour change is easy to see."
   },
   {
-    q: "A balloon is rubbed on hair. Afterwards the hair is attracted toward the balloon. Which statement is correct?",
+    q: "Why is the ethanol heated in a <strong>water bath</strong> rather than over a Bunsen burner?",
     options: [
-      "The balloon gained electrons (negative charge) and the hair lost electrons (positive charge)",
-      "The balloon and hair both gained negative charge, which is what causes attraction",
-      "The balloon and hair both gained positive charge, which is what causes attraction",
-      "The balloon lost electrons (negative charge) and the hair gained electrons (negative charge)"
+      "Ethanol is highly flammable, so a naked flame could set it alight",
+      "Ethanol boils at a temperature far too high for a Bunsen to reach",
+      "A water bath heats the ethanol much more quickly than a flame does",
+      "A Bunsen would boil the ethanol away before it removed any colour"
     ],
     answer: 0,
-    explain: "The balloon gains electrons from the hair, becoming negatively charged. The hair is left positively charged. Opposite charges attract."
+    explain: "Ethanol is highly flammable. It is heated indirectly in a hot water bath with all naked flames turned off."
   },
   {
-    q: "Which of the following is a real example of electrostatic charge building up on a person?",
+    q: "What is a <strong>positive</strong> result when iodine solution is added to a leaf?",
     options: [
-      "Receiving a small shock after walking across a carpet and then touching a metal door handle",
-      "A metal pan heating up on a gas hob because metal conducts heat from the flame efficiently",
-      "A kettle boiling water by passing current through a heating element inside the appliance",
-      "A light bulb glowing because current flows through a thin wire filament, heating it brightly"
+      "It changes from orange-brown to blue-black where starch is",
+      "It changes from blue-black to orange-brown where starch is",
+      "It changes from orange-brown to bright green where starch is",
+      "It changes from colourless to a milky white where starch is"
     ],
     answer: 0,
-    explain: "Walking on carpet builds up static charge by friction. Touching metal allows the charge to discharge suddenly as a small spark or shock."
+    explain: "Iodine solution turns from orange-brown to blue-black in the presence of starch, showing photosynthesis has taken place."
   },
   {
-    q: "Like charges...",
+    q: "What does it mean to <em>destarch</em> a plant before an experiment?",
     options: [
-      "Repel each other; unlike (opposite) charges attract each other",
-      "Attract each other; unlike (opposite) charges repel each other",
-      "Have no effect on each other; only unlike charges produce a force",
-      "Attract at short distances but repel at long distances, similar to the behaviour of magnets"
+      "Leaving it in the dark for two days so it uses up its starch",
+      "Leaving it in bright light for two days so it makes more starch",
+      "Removing all of its leaves so that no new starch can be made",
+      "Watering it with distilled water so it takes up no more minerals"
     ],
     answer: 0,
-    explain: "Like charges (both positive or both negative) repel. Unlike charges (positive and negative) attract."
-  },
-
-  /* ── MOON PHASES AND ORBIT ── */
-  {
-    q: "What causes the <em>phases of the Moon</em>?",
-    options: [
-      "The Moon orbits Earth, so we see different amounts of its sunlit side from different positions",
-      "Earth's shadow falls across different portions of the Moon as it travels its orbit",
-      "The Moon rotates on its axis, gradually turning different lit and dark sides toward Earth",
-      "Other planets periodically block the Sun's light, leaving only part of the Moon illuminated"
-    ],
-    answer: 0,
-    explain: "Phases are caused by the changing angle between the Moon, Earth and Sun as the Moon orbits. We see different fractions of its sunlit half."
+    explain: "Destarching removes the starch already stored, so any starch found afterwards must have been made during the experiment."
   },
   {
-    q: "During a <em>new Moon</em>, where is the Moon positioned relative to Earth and the Sun?",
+    q: "A destarched <em>variegated</em> leaf (part green, part white) is tested with iodine. What is seen?",
     options: [
-      "Between Earth and the Sun, so its lit side faces away from us",
-      "On the opposite side of Earth from the Sun, so its fully lit side faces us",
-      "At right angles to the Sun-Earth line, so exactly half of the lit side is visible",
-      "Beyond the Sun, on the far side of the Solar System from Earth's position"
+      "Only the parts that were green turn blue-black with the iodine",
+      "Only the parts that were white turn blue-black with the iodine",
+      "The whole leaf turns blue-black as the starch spreads through it",
+      "No part of the leaf turns blue-black because it was not all green"
     ],
     answer: 0,
-    explain: "At new Moon, the Moon is between Earth and the Sun. We see only its dark, unlit side - so it is invisible in the night sky."
+    explain: "Only the green parts contain chlorophyll, so only those parts photosynthesise and store starch. This shows chlorophyll is needed."
   },
   {
-    q: "Approximately how long does one complete cycle of Moon phases take?",
+    q: "A destarched plant is sealed in a bag with soda lime, which absorbs carbon dioxide. What is the result?",
     options: [
-      "About 29.5 days (one lunar month)",
-      "About 365.25 days, the same time as one orbit of Earth around the Sun",
-      "About 7 days, which is why the main phase names appear roughly one week apart",
-      "About 24 hours, the same as the time it takes Earth to rotate once on its axis"
+      "It makes no starch, showing carbon dioxide is needed for it",
+      "It makes extra starch, showing carbon dioxide slows it down",
+      "It still makes starch, showing carbon dioxide is not needed",
+      "It turns yellow, showing carbon dioxide keeps a leaf green"
     ],
     answer: 0,
-    explain: "The Moon completes its orbit around Earth in about 29.5 days, which is one lunar month."
-  },
-  {
-    q: "What force keeps the Moon in its orbit around Earth?",
-    options: [
-      "Gravity, which pulls the Moon toward Earth while its orbital speed keeps it from falling in",
-      "Magnetism, since the Moon's iron core is attracted to Earth's own magnetic field",
-      "The normal contact force between the Moon and the upper layers of Earth's atmosphere",
-      "Air resistance, which slows the Moon enough to maintain its circular orbital path"
-    ],
-    answer: 0,
-    explain: "Gravity attracts the Moon toward Earth. The Moon's orbital speed means it continuously 'falls around' Earth rather than crashing into it."
-  },
-  {
-    q: "Which phase occurs when the Moon is on the <em>opposite side of Earth</em> from the Sun?",
-    options: [
-      "Full Moon - the entire lit side of the Moon faces toward Earth",
-      "New Moon - the Moon is between Earth and the Sun, hiding its lit side",
-      "First Quarter - half the lit side is visible on the right-hand edge",
-      "Last Quarter - half the lit side is visible on the left-hand edge"
-    ],
-    answer: 0,
-    explain: "At full Moon, Earth is between the Moon and the Sun. The sunlit side of the Moon faces directly toward us."
+    explain: "With no carbon dioxide the leaf cannot photosynthesise, so no starch is made. This is the control that proves CO&#8322; is a reactant."
   },
 
-  /* ── GRAVITATIONAL FIELD ── */
+  /* ── RATE AND LIMITING FACTORS ── */
   {
-    q: "A gravitational field is best defined as:",
+    q: "How is the rate of photosynthesis usually measured using pondweed?",
     options: [
-      "A region of space in which any object with mass experiences a gravitational force",
-      "The speed at which objects accelerate when falling freely near a planet's surface",
-      "The force of gravity on an object, equal to the object's weight divided by its mass",
-      "The curved path an object follows when moving under the influence of a central force"
+      "By counting the bubbles of oxygen given off in a fixed time",
+      "By counting the bubbles of carbon dioxide taken in each minute",
+      "By measuring how far the mass of the pondweed falls in an hour",
+      "By measuring how much water the pondweed takes up in an hour"
     ],
     answer: 0,
-    explain: "A gravitational field is a region of space where masses experience a gravitational (attractive) force."
+    explain: "Oxygen is a product, so the number of bubbles released per minute (or the volume of gas collected) gives the rate."
   },
   {
-    q: "What is the approximate gravitational field strength at Earth's surface?",
+    q: "A lamp is moved closer to some pondweed. What happens to the rate?",
     options: [
-      "10 N/kg (newtons per kilogram)",
-      "10 m/s - the speed an object reaches one second after being dropped from rest",
-      "100 N/kg - the force pulling every kilogram toward the centre of Earth",
-      "9.8 mph - the rate at which a falling object gains speed near Earth's surface"
+      "It increases, because the light intensity reaching it is greater",
+      "It decreases, because the light intensity reaching it is greater",
+      "It stays the same, because the plant already has enough light",
+      "It decreases, because the extra heat damages the pondweed cells"
     ],
     answer: 0,
-    explain: "Earth's gravitational field strength is approximately 10 N/kg (or more precisely 9.8 N/kg). This means every kilogram of mass experiences a 10 N force."
+    explain: "More light intensity means more energy absorbed per second, so more bubbles per minute - until another factor becomes limiting."
   },
   {
-    q: "An object has a mass of 5 kg. What is its <em>weight</em> on Earth? (use g = 10 N/kg)",
+    q: "What is a <em>limiting factor</em>?",
     options: [
-      "50 N",
-      "5 N (the same as its mass, since weight and mass are equal on Earth's surface)",
-      "500 N (mass multiplied by the square of gravitational field strength)",
-      "0.5 N (mass divided by field strength, since weight is always less than mass)"
+      "The factor in shortest supply, which is holding the rate back",
+      "The factor in greatest supply, which is speeding up the rate",
+      "The factor that has no effect at all on the rate of a reaction",
+      "The factor a plant can change itself in order to set its rate"
     ],
     answer: 0,
-    explain: "Weight = mass × gravitational field strength. W = 5 × 10 = 50 N. Mass (kg) and weight (N) are different quantities."
+    explain: "A limiting factor is the one in shortest supply. Increasing it raises the rate; increasing any other factor makes no difference."
   },
   {
-    q: "How does gravitational field strength change as you move <em>further</em> from Earth?",
+    q: "Which three factors most commonly limit the rate of photosynthesis?",
     options: [
-      "It decreases, because the gravitational field gets weaker with distance from the planet",
-      "It increases, because you move away from other masses that previously opposed Earth's pull",
-      "It stays exactly the same regardless of distance, since gravity is a constant universal force",
-      "It first increases then decreases, reaching a maximum at the height of the ISS orbit"
+      "Light intensity, carbon dioxide concentration and temperature",
+      "Light intensity, oxygen concentration and the amount of starch",
+      "Wind speed, the colour of the soil and the number of the leaves",
+      "Water hardness, the air pressure and the height above sea level"
     ],
     answer: 0,
-    explain: "Gravitational field strength decreases with distance from the planet. The further you are, the weaker the force on each kilogram of mass."
+    explain: "Light intensity, carbon dioxide concentration and temperature are the three standard limiting factors at KS3."
   },
   {
-    q: "What is the direction of the gravitational field around Earth?",
+    q: "On a graph of rate against light intensity, the line levels off. What does this show?",
     options: [
-      "Pointing inward toward the centre of Earth at every point around it",
-      "Pointing outward away from Earth's surface, since the field pushes objects into orbit",
-      "Always pointing downward in absolute terms, regardless of where you are on the planet",
-      "Pointing from the South Pole toward the North Pole along Earth's rotational axis"
+      "Light is no longer the limiting factor - something else now is",
+      "Light is still the limiting factor, so more light raises the rate",
+      "The plant has been damaged by the light and has stopped working",
+      "The plant has used up all of the glucose stored inside its leaves"
     ],
     answer: 0,
-    explain: "Gravitational field lines point toward the centre of the mass (Earth). Gravity is always an attractive force."
-  },
-
-  /* ── INVESTIGATING CIRCUITS ── */
-  {
-    q: "A student investigates how <em>wire length</em> affects current. Which variables must be kept constant?",
-    options: [
-      "The voltage of the supply and the thickness (cross-sectional area) of the wire",
-      "The length of the wire, since that is the independent variable being deliberately changed",
-      "The current through the wire, since that is what changes in response to wire length",
-      "Both current and voltage, leaving only the wire material as the one variable to change"
-    ],
-    answer: 0,
-    explain: "The independent variable is wire length. Voltage and wire thickness must be kept constant (controlled variables) for a fair test."
+    explain: "Once the line plateaus, adding more light has no effect, so another factor (usually CO&#8322; or temperature) has become limiting."
   },
   {
-    q: "How should an <em>ammeter</em> be connected in a circuit, and why?",
+    q: "Why do commercial growers add carbon dioxide and heating to a greenhouse?",
     options: [
-      "In series, so that all the current being measured passes through the meter",
-      "In parallel, so that the meter can measure the full voltage across the component",
-      "In parallel, so that it does not add resistance to the branch being investigated",
-      "In series across both terminals of the supply to get the most accurate reading possible"
+      "Extra carbon dioxide and warmth raise the rate, so crops grow faster",
+      "Extra carbon dioxide and warmth lower the rate, so crops last longer",
+      "Extra carbon dioxide replaces the water that the plants need to grow",
+      "Extra carbon dioxide kills the pests that would eat the young plants"
     ],
     answer: 0,
-    explain: "An ammeter goes in series so all the current flows through it. It has very low resistance so it barely affects the circuit."
+    explain: "Removing limiting factors raises the rate of photosynthesis, so plants make more glucose and grow faster."
   },
   {
-    q: "A student measures current at several different voltages and plots a graph. Which result shows the component obeys <em>Ohm's Law</em>?",
+    q: "What happens to the rate of photosynthesis at very <strong>high</strong> temperatures?",
     options: [
-      "A straight line through the origin, showing current increases proportionally with voltage",
-      "A curve that flattens at high voltages, showing resistance rises as the component heats up",
-      "A curve that rises steeply at first then levels off as the material reaches saturation",
-      "A zigzag pattern showing the component switches between high and low resistance states"
+      "It falls, because the enzymes controlling it become denatured",
+      "It rises, because the particles are moving much more quickly",
+      "It stays the same, as temperature has no effect on the process",
+      "It rises, because the stomata open more widely in the warm air"
     ],
     answer: 0,
-    explain: "Ohm's Law: V = IR. If resistance is constant, current is directly proportional to voltage - the graph is a straight line through the origin."
-  },
-  {
-    q: "Why is it important to switch off the power supply between readings when investigating circuits?",
-    options: [
-      "To prevent the wire overheating, which would change its resistance and make results unfair",
-      "To allow the ammeter time to reset to zero so each reading starts from the same baseline",
-      "To stop the current reversing direction, which would cause negative values on the meters",
-      "To let the voltmeter discharge fully so it gives an accurate reading on the next measurement"
-    ],
-    answer: 0,
-    explain: "Leaving current on heats the wire, which increases its resistance. Switching off between readings keeps the temperature (and resistance) constant."
+    explain: "Photosynthesis is controlled by enzymes. Above the optimum temperature they denature and the rate falls sharply."
   },
 
-  /* ── HELIOCENTRIC AND GEOCENTRIC MODELS ── */
+  /* ── GLUCOSE, STARCH AND PLANT MINERALS ── */
   {
-    q: "What is the <em>geocentric</em> model of the Solar System?",
+    q: "What does a plant do with the <strong>glucose</strong> it makes?",
     options: [
-      "The model in which Earth is at the centre and the Sun, Moon and planets orbit around it",
-      "The model in which the Sun is at the centre and all the planets, including Earth, orbit it",
-      "The model in which each planet orbits its own individual star in a separate region of space",
-      "The model in which the Moon is at the centre and the Earth and Sun orbit around it together"
+      "Uses it in respiration, or stores it as starch, or makes cellulose",
+      "Uses it for breathing, or stores it as fat, or makes mineral salts",
+      "Uses it in photosynthesis, or stores it as water, or makes oxygen",
+      "Uses it for growth only - glucose cannot be stored or changed"
     ],
     answer: 0,
-    explain: "Geocentric means Earth-centred. In this model (accepted for roughly 2000 years) the Sun, Moon and planets all orbit Earth."
+    explain: "Glucose is respired for energy, stored as starch, converted to cellulose for cell walls, or combined with nitrates to make proteins."
   },
   {
-    q: "What is the <em>heliocentric</em> model of the Solar System?",
+    q: "Why is glucose converted to <strong>starch</strong> for storage?",
     options: [
-      "The model in which the Sun is at the centre and Earth and the other planets orbit around it",
-      "The model in which Earth is at the centre and all other bodies orbit around our planet",
-      "The model in which each body in the Solar System orbits the most massive planet in it",
-      "The model in which the Sun and Earth orbit a shared central point located between them"
+      "Starch is insoluble, so it does not upset the water balance of a cell",
+      "Starch is soluble, so it can move quickly to wherever it is needed",
+      "Starch is a gas, so it can be stored in the air spaces of the leaf",
+      "Starch is sweet, so it attracts the insects that pollinate a plant"
     ],
     answer: 0,
-    explain: "Heliocentric means Sun-centred. Earth and all other planets orbit the Sun. This is our current accepted model."
+    explain: "Starch is insoluble and compact, so large amounts can be stored without drawing water into the cell by osmosis."
   },
   {
-    q: "Which scientist is most closely associated with promoting the <em>heliocentric</em> model?",
+    q: "Which mineral does a plant need in order to make <strong>proteins</strong> for growth?",
     options: [
-      "Nicolaus Copernicus, who published the heliocentric model in 1543",
-      "Isaac Newton, who used his law of gravity to prove the geocentric model was correct",
-      "Aristotle, who proposed that the Sun was fixed at the centre while Earth orbited it",
-      "Ptolemy, who built the most detailed geocentric model using epicycles to match observations"
+      "Nitrate ions, which are absorbed from the soil water by the roots",
+      "Nitrate ions, which are absorbed from the air by the leaf stomata",
+      "Magnesium ions, which are absorbed from the soil water by roots",
+      "Carbon dioxide gas, which is absorbed from the air by the leaves"
     ],
     answer: 0,
-    explain: "Copernicus published his heliocentric model in 1543. Galileo later provided strong observational evidence for it."
+    explain: "Glucose plus nitrates makes amino acids, which build proteins. A plant short of nitrate is stunted with yellowing older leaves."
   },
   {
-    q: "Why did the geocentric model seem convincing to people for so long?",
+    q: "A plant has yellow leaves between the veins. Which mineral is it most likely short of?",
     options: [
-      "The Sun, Moon and stars visibly move across the sky each day, consistent with them orbiting Earth",
-      "Ancient scientists had measured Earth's orbit and found it was too small to cause any detectable parallax",
-      "The geocentric model correctly predicted every eclipse and planetary position with perfect accuracy",
-      "People could feel Earth spinning beneath their feet, confirming it was moving and everything else was still"
+      "Magnesium, which is needed to make chlorophyll for the leaves",
+      "Nitrate, which is needed to make the chlorophyll for the leaves",
+      "Potassium, which is needed to make the cellulose in cell walls",
+      "Glucose, which is needed to make the chlorophyll in the leaves"
     ],
     answer: 0,
-    explain: "From Earth, it genuinely looks as though the Sun and stars move around us. Without instruments, the geocentric model matched everyday observations."
+    explain: "Magnesium is a component of chlorophyll, so a shortage causes yellowing (chlorosis) and a lower rate of photosynthesis."
   },
   {
-    q: "Which observation most strongly supported the <em>heliocentric</em> model over the geocentric one?",
+    q: "How does a plant take in the minerals it needs?",
     options: [
-      "Galileo's discovery of moons orbiting Jupiter, showing that not everything orbits Earth",
-      "The observation that the Sun rises in the east and sets in the west every day without fail",
-      "The fact that the Moon shows phases, which the geocentric model cannot explain at all",
-      "The observation that star patterns (constellations) appear unchanged throughout the whole year"
+      "Dissolved in soil water, absorbed through the root hair cells",
+      "As gases from the air, absorbed through the stomata on leaves",
+      "Made inside the leaves during photosynthesis, then sent down",
+      "From the sunlight, which is absorbed by chlorophyll in leaves"
     ],
     answer: 0,
-    explain: "Galileo observed moons orbiting Jupiter - proof that not everything in the Solar System orbits Earth, undermining the geocentric model."
+    explain: "Minerals must be dissolved in water to be absorbed by root hair cells, then carried up the xylem with the water."
+  },
+  {
+    q: "How is a <em>root hair cell</em> adapted to its job?",
+    options: [
+      "A long thin extension giving a large surface area for absorbing",
+      "Many chloroplasts so that it can photosynthesise underground",
+      "A thick waxy layer so no water can leak back out into the soil",
+      "A hollow tube shape that lets the water flow straight through it"
+    ],
+    answer: 0,
+    explain: "The hair-like extension greatly increases surface area, so water and dissolved minerals are absorbed faster."
+  },
+
+  /* ── AEROBIC RESPIRATION ── */
+  {
+    q: "What is the word equation for <em>aerobic respiration</em>?",
+    options: [
+      "glucose + oxygen &rarr; carbon dioxide + water",
+      "carbon dioxide + water &rarr; glucose + oxygen",
+      "glucose + carbon dioxide &rarr; oxygen + water",
+      "oxygen + water &rarr; glucose + carbon dioxide"
+    ],
+    answer: 0,
+    explain: "Aerobic respiration uses oxygen to break glucose down fully into carbon dioxide and water, transferring energy for the cell."
+  },
+  {
+    q: "Where in a cell does aerobic respiration mainly happen?",
+    options: [
+      "In the mitochondria, which are found in the cytoplasm of a cell",
+      "In the chloroplasts, which are found in the cytoplasm of a cell",
+      "In the nucleus, which controls all of the activities of the cell",
+      "In the cell membrane, which controls what enters and leaves it"
+    ],
+    answer: 0,
+    explain: "Mitochondria are the site of aerobic respiration. Very active cells, such as muscle cells, contain large numbers of them."
+  },
+  {
+    q: "Which organisms carry out respiration?",
+    options: [
+      "Every living organism, in all of its cells, all of the time",
+      "Only animals, because plants photosynthesise for energy instead",
+      "Only large active animals, because they need the most energy",
+      "Only organisms with lungs or gills, as respiration needs oxygen"
+    ],
+    answer: 0,
+    explain: "Respiration is a characteristic of all living things. It releases the energy needed for every other process of life."
+  },
+  {
+    q: "What is the difference between <em>breathing</em> and <em>respiration</em>?",
+    options: [
+      "Breathing moves air in and out; respiration happens in the cells",
+      "Respiration moves air in and out; breathing happens in the cells",
+      "They are two different words that mean exactly the same thing",
+      "Breathing happens in animals and respiration happens in plants"
+    ],
+    answer: 0,
+    explain: "Breathing (ventilation) is the physical movement of air. Respiration is the chemical reaction inside every cell."
+  },
+  {
+    q: "Why is it wrong to say that respiration <strong>makes</strong> energy?",
+    options: [
+      "Energy cannot be created - it is transferred from a store in glucose",
+      "Energy cannot be stored - it is created fresh whenever a cell needs it",
+      "Energy is made in the mitochondria and then stored inside the nucleus",
+      "Energy is made inside the lungs and then carried around by the blood"
+    ],
+    answer: 0,
+    explain: "Energy is conserved, never created. Respiration transfers energy from the chemical store in glucose to where the cell needs it."
+  },
+  {
+    q: "What is the energy transferred by respiration used for?",
+    options: [
+      "Movement, keeping warm, growth and building larger molecules",
+      "Movement only - none of the other processes need any energy",
+      "Digesting food only, which is why we feel warm after a big meal",
+      "Keeping warm only, which is why mammals must eat every day"
+    ],
+    answer: 0,
+    explain: "Respiration powers muscle contraction, warmth in mammals and birds, active transport, and building large molecules for growth and repair."
+  },
+  {
+    q: "How would you test that a gas produced by a small animal is <strong>carbon dioxide</strong>?",
+    options: [
+      "Bubble it through limewater, which turns from clear to cloudy",
+      "Bubble it through limewater, which turns from cloudy to clear",
+      "Add iodine solution, which turns from orange-brown to blue-black",
+      "Hold damp litmus paper in it, which is bleached completely white"
+    ],
+    answer: 0,
+    explain: "Limewater turns milky/cloudy with carbon dioxide. Exhaled air turns it cloudy far faster than inhaled air does."
+  },
+  {
+    q: "Hydrogencarbonate indicator is placed in a tube with a woodlouse. What happens?",
+    options: [
+      "It changes from red to yellow as the carbon dioxide level rises",
+      "It changes from yellow to red as the carbon dioxide level rises",
+      "It changes from red to purple as the oxygen level begins to rise",
+      "It changes from blue to black as the glucose level begins to rise"
+    ],
+    answer: 0,
+    explain: "Hydrogencarbonate indicator is red at normal CO&#8322; levels, yellow when CO&#8322; rises, and purple when CO&#8322; falls (as in a photosynthesising plant)."
+  },
+  {
+    q: "Germinating peas in a flask warm up, but boiled peas do not. Why?",
+    options: [
+      "The living peas are respiring, and respiration transfers heat",
+      "The living peas photosynthesise, which warms the air in the flask",
+      "The boiled peas have lost their starch store, so cannot warm up",
+      "The living peas are heavier, so they hold more heat in the flask"
+    ],
+    answer: 0,
+    explain: "Respiration transfers some energy to the surroundings as heat. Boiled peas are dead, so they do not respire and the flask stays cool."
+  },
+  {
+    q: "Why do heart rate and breathing rate increase during exercise?",
+    options: [
+      "To deliver oxygen and glucose faster and remove carbon dioxide",
+      "To slow the muscles down so that they use less energy overall",
+      "To take in extra carbon dioxide, which the working muscles need",
+      "To remove the extra starch that the muscles make while working"
+    ],
+    answer: 0,
+    explain: "Working muscles respire faster, so they need oxygen and glucose delivered more quickly and carbon dioxide removed more quickly."
+  },
+  {
+    q: "How are the <em>alveoli</em> in the lungs adapted for gas exchange?",
+    options: [
+      "A huge surface area, very thin walls and a rich blood supply",
+      "A small surface area, very thick walls and a rich blood supply",
+      "A huge surface area with a waxy layer to stop water escaping",
+      "A small surface area with chloroplasts to absorb light energy"
+    ],
+    answer: 0,
+    explain: "Millions of alveoli give a huge surface area; their walls are one cell thick and are surrounded by capillaries, so diffusion is fast."
+  },
+
+  /* ── ANAEROBIC RESPIRATION IN HUMANS ── */
+  {
+    q: "What is <em>anaerobic respiration</em>?",
+    options: [
+      "Respiration without oxygen, transferring much less energy",
+      "Respiration without glucose, transferring much more energy",
+      "Respiration with extra oxygen, transferring much more energy",
+      "Respiration without any water, transferring the same energy"
+    ],
+    answer: 0,
+    explain: "Anaerobic respiration releases energy from glucose without using oxygen. It transfers far less energy per glucose molecule."
+  },
+  {
+    q: "What is the word equation for anaerobic respiration in <strong>humans</strong>?",
+    options: [
+      "glucose &rarr; lactic acid (no oxygen is used at all)",
+      "glucose &rarr; ethanol + carbon dioxide (no oxygen used)",
+      "glucose + oxygen &rarr; lactic acid + carbon dioxide",
+      "lactic acid &rarr; glucose + oxygen + carbon dioxide"
+    ],
+    answer: 0,
+    explain: "In human muscle, glucose is broken down incompletely to lactic acid. No oxygen is used and no carbon dioxide is produced."
+  },
+  {
+    q: "Why do muscles respire anaerobically during very hard exercise?",
+    options: [
+      "Oxygen cannot be delivered to the muscles quickly enough",
+      "Glucose cannot be delivered to the muscles quickly enough",
+      "The muscles have used up the carbon dioxide that they need",
+      "The lungs stop working once the exercise becomes very hard"
+    ],
+    answer: 0,
+    explain: "The heart and lungs cannot supply oxygen fast enough for the demand, so muscles top up their energy supply anaerobically."
+  },
+  {
+    q: "What effect does a build-up of <em>lactic acid</em> have?",
+    options: [
+      "It builds up in the muscles, causing fatigue, pain and cramp",
+      "It builds up in the lungs, causing coughing and a sore throat",
+      "It is breathed straight back out, so it has no effect at all",
+      "It is stored in the liver as starch and then used the next day"
+    ],
+    answer: 0,
+    explain: "Lactic acid causes muscle fatigue and pain, which is why muscles stop working efficiently during prolonged hard exercise."
+  },
+  {
+    q: "What is meant by an <em>oxygen debt</em>?",
+    options: [
+      "The extra oxygen needed afterwards to break down lactic acid",
+      "The extra glucose needed afterwards to replace what was used",
+      "The oxygen the muscles store up before hard exercise begins",
+      "The oxygen lost from the blood while a person is exercising"
+    ],
+    answer: 0,
+    explain: "The oxygen debt is the extra oxygen the body must take in after exercise to break down the lactic acid that built up."
+  },
+  {
+    q: "Why do you keep breathing hard for a while after you stop running?",
+    options: [
+      "To repay the oxygen debt and break down the lactic acid built up",
+      "To take in the extra carbon dioxide that the muscles will now need",
+      "To cool the body down quickly now that the muscles have warmed up",
+      "To replace the glucose that was used up by the working muscles"
+    ],
+    answer: 0,
+    explain: "Deep breathing continues so extra oxygen can be delivered to break down the lactic acid and return the muscles to normal."
+  },
+  {
+    q: "How do aerobic and anaerobic respiration compare in energy transferred?",
+    options: [
+      "Aerobic transfers much more energy per molecule of glucose",
+      "Anaerobic transfers much more energy per molecule of glucose",
+      "Both transfer exactly the same amount of energy per glucose",
+      "Anaerobic transfers more, but only when the muscles are warm"
+    ],
+    answer: 0,
+    explain: "Aerobic respiration breaks glucose down completely, transferring far more energy. Anaerobic is a fast but inefficient back-up."
+  },
+  {
+    q: "Why does anaerobic respiration transfer less energy than aerobic respiration?",
+    options: [
+      "The glucose is only partly broken down, so energy is left in the products",
+      "The glucose is broken down completely, so no energy is left in products",
+      "The glucose is not broken down at all, so no energy can be transferred",
+      "The glucose is turned back into starch, which locks all the energy away"
+    ],
+    answer: 0,
+    explain: "Lactic acid and ethanol still contain chemical energy, because the glucose was not fully broken down without oxygen."
+  },
+
+  /* ── FERMENTATION IN YEAST AND BACTERIA ── */
+  {
+    q: "What is the word equation for anaerobic respiration in <strong>yeast</strong>?",
+    options: [
+      "glucose &rarr; ethanol + carbon dioxide (called fermentation)",
+      "glucose &rarr; lactic acid + carbon dioxide (this is fermenting)",
+      "glucose + oxygen &rarr; ethanol + water (called fermentation)",
+      "ethanol + carbon dioxide &rarr; glucose (called fermentation)"
+    ],
+    answer: 0,
+    explain: "Anaerobic respiration in yeast is called fermentation: glucose &rarr; ethanol + carbon dioxide."
+  },
+  {
+    q: "What is <em>yeast</em>?",
+    options: [
+      "A single-celled fungus that respires with or without oxygen",
+      "A single-celled bacterium that only respires without oxygen",
+      "A tiny green plant that photosynthesises inside bread dough",
+      "A chemical powder that reacts with warm water to give off gas"
+    ],
+    answer: 0,
+    explain: "Yeast is a single-celled fungus. It respires aerobically when oxygen is available and ferments when it is not."
+  },
+  {
+    q: "Which product of fermentation makes bread dough <strong>rise</strong>?",
+    options: [
+      "Carbon dioxide, which forms bubbles that expand inside the dough",
+      "Ethanol, which forms bubbles that expand in the dough as it bakes",
+      "Oxygen, which forms bubbles that expand in the dough as it bakes",
+      "Lactic acid, which forms bubbles that expand throughout the dough"
+    ],
+    answer: 0,
+    explain: "Carbon dioxide from the yeast is trapped as bubbles in the dough. The bubbles expand in the oven, giving bread its texture."
+  },
+  {
+    q: "What happens to the ethanol made by the yeast when bread is baked?",
+    options: [
+      "It evaporates in the oven's heat, so the bread is not alcoholic",
+      "It stays in the loaf, which is why fresh bread has a strong smell",
+      "It is turned back into glucose by the yeast as the bread bakes",
+      "It reacts with the flour to make the brown crust on top of a loaf"
+    ],
+    answer: 0,
+    explain: "Ethanol has a low boiling point and evaporates away during baking, leaving the risen, alcohol-free loaf behind."
+  },
+  {
+    q: "Which product of fermentation is wanted when brewing beer and wine?",
+    options: [
+      "Ethanol, the alcohol, made by the yeast when there is no oxygen",
+      "Lactic acid, the acid in yoghurt, made by the yeast without oxygen",
+      "Carbon dioxide only - the alcohol is then added in separately later",
+      "Glucose, which gives beer and wine their sweet taste when brewed"
+    ],
+    answer: 0,
+    explain: "Brewing wants the ethanol. The carbon dioxide is usually allowed to escape, although it is kept in for sparkling drinks."
+  },
+  {
+    q: "Why is a brewing vessel fitted with an airlock that keeps air out?",
+    options: [
+      "So the yeast has no oxygen and must ferment to make ethanol",
+      "So the yeast has plenty of oxygen and can make more ethanol",
+      "So the carbon dioxide cannot escape and the drink becomes fizzy",
+      "So the mixture stays warm and the yeast does not get too cold"
+    ],
+    answer: 0,
+    explain: "Yeast only makes ethanol when respiring anaerobically. With oxygen present it respires aerobically and produces CO&#8322; and water instead."
+  },
+  {
+    q: "How does temperature affect fermentation by yeast?",
+    options: [
+      "Too hot and the yeast enzymes denature, so fermentation stops",
+      "Too hot and the yeast just works faster, with no upper limit at all",
+      "Too cold and the yeast enzymes denature, so fermentation stops",
+      "Temperature makes no difference to how fast the yeast can ferment"
+    ],
+    answer: 0,
+    explain: "There is an optimum temperature (around 25-35&deg;C). Too cold and yeast is sluggish; too hot and its enzymes denature and it dies."
+  },
+  {
+    q: "How is <strong>yoghurt</strong> made from milk?",
+    options: [
+      "Bacteria respire anaerobically, making lactic acid that thickens it",
+      "Yeast respires anaerobically, making the ethanol that thickens it",
+      "Bacteria respire aerobically, making carbon dioxide that thickens it",
+      "Fungi photosynthesise in the milk, making the glucose that sours it"
+    ],
+    answer: 0,
+    explain: "Lactic acid bacteria ferment the sugar in milk to lactic acid. The acid clots the milk proteins, thickening and souring it."
+  },
+  {
+    q: "What is <em>bioethanol</em>?",
+    options: [
+      "Ethanol made by fermenting sugar from crops, then used as fuel",
+      "Ethanol made by burning fossil fuels, then used to feed the yeast",
+      "Lactic acid made by fermenting crops, then burned in car engines",
+      "Carbon dioxide collected from fermenting crops and burned as fuel"
+    ],
+    answer: 0,
+    explain: "Bioethanol is made by fermenting sugars from crops such as sugar cane or maize, then distilling the ethanol for use as a fuel."
+  },
+  {
+    q: "How could you measure the rate of fermentation of a yeast and sugar mixture?",
+    options: [
+      "By counting the bubbles of carbon dioxide given off each minute",
+      "By counting the bubbles of oxygen that are given off each minute",
+      "By measuring how much the mass of the sugar solution rises per minute",
+      "By measuring how much lactic acid the yeast produces in each minute"
+    ],
+    answer: 0,
+    explain: "Carbon dioxide is a product, so counting bubbles per minute (or collecting the gas in a syringe) measures the rate."
+  },
+
+  /* ── PHOTOSYNTHESIS AND RESPIRATION TOGETHER ── */
+  {
+    q: "How are photosynthesis and respiration related to each other?",
+    options: [
+      "The products of one are the reactants of the other, so they balance",
+      "Both processes use the same reactants and make the same products",
+      "Photosynthesis happens in animals and respiration happens in plants",
+      "Both processes only happen in daylight when there is enough light"
+    ],
+    answer: 0,
+    explain: "Photosynthesis makes glucose and oxygen; respiration uses glucose and oxygen and returns carbon dioxide and water. They are opposites."
+  },
+  {
+    q: "Which statement about energy in these two processes is correct?",
+    options: [
+      "Photosynthesis takes energy in; respiration transfers energy out",
+      "Photosynthesis transfers energy out; respiration takes energy in",
+      "Both processes take energy in from the surrounding environment",
+      "Both processes transfer energy out to the surrounding environment"
+    ],
+    answer: 0,
+    explain: "Photosynthesis is endothermic - it stores light energy in glucose. Respiration releases that stored energy for the cell to use."
+  },
+  {
+    q: "How do these processes affect the carbon dioxide level of the atmosphere?",
+    options: [
+      "Respiration and burning add it; photosynthesis removes it again",
+      "Photosynthesis adds it; respiration and burning remove it again",
+      "Only the burning of fossil fuels changes the amount of it in the air",
+      "Its level never changes, because carbon dioxide is a very stable gas"
+    ],
+    answer: 0,
+    explain: "Photosynthesis removes CO&#8322; from the air while respiration, decay and combustion return it - the two sides of the carbon cycle."
   }
-
 ];
 
 // ── STATE ───────────────────────────────────────────────────────────────────
