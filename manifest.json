@@ -1,7 +1,7 @@
 {
   "name": "Revision",
   "short_name": "Revision",
-  "description": "Year 8 Science revision quiz app",
+  "description": "Year 7 French revision quiz app (Units 1-2)",
   "start_url": "/revision/",
   "scope": "/revision/",
   "display": "standalone",

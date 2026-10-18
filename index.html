@@ -10,7 +10,7 @@
 <meta name="apple-mobile-web-app-title" content="Revision">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
-<title>CHLORO.EXE // Photosynthesis &amp; Respiration // Yr8</title>
+<title>FRANÇAIS.EXE // Ma vie numérique &amp; Cinéma // Yr7</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
@@ -488,9 +488,9 @@ header h1{
 
 <div class="wrap">
   <header>
-    <div class="status-bar">// IDENTITY: YEAR_8 &nbsp;|&nbsp; MODULE: MATERIAL_CYCLES_AND_ENERGY &nbsp;|&nbsp; STATUS: ACTIVE //</div>
-    <h1>CHLORO.EXE</h1>
-    <div class="sub">PHOTOSYNTHESIS &middot; RESPIRATION &middot; FERMENTATION <b>|</b> END OF UNIT REVISION <b>|</b> YEAR 8</div>
+    <div class="status-bar">// IDENTITY: YEAR_7 &nbsp;|&nbsp; MODULE: FRANÇAIS_UNITS_01-02 &nbsp;|&nbsp; STATUS: ACTIVE //</div>
+    <h1>FRANÇAIS.EXE</h1>
+    <div class="sub">MA VIE NUMÉRIQUE &middot; CINÉMA ET CÉLÉBRITÉ <b>|</b> VOCAB REVISION <b>|</b> YEAR 7</div>
     <div class="hline"></div>
   </header>
   <div id="quiz-area"></div>
@@ -637,848 +637,1267 @@ header h1{
 // ── QUIZ ────────────────────────────────────────────────────────────────────
 const QUESTIONS = [
 
-  /* ── PHOTOSYNTHESIS: THE REACTION ── */
+  /* -- MA VIE NUMERIQUE :: ACTIVITIES -- */
   {
-    q: "What is the word equation for <em>photosynthesis</em>?",
+    q: "How do you say <em>I watch TV</em> in French?",
     options: [
-      "carbon dioxide + water &rarr; glucose + oxygen",
-      "glucose + oxygen &rarr; carbon dioxide + water",
-      "carbon dioxide + oxygen &rarr; glucose + water",
-      "glucose + carbon dioxide &rarr; water + oxygen"
+      "Je regarde la télé",
+      "Je joue sur ma Xbox",
+      "Je crée des playlists",
+      "Je joue en ligne"
     ],
     answer: 0,
-    explain: "Carbon dioxide and water are the reactants; glucose and oxygen are the products. Light energy is transferred in, so it is written above the arrow, not as a reactant."
+    explain: "<em>Je regarde</em> = I watch; <em>la télé</em> is short for la télévision."
   },
   {
-    q: "Where in a plant cell does photosynthesis take place?",
+    q: "What does <em>J'écoute de la musique en streaming</em> mean?",
     options: [
-      "In the chloroplasts, which contain the green pigment chlorophyll",
-      "In the mitochondria, which are found in plant and animal cells",
-      "In the nucleus, which stores the genetic information for the cell",
-      "In the cell wall, which is made of cellulose and supports the cell"
+      "I stream music",
+      "I download songs",
+      "I create playlists",
+      "I buy games"
     ],
     answer: 0,
-    explain: "Chloroplasts contain chlorophyll. Cells with no chloroplasts, such as root cells, cannot photosynthesise."
+    explain: "<em>écouter</em> = to listen; <em>en streaming</em> = streaming."
   },
   {
-    q: "What is the job of <em>chlorophyll</em>?",
+    q: "How do you say <em>I download songs</em> in French?",
     options: [
-      "It absorbs light energy and transfers it into the reaction",
-      "It absorbs carbon dioxide and carries it down into the stem",
-      "It stores the glucose made until the plant needs to use it up",
-      "It releases the waste oxygen through the surface of the leaf"
+      "Je télécharge des chansons",
+      "J'écoute de la musique en streaming",
+      "Je crée des playlists",
+      "Je joue sur ma Xbox"
     ],
     answer: 0,
-    explain: "Chlorophyll is the green pigment that absorbs light energy. It reflects green light, which is why leaves look green."
+    explain: "<em>télécharger</em> = to download; <em>une chanson</em> = a song."
   },
   {
-    q: "Where does a plant get the two <strong>reactants</strong> for photosynthesis?",
+    q: "What does <em>Je crée des playlists</em> mean?",
     options: [
-      "Carbon dioxide from the air through the leaves, water from the soil",
-      "Carbon dioxide from the soil through the roots, water from the air",
-      "Oxygen from the air through the leaves, glucose from the soil water",
-      "Carbon dioxide and water are both taken from the soil by the roots"
+      "I create playlists",
+      "I download songs",
+      "I play on my Xbox",
+      "I stream music"
     ],
     answer: 0,
-    explain: "Carbon dioxide diffuses in through the stomata; water is absorbed by root hair cells and carried up the xylem."
+    explain: "<em>créer</em> = to create."
   },
   {
-    q: "Which gas is released as a product of photosynthesis?",
+    q: "How do you say <em>I play online</em> in French?",
     options: [
-      "Oxygen, which diffuses out of the leaf through the stomata",
-      "Carbon dioxide, which diffuses out through the leaf stomata",
-      "Nitrogen, which diffuses out through the waxy cuticle layer",
-      "Hydrogen, which diffuses out through the guard cells of leaf"
+      "Je joue en ligne",
+      "Je joue sur ma Xbox",
+      "J'achète des jeux",
+      "Je regarde"
     ],
     answer: 0,
-    explain: "Oxygen is a product of photosynthesis. Plants use some of it for their own respiration and the rest diffuses out."
+    explain: "<em>jouer</em> = to play; <em>en ligne</em> = online."
   },
   {
-    q: "What supplies the energy for photosynthesis?",
+    q: "What does <em>J'achète des jeux</em> mean?",
     options: [
-      "Light energy, usually from the Sun, absorbed by the chlorophyll",
-      "Heat energy from the warm soil, absorbed by the roots of a plant",
-      "Chemical energy from soil minerals, taken in by the root hair cells",
-      "Kinetic energy from the wind as it moves the leaves back and forth"
+      "I buy games",
+      "I play online",
+      "I watch TV",
+      "I play on my Xbox"
     ],
     answer: 0,
-    explain: "Photosynthesis is powered by light energy. Sunlight is the usual source, but a lamp works just as well."
+    explain: "<em>acheter</em> = to buy; <em>un jeu</em> = a game."
   },
   {
-    q: "Photosynthesis is described as an <em>endothermic</em> reaction. What does that mean?",
+    q: "How do you say <em>I play on my Xbox</em> in French?",
     options: [
-      "Energy is transferred from the surroundings into the reaction",
-      "Energy is transferred out of the reaction into the surroundings",
-      "The reaction gives out heat, so the leaf warms the air around it",
-      "The reaction only starts once the leaf is warmer than the air"
+      "Je joue sur ma Xbox",
+      "Je joue en ligne",
+      "J'achète des jeux",
+      "Je crée des playlists"
     ],
     answer: 0,
-    explain: "Endothermic means energy is taken in from the surroundings - here, light energy is transferred into the glucose that is made."
+    explain: "<em>jouer sur</em> = to play on."
   },
   {
-    q: "Which is the correct <strong>balanced symbol equation</strong> for photosynthesis?",
+    q: "How do you say <em>YouTube channels</em> in French?",
     options: [
-      "6CO<sub>2</sub> + 6H<sub>2</sub>O &rarr; C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub>",
-      "C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6O<sub>2</sub> &rarr; 6CO<sub>2</sub> + 6H<sub>2</sub>O",
-      "6CO<sub>2</sub> + 6O<sub>2</sub> &rarr; C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6H<sub>2</sub>O",
-      "6CO<sub>2</sub> + 12H<sub>2</sub>O &rarr; C<sub>6</sub>H<sub>12</sub>O<sub>6</sub> + 6H<sub>2</sub>"
+      "Des chaînes YouTube",
+      "À la demande sur Netflix",
+      "Sur mon ordinateur",
+      "Sur ma tablette"
     ],
     answer: 0,
-    explain: "6CO&#8322; + 6H&#8322;O &rarr; C&#8326;H&#8321;&#8322;O&#8326; + 6O&#8322;. Note the reverse of this equation is aerobic respiration."
+    explain: "<em>une chaîne</em> = a channel."
   },
   {
-    q: "Which organisms are able to photosynthesise?",
+    q: "What does <em>À la demande sur Netflix</em> mean?",
     options: [
-      "Plants, algae and some bacteria, because they contain chlorophyll",
-      "Only green flowering plants that grow on land, such as trees",
-      "All living organisms, because every cell has to make its own food",
-      "Plants and animals, but only while they are out in bright sunlight"
+      "On demand, on Netflix",
+      "On my smartphone",
+      "YouTube channels",
+      "On my computer"
     ],
     answer: 0,
-    explain: "Any organism containing chlorophyll can photosynthesise - plants, algae (including seaweed and phytoplankton) and some bacteria."
+    explain: "<em>à la demande</em> = on demand."
   },
   {
-    q: "Why are plants called <em>producers</em>?",
+    q: "How do you say <em>On my smartphone</em> in French?",
     options: [
-      "They make their own food, so other organisms depend on them",
-      "They are eaten by every animal, so they are listed first of all",
-      "They take in ready-made food from the soil around their roots",
-      "They grow more quickly than animals, so there are more of them"
+      "Sur mon smartphone",
+      "Sur mon ordinateur",
+      "Sur ma tablette",
+      "Des chaînes YouTube"
     ],
     answer: 0,
-    explain: "Producers make their own food by photosynthesis. Every food chain starts with a producer because consumers cannot make food."
+    explain: "<em>sur</em> = on."
   },
   {
-    q: "Why does almost all life on Earth depend on photosynthesis?",
+    q: "What does <em>Sur mon ordinateur</em> mean?",
     options: [
-      "It builds the food molecules that others eat and keeps oxygen in the air",
-      "It removes all the oxygen from the air and replaces it with carbon dioxide",
-      "It provides the mineral salts animals need to build their bones and teeth",
-      "It supplies the water animals drink and the warmth that keeps them alive"
+      "On my computer",
+      "On my smartphone",
+      "On my tablet",
+      "On demand, on Netflix"
     ],
     answer: 0,
-    explain: "Photosynthetic organisms build organic molecules that are an energy store for the whole food web, and they maintain the balance of oxygen and carbon dioxide in the atmosphere."
+    explain: "<em>un ordinateur</em> = a computer."
   },
   {
-    q: "Do plants respire?",
+    q: "How do you say <em>On my tablet</em> in French?",
     options: [
-      "Yes - plants respire all the time, day and night, in every cell",
-      "No - plants photosynthesise instead, so they never need to respire",
-      "Yes - but only at night, when they cannot photosynthesise at all",
-      "Yes - but only in the roots, because roots cannot reach the light"
+      "Sur ma tablette",
+      "Sur mon smartphone",
+      "Sur mon ordinateur",
+      "Des chaînes YouTube"
     ],
     answer: 0,
-    explain: "Every living cell respires constantly. Plants both respire and photosynthesise; only photosynthesis needs light."
-  },
-  {
-    q: "On a bright day a plant releases more oxygen than it takes in. Why?",
-    options: [
-      "It photosynthesises faster than it respires, so oxygen is left over",
-      "It stops respiring in the light, so all the oxygen it makes escapes",
-      "It cannot absorb any oxygen in daylight as the stomata are shut then",
-      "Its roots take in extra oxygen from the soil and release it from leaves"
-    ],
-    answer: 0,
-    explain: "In bright light the rate of photosynthesis is higher than the rate of respiration, so there is a net release of oxygen."
-  },
-  {
-    q: "What happens in a plant's leaves at night?",
-    options: [
-      "It only respires, so it takes in oxygen and gives out carbon dioxide",
-      "It only photosynthesises, so it takes in carbon dioxide and gives out oxygen",
-      "It does neither, because both of these processes need light energy",
-      "It does both equally, so no gases enter or leave the leaf at all"
-    ],
-    answer: 0,
-    explain: "Photosynthesis stops in the dark but respiration continues, so at night there is a net intake of oxygen and release of carbon dioxide."
+    explain: "<em>une tablette</em> = a tablet."
   },
 
-  /* ── LEAF ADAPTATIONS AND TRANSPORT ── */
+  /* -- MA VIE NUMERIQUE :: TIME PHRASES -- */
   {
-    q: "Why are most leaves <strong>broad and flat</strong>?",
+    q: "What does <em>De temps en temps</em> mean?",
     options: [
-      "A large surface area absorbs as much light as possible",
-      "A large surface area loses as much water as possible",
-      "A flat shape lets the rain run off the leaf very quickly",
-      "A flat shape supports the weight of the stem beneath it"
+      "From time to time",
+      "At the weekend",
+      "In the morning",
+      "Before the lessons"
     ],
     answer: 0,
-    explain: "A large surface area means more light can be absorbed by the chlorophyll, raising the rate of photosynthesis."
+    explain: "A frequency phrase: <em>de temps en temps</em> = from time to time."
   },
   {
-    q: "Why are most leaves <strong>thin</strong>?",
+    q: "How do you say <em>Before the lessons</em> in French?",
     options: [
-      "Gases have only a short distance to diffuse to reach the cells",
-      "Water has only a short distance to travel to reach the cuticle",
-      "Thin leaves are lighter, so the branches do not bend and snap",
-      "Thin leaves let the light pass straight through without stopping"
+      "Avant les cours",
+      "Après l'école",
+      "Tous les soirs",
+      "De temps en temps"
     ],
     answer: 0,
-    explain: "A short diffusion distance means carbon dioxide reaches the photosynthesising cells quickly, and oxygen leaves quickly."
+    explain: "<em>avant</em> = before; <em>les cours</em> = the lessons."
   },
   {
-    q: "How are <em>palisade cells</em> adapted for photosynthesis?",
+    q: "What does <em>Après l'école</em> mean?",
     options: [
-      "Packed with chloroplasts and near the top surface of the leaf",
-      "Packed with mitochondria and near the lower surface of a leaf",
-      "They have no chloroplasts and form the outer protective layer",
-      "They are hollow tubes carrying water up the stem to the leaf"
+      "After school",
+      "Every evening",
+      "At the moment",
+      "Sometimes"
     ],
     answer: 0,
-    explain: "Palisade cells sit near the upper surface where light is strongest, and are packed with chloroplasts to absorb it."
+    explain: "<em>après</em> = after; <em>l'école</em> = school."
   },
   {
-    q: "What are <em>stomata</em>?",
+    q: "How do you say <em>Every evening</em> in French?",
     options: [
-      "Tiny pores that let carbon dioxide in and oxygen and vapour out",
-      "Tiny pores that take water in from the soil and carry it upwards",
-      "Green cells that absorb the light energy needed to make glucose",
-      "Waxy cells that stop the leaf losing any water at all on hot days"
+      "Tous les soirs",
+      "Avant les cours",
+      "Après l'école",
+      "En ce moment"
     ],
     answer: 0,
-    explain: "Stomata are pores, mostly on the underside of the leaf, that allow gas exchange with the air around the leaf."
+    explain: "<em>tous les soirs</em> = every evening."
   },
   {
-    q: "What do <em>guard cells</em> do?",
+    q: "What does <em>Le matin</em> mean?",
     options: [
-      "They open and close the stomata to control gases and water loss",
-      "They absorb light energy and pass it to the palisade cells below",
-      "They carry sugars out of the leaf to the rest of the growing plant",
-      "They protect the leaf from insects by making a bitter tasting poison"
+      "In the morning",
+      "At the weekend",
+      "Every evening",
+      "At the moment"
     ],
     answer: 0,
-    explain: "Guard cells change shape to open the stomata in the light and close them when water is short, balancing gas exchange against water loss."
+    explain: "<em>le matin</em> = (in) the morning."
   },
   {
-    q: "Why are most stomata found on the <strong>lower</strong> surface of a leaf?",
+    q: "How do you say <em>At the weekend</em> in French?",
     options: [
-      "The underside is shaded and cooler, so less water is lost",
-      "The upper side is sunlit and warmer, so more light is caught",
-      "The wind can blow across the underside of the leaf much more",
-      "The veins are on the underside, so water can escape from there"
+      "Le weekend",
+      "Le matin",
+      "En ce moment",
+      "D'habitude"
     ],
     answer: 0,
-    explain: "Keeping stomata on the shaded, cooler underside allows gas exchange while reducing water loss by evaporation."
+    explain: "<em>le weekend</em> = at the weekend."
   },
   {
-    q: "What do the <em>xylem</em> and <em>phloem</em> in a leaf vein do?",
+    q: "What does <em>Parfois</em> mean?",
     options: [
-      "Xylem brings water to the leaf; phloem carries sugars away",
-      "Phloem brings water to the leaf; xylem carries sugars away",
-      "Both xylem and phloem carry water from the roots to the leaf",
-      "Xylem brings oxygen to the leaf; phloem takes carbon dioxide"
+      "Sometimes",
+      "Usually",
+      "Often",
+      "At the moment"
     ],
     answer: 0,
-    explain: "Xylem transports water and dissolved minerals up from the roots; phloem transports dissolved sugars to the rest of the plant."
+    explain: "<em>parfois</em> = sometimes."
   },
   {
-    q: "What is the job of the <em>waxy cuticle</em> on a leaf?",
+    q: "How do you say <em>Usually</em> in French?",
     options: [
-      "A waterproof layer that reduces water loss from the leaf",
-      "A green layer that absorbs light energy to make glucose",
-      "A layer of pores that lets carbon dioxide into the leaf",
-      "A store of starch that the plant can use up during a night"
+      "D'habitude",
+      "Souvent",
+      "Parfois",
+      "En ce moment"
     ],
     answer: 0,
-    explain: "The cuticle is a transparent waterproof layer. It cuts water loss without blocking the light reaching the palisade cells."
+    explain: "<em>d'habitude</em> = usually."
   },
   {
-    q: "Why does the spongy layer of a leaf contain <strong>air spaces</strong>?",
+    q: "What does <em>En ce moment</em> mean?",
     options: [
-      "They let gases diffuse quickly between the stomata and cells",
-      "They store the water the plant will need on a hot and dry day",
-      "They make the leaf light enough to be held up by a thin stalk",
-      "They trap light and reflect it up onto the palisade cells above"
+      "At the moment",
+      "In the morning",
+      "Every evening",
+      "After school"
     ],
     answer: 0,
-    explain: "The air spaces give a large internal surface area and let carbon dioxide diffuse rapidly to every photosynthesising cell."
-  },
-
-  /* ── TESTING A LEAF FOR STARCH ── */
-  {
-    q: "When testing a leaf for starch, why is it <strong>boiled in water</strong> first?",
-    options: [
-      "It kills the leaf and breaks down the membranes in its cells",
-      "It removes the green chlorophyll from the cells of the leaf",
-      "It adds the starch that the iodine solution then reacts with",
-      "It washes the waxy cuticle off the outer surface of the leaf"
-    ],
-    answer: 0,
-    explain: "Boiling kills the leaf, stopping any further reactions, and breaks down cell membranes so the ethanol and iodine can get in."
+    explain: "<em>en ce moment</em> = at the moment / right now."
   },
   {
-    q: "Why is the leaf then placed in <strong>hot ethanol</strong>?",
+    q: "How do you say <em>Often</em> in French?",
     options: [
-      "The ethanol removes chlorophyll so a colour change can be seen",
-      "The ethanol kills the leaf so that photosynthesis stops at once",
-      "The ethanol adds a stain that turns blue-black if starch is there",
-      "The ethanol softens the leaf so that iodine can soak through it"
+      "Souvent",
+      "Parfois",
+      "D'habitude",
+      "Le matin"
     ],
     answer: 0,
-    explain: "Ethanol dissolves out the green chlorophyll, leaving a pale leaf on which the iodine colour change is easy to see."
-  },
-  {
-    q: "Why is the ethanol heated in a <strong>water bath</strong> rather than over a Bunsen burner?",
-    options: [
-      "Ethanol is highly flammable, so a naked flame could set it alight",
-      "Ethanol boils at a temperature far too high for a Bunsen to reach",
-      "A water bath heats the ethanol much more quickly than a flame does",
-      "A Bunsen would boil the ethanol away before it removed any colour"
-    ],
-    answer: 0,
-    explain: "Ethanol is highly flammable. It is heated indirectly in a hot water bath with all naked flames turned off."
-  },
-  {
-    q: "What is a <strong>positive</strong> result when iodine solution is added to a leaf?",
-    options: [
-      "It changes from orange-brown to blue-black where starch is",
-      "It changes from blue-black to orange-brown where starch is",
-      "It changes from orange-brown to bright green where starch is",
-      "It changes from colourless to a milky white where starch is"
-    ],
-    answer: 0,
-    explain: "Iodine solution turns from orange-brown to blue-black in the presence of starch, showing photosynthesis has taken place."
-  },
-  {
-    q: "What does it mean to <em>destarch</em> a plant before an experiment?",
-    options: [
-      "Leaving it in the dark for two days so it uses up its starch",
-      "Leaving it in bright light for two days so it makes more starch",
-      "Removing all of its leaves so that no new starch can be made",
-      "Watering it with distilled water so it takes up no more minerals"
-    ],
-    answer: 0,
-    explain: "Destarching removes the starch already stored, so any starch found afterwards must have been made during the experiment."
-  },
-  {
-    q: "A destarched <em>variegated</em> leaf (part green, part white) is tested with iodine. What is seen?",
-    options: [
-      "Only the parts that were green turn blue-black with the iodine",
-      "Only the parts that were white turn blue-black with the iodine",
-      "The whole leaf turns blue-black as the starch spreads through it",
-      "No part of the leaf turns blue-black because it was not all green"
-    ],
-    answer: 0,
-    explain: "Only the green parts contain chlorophyll, so only those parts photosynthesise and store starch. This shows chlorophyll is needed."
-  },
-  {
-    q: "A destarched plant is sealed in a bag with soda lime, which absorbs carbon dioxide. What is the result?",
-    options: [
-      "It makes no starch, showing carbon dioxide is needed for it",
-      "It makes extra starch, showing carbon dioxide slows it down",
-      "It still makes starch, showing carbon dioxide is not needed",
-      "It turns yellow, showing carbon dioxide keeps a leaf green"
-    ],
-    answer: 0,
-    explain: "With no carbon dioxide the leaf cannot photosynthesise, so no starch is made. This is the control that proves CO&#8322; is a reactant."
+    explain: "<em>souvent</em> = often."
   },
 
-  /* ── RATE AND LIMITING FACTORS ── */
+  /* -- MA VIE NUMERIQUE :: LOCATION -- */
   {
-    q: "How is the rate of photosynthesis usually measured using pondweed?",
+    q: "How do you say <em>In the living room</em> in French?",
     options: [
-      "By counting the bubbles of oxygen given off in a fixed time",
-      "By counting the bubbles of carbon dioxide taken in each minute",
-      "By measuring how far the mass of the pondweed falls in an hour",
-      "By measuring how much water the pondweed takes up in an hour"
+      "Dans le salon",
+      "Dans le jardin",
+      "Dans ma chambre",
+      "Dans le train"
     ],
     answer: 0,
-    explain: "Oxygen is a product, so the number of bubbles released per minute (or the volume of gas collected) gives the rate."
+    explain: "<em>le salon</em> = the living room."
   },
   {
-    q: "A lamp is moved closer to some pondweed. What happens to the rate?",
+    q: "What does <em>Dans le jardin</em> mean?",
     options: [
-      "It increases, because the light intensity reaching it is greater",
-      "It decreases, because the light intensity reaching it is greater",
-      "It stays the same, because the plant already has enough light",
-      "It decreases, because the extra heat damages the pondweed cells"
+      "In the garden",
+      "In the living room",
+      "In my bedroom",
+      "On the train"
     ],
     answer: 0,
-    explain: "More light intensity means more energy absorbed per second, so more bubbles per minute - until another factor becomes limiting."
+    explain: "<em>le jardin</em> = the garden."
   },
   {
-    q: "What is a <em>limiting factor</em>?",
+    q: "How do you say <em>On the bus</em> in French?",
     options: [
-      "The factor in shortest supply, which is holding the rate back",
-      "The factor in greatest supply, which is speeding up the rate",
-      "The factor that has no effect at all on the rate of a reaction",
-      "The factor a plant can change itself in order to set its rate"
+      "Dans le bus",
+      "Dans le train",
+      "Dans le salon",
+      "Dans ma chambre"
     ],
     answer: 0,
-    explain: "A limiting factor is the one in shortest supply. Increasing it raises the rate; increasing any other factor makes no difference."
+    explain: "French uses <em>dans</em> (in) le bus, not sur."
   },
   {
-    q: "Which three factors most commonly limit the rate of photosynthesis?",
+    q: "What does <em>Dans le train</em> mean?",
     options: [
-      "Light intensity, carbon dioxide concentration and temperature",
-      "Light intensity, oxygen concentration and the amount of starch",
-      "Wind speed, the colour of the soil and the number of the leaves",
-      "Water hardness, the air pressure and the height above sea level"
+      "On the train",
+      "On the bus",
+      "In the garden",
+      "In my bedroom"
     ],
     answer: 0,
-    explain: "Light intensity, carbon dioxide concentration and temperature are the three standard limiting factors at KS3."
+    explain: "<em>le train</em> = the train."
   },
   {
-    q: "On a graph of rate against light intensity, the line levels off. What does this show?",
+    q: "How do you say <em>In my bedroom</em> in French?",
     options: [
-      "Light is no longer the limiting factor - something else now is",
-      "Light is still the limiting factor, so more light raises the rate",
-      "The plant has been damaged by the light and has stopped working",
-      "The plant has used up all of the glucose stored inside its leaves"
+      "Dans ma chambre",
+      "Dans le salon",
+      "Dans le jardin",
+      "Dans le bus"
     ],
     answer: 0,
-    explain: "Once the line plateaus, adding more light has no effect, so another factor (usually CO&#8322; or temperature) has become limiting."
-  },
-  {
-    q: "Why do commercial growers add carbon dioxide and heating to a greenhouse?",
-    options: [
-      "Extra carbon dioxide and warmth raise the rate, so crops grow faster",
-      "Extra carbon dioxide and warmth lower the rate, so crops last longer",
-      "Extra carbon dioxide replaces the water that the plants need to grow",
-      "Extra carbon dioxide kills the pests that would eat the young plants"
-    ],
-    answer: 0,
-    explain: "Removing limiting factors raises the rate of photosynthesis, so plants make more glucose and grow faster."
-  },
-  {
-    q: "What happens to the rate of photosynthesis at very <strong>high</strong> temperatures?",
-    options: [
-      "It falls, because the enzymes controlling it become denatured",
-      "It rises, because the particles are moving much more quickly",
-      "It stays the same, as temperature has no effect on the process",
-      "It rises, because the stomata open more widely in the warm air"
-    ],
-    answer: 0,
-    explain: "Photosynthesis is controlled by enzymes. Above the optimum temperature they denature and the rate falls sharply."
+    explain: "<em>ma chambre</em> = my bedroom."
   },
 
-  /* ── GLUCOSE, STARCH AND PLANT MINERALS ── */
+  /* -- MA VIE NUMERIQUE :: QUESTION WORDS -- */
   {
-    q: "What does a plant do with the <strong>glucose</strong> it makes?",
+    q: "What does <em>Quand est-ce que tu…?</em> mean?",
     options: [
-      "Uses it in respiration, or stores it as starch, or makes cellulose",
-      "Uses it for breathing, or stores it as fat, or makes mineral salts",
-      "Uses it in photosynthesis, or stores it as water, or makes oxygen",
-      "Uses it for growth only - glucose cannot be stored or changed"
+      "When do you…?",
+      "Where do you…?",
+      "Why do you…?",
+      "How do you…?"
     ],
     answer: 0,
-    explain: "Glucose is respired for energy, stored as starch, converted to cellulose for cell walls, or combined with nitrates to make proteins."
+    explain: "<em>quand</em> = when."
   },
   {
-    q: "Why is glucose converted to <strong>starch</strong> for storage?",
+    q: "How do you say <em>Where do you…?</em> in French?",
     options: [
-      "Starch is insoluble, so it does not upset the water balance of a cell",
-      "Starch is soluble, so it can move quickly to wherever it is needed",
-      "Starch is a gas, so it can be stored in the air spaces of the leaf",
-      "Starch is sweet, so it attracts the insects that pollinate a plant"
+      "Où est-ce que tu…?",
+      "Quand est-ce que tu…?",
+      "Comment est-ce que tu…?",
+      "Pourquoi est-ce que tu…?"
     ],
     answer: 0,
-    explain: "Starch is insoluble and compact, so large amounts can be stored without drawing water into the cell by osmosis."
+    explain: "<em>où</em> = where."
   },
   {
-    q: "Which mineral does a plant need in order to make <strong>proteins</strong> for growth?",
+    q: "What does <em>Avec qui est-ce que tu…?</em> mean?",
     options: [
-      "Nitrate ions, which are absorbed from the soil water by the roots",
-      "Nitrate ions, which are absorbed from the air by the leaf stomata",
-      "Magnesium ions, which are absorbed from the soil water by roots",
-      "Carbon dioxide gas, which is absorbed from the air by the leaves"
+      "Who do you… with?",
+      "Why do you…?",
+      "When do you…?",
+      "What do you…?"
     ],
     answer: 0,
-    explain: "Glucose plus nitrates makes amino acids, which build proteins. A plant short of nitrate is stunted with yellowing older leaves."
+    explain: "<em>avec qui</em> = with whom."
   },
   {
-    q: "A plant has yellow leaves between the veins. Which mineral is it most likely short of?",
+    q: "How do you say <em>Why do you…?</em> in French?",
     options: [
-      "Magnesium, which is needed to make chlorophyll for the leaves",
-      "Nitrate, which is needed to make the chlorophyll for the leaves",
-      "Potassium, which is needed to make the cellulose in cell walls",
-      "Glucose, which is needed to make the chlorophyll in the leaves"
+      "Pourquoi est-ce que tu…?",
+      "Comment est-ce que tu…?",
+      "Quand est-ce que tu…?",
+      "Qu'est-ce que tu…?"
     ],
     answer: 0,
-    explain: "Magnesium is a component of chlorophyll, so a shortage causes yellowing (chlorosis) and a lower rate of photosynthesis."
+    explain: "<em>pourquoi</em> = why."
   },
   {
-    q: "How does a plant take in the minerals it needs?",
+    q: "What does <em>Comment est-ce que tu…?</em> mean?",
     options: [
-      "Dissolved in soil water, absorbed through the root hair cells",
-      "As gases from the air, absorbed through the stomata on leaves",
-      "Made inside the leaves during photosynthesis, then sent down",
-      "From the sunlight, which is absorbed by chlorophyll in leaves"
+      "How do you…?",
+      "Where do you…?",
+      "When do you…?",
+      "Why do you…?"
     ],
     answer: 0,
-    explain: "Minerals must be dissolved in water to be absorbed by root hair cells, then carried up the xylem with the water."
+    explain: "<em>comment</em> = how."
   },
   {
-    q: "How is a <em>root hair cell</em> adapted to its job?",
+    q: "How do you say <em>What do you…?</em> in French?",
     options: [
-      "A long thin extension giving a large surface area for absorbing",
-      "Many chloroplasts so that it can photosynthesise underground",
-      "A thick waxy layer so no water can leak back out into the soil",
-      "A hollow tube shape that lets the water flow straight through it"
+      "Qu'est-ce que tu…?",
+      "Où est-ce que tu…?",
+      "Comment est-ce que tu…?",
+      "Quand est-ce que tu…?"
     ],
     answer: 0,
-    explain: "The hair-like extension greatly increases surface area, so water and dissolved minerals are absorbed faster."
-  },
-
-  /* ── AEROBIC RESPIRATION ── */
-  {
-    q: "What is the word equation for <em>aerobic respiration</em>?",
-    options: [
-      "glucose + oxygen &rarr; carbon dioxide + water",
-      "carbon dioxide + water &rarr; glucose + oxygen",
-      "glucose + carbon dioxide &rarr; oxygen + water",
-      "oxygen + water &rarr; glucose + carbon dioxide"
-    ],
-    answer: 0,
-    explain: "Aerobic respiration uses oxygen to break glucose down fully into carbon dioxide and water, transferring energy for the cell."
-  },
-  {
-    q: "Where in a cell does aerobic respiration mainly happen?",
-    options: [
-      "In the mitochondria, which are found in the cytoplasm of a cell",
-      "In the chloroplasts, which are found in the cytoplasm of a cell",
-      "In the nucleus, which controls all of the activities of the cell",
-      "In the cell membrane, which controls what enters and leaves it"
-    ],
-    answer: 0,
-    explain: "Mitochondria are the site of aerobic respiration. Very active cells, such as muscle cells, contain large numbers of them."
-  },
-  {
-    q: "Which organisms carry out respiration?",
-    options: [
-      "Every living organism, in all of its cells, all of the time",
-      "Only animals, because plants photosynthesise for energy instead",
-      "Only large active animals, because they need the most energy",
-      "Only organisms with lungs or gills, as respiration needs oxygen"
-    ],
-    answer: 0,
-    explain: "Respiration is a characteristic of all living things. It releases the energy needed for every other process of life."
-  },
-  {
-    q: "What is the difference between <em>breathing</em> and <em>respiration</em>?",
-    options: [
-      "Breathing moves air in and out; respiration happens in the cells",
-      "Respiration moves air in and out; breathing happens in the cells",
-      "They are two different words that mean exactly the same thing",
-      "Breathing happens in animals and respiration happens in plants"
-    ],
-    answer: 0,
-    explain: "Breathing (ventilation) is the physical movement of air. Respiration is the chemical reaction inside every cell."
-  },
-  {
-    q: "Why is it wrong to say that respiration <strong>makes</strong> energy?",
-    options: [
-      "Energy cannot be created - it is transferred from a store in glucose",
-      "Energy cannot be stored - it is created fresh whenever a cell needs it",
-      "Energy is made in the mitochondria and then stored inside the nucleus",
-      "Energy is made inside the lungs and then carried around by the blood"
-    ],
-    answer: 0,
-    explain: "Energy is conserved, never created. Respiration transfers energy from the chemical store in glucose to where the cell needs it."
-  },
-  {
-    q: "What is the energy transferred by respiration used for?",
-    options: [
-      "Movement, keeping warm, growth and building larger molecules",
-      "Movement only - none of the other processes need any energy",
-      "Digesting food only, which is why we feel warm after a big meal",
-      "Keeping warm only, which is why mammals must eat every day"
-    ],
-    answer: 0,
-    explain: "Respiration powers muscle contraction, warmth in mammals and birds, active transport, and building large molecules for growth and repair."
-  },
-  {
-    q: "How would you test that a gas produced by a small animal is <strong>carbon dioxide</strong>?",
-    options: [
-      "Bubble it through limewater, which turns from clear to cloudy",
-      "Bubble it through limewater, which turns from cloudy to clear",
-      "Add iodine solution, which turns from orange-brown to blue-black",
-      "Hold damp litmus paper in it, which is bleached completely white"
-    ],
-    answer: 0,
-    explain: "Limewater turns milky/cloudy with carbon dioxide. Exhaled air turns it cloudy far faster than inhaled air does."
-  },
-  {
-    q: "Hydrogencarbonate indicator is placed in a tube with a woodlouse. What happens?",
-    options: [
-      "It changes from red to yellow as the carbon dioxide level rises",
-      "It changes from yellow to red as the carbon dioxide level rises",
-      "It changes from red to purple as the oxygen level begins to rise",
-      "It changes from blue to black as the glucose level begins to rise"
-    ],
-    answer: 0,
-    explain: "Hydrogencarbonate indicator is red at normal CO&#8322; levels, yellow when CO&#8322; rises, and purple when CO&#8322; falls (as in a photosynthesising plant)."
-  },
-  {
-    q: "Germinating peas in a flask warm up, but boiled peas do not. Why?",
-    options: [
-      "The living peas are respiring, and respiration transfers heat",
-      "The living peas photosynthesise, which warms the air in the flask",
-      "The boiled peas have lost their starch store, so cannot warm up",
-      "The living peas are heavier, so they hold more heat in the flask"
-    ],
-    answer: 0,
-    explain: "Respiration transfers some energy to the surroundings as heat. Boiled peas are dead, so they do not respire and the flask stays cool."
-  },
-  {
-    q: "Why do heart rate and breathing rate increase during exercise?",
-    options: [
-      "To deliver oxygen and glucose faster and remove carbon dioxide",
-      "To slow the muscles down so that they use less energy overall",
-      "To take in extra carbon dioxide, which the working muscles need",
-      "To remove the extra starch that the muscles make while working"
-    ],
-    answer: 0,
-    explain: "Working muscles respire faster, so they need oxygen and glucose delivered more quickly and carbon dioxide removed more quickly."
-  },
-  {
-    q: "How are the <em>alveoli</em> in the lungs adapted for gas exchange?",
-    options: [
-      "A huge surface area, very thin walls and a rich blood supply",
-      "A small surface area, very thick walls and a rich blood supply",
-      "A huge surface area with a waxy layer to stop water escaping",
-      "A small surface area with chloroplasts to absorb light energy"
-    ],
-    answer: 0,
-    explain: "Millions of alveoli give a huge surface area; their walls are one cell thick and are surrounded by capillaries, so diffusion is fast."
+    explain: "<em>qu'est-ce que</em> = what."
   },
 
-  /* ── ANAEROBIC RESPIRATION IN HUMANS ── */
+  /* -- MA VIE NUMERIQUE :: WHO WITH -- */
   {
-    q: "What is <em>anaerobic respiration</em>?",
+    q: "What does <em>seul(e)</em> mean?",
     options: [
-      "Respiration without oxygen, transferring much less energy",
-      "Respiration without glucose, transferring much more energy",
-      "Respiration with extra oxygen, transferring much more energy",
-      "Respiration without any water, transferring the same energy"
+      "Alone",
+      "Also",
+      "Often",
+      "Usually"
     ],
     answer: 0,
-    explain: "Anaerobic respiration releases energy from glucose without using oxygen. It transfers far less energy per glucose molecule."
+    explain: "<em>seul</em> (m) / <em>seule</em> (f) = alone."
   },
   {
-    q: "What is the word equation for anaerobic respiration in <strong>humans</strong>?",
+    q: "How do you say <em>With my friends</em> in French?",
     options: [
-      "glucose &rarr; lactic acid (no oxygen is used at all)",
-      "glucose &rarr; ethanol + carbon dioxide (no oxygen used)",
-      "glucose + oxygen &rarr; lactic acid + carbon dioxide",
-      "lactic acid &rarr; glucose + oxygen + carbon dioxide"
+      "Avec mes copains",
+      "Avec ma famille",
+      "Dans ma chambre",
+      "Dans le jardin"
     ],
     answer: 0,
-    explain: "In human muscle, glucose is broken down incompletely to lactic acid. No oxygen is used and no carbon dioxide is produced."
+    explain: "<em>mes copains</em> = my friends."
   },
   {
-    q: "Why do muscles respire anaerobically during very hard exercise?",
+    q: "How do you say <em>With my family</em> in French?",
     options: [
-      "Oxygen cannot be delivered to the muscles quickly enough",
-      "Glucose cannot be delivered to the muscles quickly enough",
-      "The muscles have used up the carbon dioxide that they need",
-      "The lungs stop working once the exercise becomes very hard"
+      "Avec ma famille",
+      "Avec mes copains",
+      "Dans le salon",
+      "Dans ma chambre"
     ],
     answer: 0,
-    explain: "The heart and lungs cannot supply oxygen fast enough for the demand, so muscles top up their energy supply anaerobically."
-  },
-  {
-    q: "What effect does a build-up of <em>lactic acid</em> have?",
-    options: [
-      "It builds up in the muscles, causing fatigue, pain and cramp",
-      "It builds up in the lungs, causing coughing and a sore throat",
-      "It is breathed straight back out, so it has no effect at all",
-      "It is stored in the liver as starch and then used the next day"
-    ],
-    answer: 0,
-    explain: "Lactic acid causes muscle fatigue and pain, which is why muscles stop working efficiently during prolonged hard exercise."
-  },
-  {
-    q: "What is meant by an <em>oxygen debt</em>?",
-    options: [
-      "The extra oxygen needed afterwards to break down lactic acid",
-      "The extra glucose needed afterwards to replace what was used",
-      "The oxygen the muscles store up before hard exercise begins",
-      "The oxygen lost from the blood while a person is exercising"
-    ],
-    answer: 0,
-    explain: "The oxygen debt is the extra oxygen the body must take in after exercise to break down the lactic acid that built up."
-  },
-  {
-    q: "Why do you keep breathing hard for a while after you stop running?",
-    options: [
-      "To repay the oxygen debt and break down the lactic acid built up",
-      "To take in the extra carbon dioxide that the muscles will now need",
-      "To cool the body down quickly now that the muscles have warmed up",
-      "To replace the glucose that was used up by the working muscles"
-    ],
-    answer: 0,
-    explain: "Deep breathing continues so extra oxygen can be delivered to break down the lactic acid and return the muscles to normal."
-  },
-  {
-    q: "How do aerobic and anaerobic respiration compare in energy transferred?",
-    options: [
-      "Aerobic transfers much more energy per molecule of glucose",
-      "Anaerobic transfers much more energy per molecule of glucose",
-      "Both transfer exactly the same amount of energy per glucose",
-      "Anaerobic transfers more, but only when the muscles are warm"
-    ],
-    answer: 0,
-    explain: "Aerobic respiration breaks glucose down completely, transferring far more energy. Anaerobic is a fast but inefficient back-up."
-  },
-  {
-    q: "Why does anaerobic respiration transfer less energy than aerobic respiration?",
-    options: [
-      "The glucose is only partly broken down, so energy is left in the products",
-      "The glucose is broken down completely, so no energy is left in products",
-      "The glucose is not broken down at all, so no energy can be transferred",
-      "The glucose is turned back into starch, which locks all the energy away"
-    ],
-    answer: 0,
-    explain: "Lactic acid and ethanol still contain chemical energy, because the glucose was not fully broken down without oxygen."
+    explain: "<em>ma famille</em> = my family."
   },
 
-  /* ── FERMENTATION IN YEAST AND BACTERIA ── */
+  /* -- MA VIE NUMERIQUE :: PEOPLE -- */
   {
-    q: "What is the word equation for anaerobic respiration in <strong>yeast</strong>?",
+    q: "What does <em>Mon chanteur préféré</em> mean?",
     options: [
-      "glucose &rarr; ethanol + carbon dioxide (called fermentation)",
-      "glucose &rarr; lactic acid + carbon dioxide (this is fermenting)",
-      "glucose + oxygen &rarr; ethanol + water (called fermentation)",
-      "ethanol + carbon dioxide &rarr; glucose (called fermentation)"
+      "My favourite singer (m)",
+      "My favourite singer (f)",
+      "My favourite actor",
+      "My favourite actress"
     ],
     answer: 0,
-    explain: "Anaerobic respiration in yeast is called fermentation: glucose &rarr; ethanol + carbon dioxide."
+    explain: "<em>un chanteur</em> = a (male) singer."
   },
   {
-    q: "What is <em>yeast</em>?",
+    q: "How do you say <em>My favourite actress</em> in French?",
     options: [
-      "A single-celled fungus that respires with or without oxygen",
-      "A single-celled bacterium that only respires without oxygen",
-      "A tiny green plant that photosynthesises inside bread dough",
-      "A chemical powder that reacts with warm water to give off gas"
+      "Mon actrice préférée",
+      "Mon acteur préféré",
+      "Ma chanteuse préférée",
+      "Mon chanteur préféré"
     ],
     answer: 0,
-    explain: "Yeast is a single-celled fungus. It respires aerobically when oxygen is available and ferments when it is not."
+    explain: "<em>une actrice</em> = an actress; note <em>préférée</em> with -ée."
   },
   {
-    q: "Which product of fermentation makes bread dough <strong>rise</strong>?",
+    q: "What does <em>Ma chanteuse préférée</em> mean?",
     options: [
-      "Carbon dioxide, which forms bubbles that expand inside the dough",
-      "Ethanol, which forms bubbles that expand in the dough as it bakes",
-      "Oxygen, which forms bubbles that expand in the dough as it bakes",
-      "Lactic acid, which forms bubbles that expand throughout the dough"
+      "My favourite singer (f)",
+      "My favourite singer (m)",
+      "My favourite actress",
+      "My favourite actor"
     ],
     answer: 0,
-    explain: "Carbon dioxide from the yeast is trapped as bubbles in the dough. The bubbles expand in the oven, giving bread its texture."
+    explain: "<em>une chanteuse</em> = a (female) singer."
   },
   {
-    q: "What happens to the ethanol made by the yeast when bread is baked?",
+    q: "How do you say <em>My favourite actor</em> in French?",
     options: [
-      "It evaporates in the oven's heat, so the bread is not alcoholic",
-      "It stays in the loaf, which is why fresh bread has a strong smell",
-      "It is turned back into glucose by the yeast as the bread bakes",
-      "It reacts with the flour to make the brown crust on top of a loaf"
+      "Mon acteur préféré",
+      "Mon actrice préférée",
+      "Mon chanteur préféré",
+      "Ma chanteuse préférée"
     ],
     answer: 0,
-    explain: "Ethanol has a low boiling point and evaporates away during baking, leaving the risen, alcohol-free loaf behind."
-  },
-  {
-    q: "Which product of fermentation is wanted when brewing beer and wine?",
-    options: [
-      "Ethanol, the alcohol, made by the yeast when there is no oxygen",
-      "Lactic acid, the acid in yoghurt, made by the yeast without oxygen",
-      "Carbon dioxide only - the alcohol is then added in separately later",
-      "Glucose, which gives beer and wine their sweet taste when brewed"
-    ],
-    answer: 0,
-    explain: "Brewing wants the ethanol. The carbon dioxide is usually allowed to escape, although it is kept in for sparkling drinks."
-  },
-  {
-    q: "Why is a brewing vessel fitted with an airlock that keeps air out?",
-    options: [
-      "So the yeast has no oxygen and must ferment to make ethanol",
-      "So the yeast has plenty of oxygen and can make more ethanol",
-      "So the carbon dioxide cannot escape and the drink becomes fizzy",
-      "So the mixture stays warm and the yeast does not get too cold"
-    ],
-    answer: 0,
-    explain: "Yeast only makes ethanol when respiring anaerobically. With oxygen present it respires aerobically and produces CO&#8322; and water instead."
-  },
-  {
-    q: "How does temperature affect fermentation by yeast?",
-    options: [
-      "Too hot and the yeast enzymes denature, so fermentation stops",
-      "Too hot and the yeast just works faster, with no upper limit at all",
-      "Too cold and the yeast enzymes denature, so fermentation stops",
-      "Temperature makes no difference to how fast the yeast can ferment"
-    ],
-    answer: 0,
-    explain: "There is an optimum temperature (around 25-35&deg;C). Too cold and yeast is sluggish; too hot and its enzymes denature and it dies."
-  },
-  {
-    q: "How is <strong>yoghurt</strong> made from milk?",
-    options: [
-      "Bacteria respire anaerobically, making lactic acid that thickens it",
-      "Yeast respires anaerobically, making the ethanol that thickens it",
-      "Bacteria respire aerobically, making carbon dioxide that thickens it",
-      "Fungi photosynthesise in the milk, making the glucose that sours it"
-    ],
-    answer: 0,
-    explain: "Lactic acid bacteria ferment the sugar in milk to lactic acid. The acid clots the milk proteins, thickening and souring it."
-  },
-  {
-    q: "What is <em>bioethanol</em>?",
-    options: [
-      "Ethanol made by fermenting sugar from crops, then used as fuel",
-      "Ethanol made by burning fossil fuels, then used to feed the yeast",
-      "Lactic acid made by fermenting crops, then burned in car engines",
-      "Carbon dioxide collected from fermenting crops and burned as fuel"
-    ],
-    answer: 0,
-    explain: "Bioethanol is made by fermenting sugars from crops such as sugar cane or maize, then distilling the ethanol for use as a fuel."
-  },
-  {
-    q: "How could you measure the rate of fermentation of a yeast and sugar mixture?",
-    options: [
-      "By counting the bubbles of carbon dioxide given off each minute",
-      "By counting the bubbles of oxygen that are given off each minute",
-      "By measuring how much the mass of the sugar solution rises per minute",
-      "By measuring how much lactic acid the yeast produces in each minute"
-    ],
-    answer: 0,
-    explain: "Carbon dioxide is a product, so counting bubbles per minute (or collecting the gas in a syringe) measures the rate."
+    explain: "<em>un acteur</em> = a (male) actor."
   },
 
-  /* ── PHOTOSYNTHESIS AND RESPIRATION TOGETHER ── */
+  /* -- MA VIE NUMERIQUE :: OPINIONS -- */
   {
-    q: "How are photosynthesis and respiration related to each other?",
+    q: "What does <em>C'est gratuit</em> mean?",
     options: [
-      "The products of one are the reactants of the other, so they balance",
-      "Both processes use the same reactants and make the same products",
-      "Photosynthesis happens in animals and respiration happens in plants",
-      "Both processes only happen in daylight when there is enough light"
+      "It is free",
+      "It is easy",
+      "It is fun",
+      "It is varied"
     ],
     answer: 0,
-    explain: "Photosynthesis makes glucose and oxygen; respiration uses glucose and oxygen and returns carbon dioxide and water. They are opposites."
+    explain: "<em>gratuit</em> = free (no cost)."
   },
   {
-    q: "Which statement about energy in these two processes is correct?",
+    q: "How do you say <em>It is not expensive</em> in French?",
     options: [
-      "Photosynthesis takes energy in; respiration transfers energy out",
-      "Photosynthesis transfers energy out; respiration takes energy in",
-      "Both processes take energy in from the surrounding environment",
-      "Both processes transfer energy out to the surrounding environment"
+      "Ce n'est pas cher",
+      "C'est amusant",
+      "C'est gratuit",
+      "C'est facile"
     ],
     answer: 0,
-    explain: "Photosynthesis is endothermic - it stores light energy in glucose. Respiration releases that stored energy for the cell to use."
+    explain: "<em>cher</em> = expensive; <em>ne…pas</em> makes it negative."
   },
   {
-    q: "How do these processes affect the carbon dioxide level of the atmosphere?",
+    q: "What does <em>C'est varié</em> mean?",
     options: [
-      "Respiration and burning add it; photosynthesis removes it again",
-      "Photosynthesis adds it; respiration and burning remove it again",
-      "Only the burning of fossil fuels changes the amount of it in the air",
-      "Its level never changes, because carbon dioxide is a very stable gas"
+      "It is varied",
+      "It is easy",
+      "It is free",
+      "It is fun"
     ],
     answer: 0,
-    explain: "Photosynthesis removes CO&#8322; from the air while respiration, decay and combustion return it - the two sides of the carbon cycle."
-  }
+    explain: "<em>varié</em> = varied."
+  },
+  {
+    q: "How do you say <em>It is fun</em> in French?",
+    options: [
+      "C'est amusant",
+      "C'est facile",
+      "C'est gratuit",
+      "C'est varié"
+    ],
+    answer: 0,
+    explain: "<em>amusant</em> = fun / amusing."
+  },
+  {
+    q: "What does <em>C'est facile</em> mean?",
+    options: [
+      "It is easy",
+      "It is varied",
+      "It is free",
+      "It is fun"
+    ],
+    answer: 0,
+    explain: "<em>facile</em> = easy."
+  },
+  {
+    q: "How do you say <em>Also</em> in French?",
+    options: [
+      "Aussi",
+      "Souvent",
+      "Parfois",
+      "Seule"
+    ],
+    answer: 0,
+    explain: "<em>aussi</em> = also / too."
+  },
+  {
+    q: "What does the verb <em>prendre</em> mean?",
+    options: [
+      "To take",
+      "Alone",
+      "Also",
+      "Usually"
+    ],
+    answer: 0,
+    explain: "<em>prendre</em> = to take (an irregular verb)."
+  },
+
+  /* -- CINEMA ET CELEBRITE :: DESCRIBING PEOPLE -- */
+  {
+    q: "What does <em>méchant(e)</em> mean?",
+    options: [
+      "Nasty",
+      "Lazy",
+      "Selfish",
+      "Stupid"
+    ],
+    answer: 0,
+    explain: "<em>méchant</em> = nasty / mean."
+  },
+  {
+    q: "How do you say <em>hard-working</em> in French?",
+    options: [
+      "Travailleur",
+      "Intelligent",
+      "Généreux",
+      "Paresseux"
+    ],
+    answer: 0,
+    explain: "<em>travailleur/travailleuse</em> = hard-working."
+  },
+  {
+    q: "What does <em>paresseux/paresseuse</em> mean?",
+    options: [
+      "Lazy",
+      "Ugly",
+      "Kind",
+      "Nasty"
+    ],
+    answer: 0,
+    explain: "<em>paresseux</em> = lazy; the opposite of travailleur."
+  },
+  {
+    q: "How do you say <em>generous</em> in French?",
+    options: [
+      "Généreux",
+      "Sérieux",
+      "Égoïste",
+      "Arrogant"
+    ],
+    answer: 0,
+    explain: "<em>généreux/généreuse</em> = generous."
+  },
+  {
+    q: "What does <em>égoïste</em> mean?",
+    options: [
+      "Selfish",
+      "Serious",
+      "Generous",
+      "Modest"
+    ],
+    answer: 0,
+    explain: "<em>égoïste</em> = selfish."
+  },
+  {
+    q: "How do you say <em>good-looking</em> in French?",
+    options: [
+      "Beau",
+      "Bête",
+      "Laid",
+      "Drôle"
+    ],
+    answer: 0,
+    explain: "<em>beau/belle</em> = good-looking; the opposite of laid."
+  },
+  {
+    q: "What does <em>laid(e)</em> mean?",
+    options: [
+      "Ugly",
+      "Lazy",
+      "Kind",
+      "Funny"
+    ],
+    answer: 0,
+    explain: "<em>laid</em> = ugly."
+  },
+  {
+    q: "How do you say <em>intelligent</em> in French?",
+    options: [
+      "Intelligent",
+      "Travailleur",
+      "Paresseux",
+      "Généreux"
+    ],
+    answer: 0,
+    explain: "<em>intelligent(e)</em> is a near-identical cognate."
+  },
+  {
+    q: "What does <em>drôle</em> mean?",
+    options: [
+      "Funny",
+      "Nasty",
+      "Stupid",
+      "Ugly"
+    ],
+    answer: 0,
+    explain: "<em>drôle</em> = funny."
+  },
+  {
+    q: "How do you say <em>kind</em> in French?",
+    options: [
+      "Gentil",
+      "Modeste",
+      "Méchant",
+      "Égoïste"
+    ],
+    answer: 0,
+    explain: "<em>gentil/gentille</em> = kind; the opposite of méchant."
+  },
+  {
+    q: "What does <em>bête</em> mean?",
+    options: [
+      "Stupid",
+      "Funny",
+      "Nasty",
+      "Modest"
+    ],
+    answer: 0,
+    explain: "<em>bête</em> = stupid / silly."
+  },
+  {
+    q: "How do you say <em>modest</em> in French?",
+    options: [
+      "Modeste",
+      "Gentil",
+      "Sérieux",
+      "Égoïste"
+    ],
+    answer: 0,
+    explain: "<em>modeste</em> = modest; the opposite of arrogant."
+  },
+  {
+    q: "What does <em>sérieux/sérieuse</em> mean?",
+    options: [
+      "Serious",
+      "Selfish",
+      "Generous",
+      "Modest"
+    ],
+    answer: 0,
+    explain: "<em>sérieux</em> = serious."
+  },
+  {
+    q: "How do you say <em>arrogant</em> in French?",
+    options: [
+      "Arrogant",
+      "Méchant",
+      "Généreux",
+      "Modeste"
+    ],
+    answer: 0,
+    explain: "<em>arrogant(e)</em> = arrogant; the opposite of modeste."
+  },
+
+  /* -- CINEMA ET CELEBRITE :: CELEBRITY PHRASES -- */
+  {
+    q: "What does <em>Ma célébrité préférée est…</em> mean?",
+    options: [
+      "My favourite celebrity is…",
+      "My favourite actress is her",
+      "My favourite singer (m)",
+      "My favourite actor"
+    ],
+    answer: 0,
+    explain: "<em>une célébrité</em> = a celebrity."
+  },
+  {
+    q: "How do you say <em>He/She is / is not…</em> in French?",
+    options: [
+      "Il/Elle est / n'est pas…",
+      "Parce qu'ils/elles sont…",
+      "Ma célébrité préférée est…",
+      "Je peux vous aider?"
+    ],
+    answer: 0,
+    explain: "<em>n'est pas</em> = is not."
+  },
+
+  /* -- CINEMA ET CELEBRITE :: TV PROGRAMMES -- */
+  {
+    q: "What are <em>les dessins animés</em>?",
+    options: [
+      "Cartoons",
+      "Comedies",
+      "Soaps",
+      "Gameshows"
+    ],
+    answer: 0,
+    explain: "<em>les dessins animés</em> = cartoons."
+  },
+  {
+    q: "How do you say <em>soaps</em> (on TV) in French?",
+    options: [
+      "Les feuilletons",
+      "Les comédies",
+      "Les documentaires",
+      "Les dessins animés"
+    ],
+    answer: 0,
+    explain: "<em>les feuilletons</em> = soaps."
+  },
+  {
+    q: "What does <em>les documentaires</em> mean?",
+    options: [
+      "Documentaries",
+      "(Police) series",
+      "Gameshows",
+      "Cartoons"
+    ],
+    answer: 0,
+    explain: "A near-cognate: <em>les documentaires</em> = documentaries."
+  },
+  {
+    q: "How do you say <em>the news</em> in French?",
+    options: [
+      "Les infos",
+      "Le sport",
+      "Les comédies",
+      "Les feuilletons"
+    ],
+    answer: 0,
+    explain: "<em>les infos</em> = the news (short for les informations)."
+  },
+  {
+    q: "What are <em>les jeux télévisés</em>?",
+    options: [
+      "Gameshows",
+      "Soaps",
+      "Cartoons",
+      "Comedies"
+    ],
+    answer: 0,
+    explain: "<em>les jeux télévisés</em> = gameshows (TV games)."
+  },
+  {
+    q: "How do you say <em>(police) series</em> in French?",
+    options: [
+      "Les séries policières",
+      "Les dessins animés",
+      "Les documentaires",
+      "Les émissions de…"
+    ],
+    answer: 0,
+    explain: "<em>les séries policières</em> = police / detective series."
+  },
+  {
+    q: "What does <em>les comédies</em> mean?",
+    options: [
+      "Comedies",
+      "Cartoons",
+      "The news",
+      "Gameshows"
+    ],
+    answer: 0,
+    explain: "<em>les comédies</em> = comedies."
+  },
+  {
+    q: "In <em>les émissions de cuisine</em>, what does <em>cuisine</em> mean?",
+    options: [
+      "Cookery",
+      "Music",
+      "Reality",
+      "Sport"
+    ],
+    answer: 0,
+    explain: "<em>la cuisine</em> = cookery / cooking."
+  },
+  {
+    q: "How do you say <em>reality</em> (TV) in French?",
+    options: [
+      "Télé-réalité",
+      "Science-fiction",
+      "Musique",
+      "Cuisine"
+    ],
+    answer: 0,
+    explain: "<em>la télé-réalité</em> = reality TV."
+  },
+  {
+    q: "What does <em>les émissions de…</em> mean?",
+    options: [
+      "…programmes",
+      "Documentaries",
+      "Gameshows",
+      "(Police) series"
+    ],
+    answer: 0,
+    explain: "<em>une émission</em> = a (TV/radio) programme."
+  },
+  {
+    q: "How do you say <em>science fiction</em> in French?",
+    options: [
+      "Science-fiction",
+      "Télé-réalité",
+      "Les feuilletons",
+      "Les séries policières"
+    ],
+    answer: 0,
+    explain: "<em>la science-fiction</em> = science fiction."
+  },
+  {
+    q: "In <em>les émissions de musique</em>, what does <em>musique</em> mean?",
+    options: [
+      "Music",
+      "Sport",
+      "Cookery",
+      "Reality"
+    ],
+    answer: 0,
+    explain: "<em>la musique</em> = music."
+  },
+  {
+    q: "How do you say <em>sport</em> (as a TV topic) in French?",
+    options: [
+      "Sport",
+      "Cuisine",
+      "Musique",
+      "Télé-réalité"
+    ],
+    answer: 0,
+    explain: "<em>le sport</em> = sport (a cognate)."
+  },
+
+  /* -- CINEMA ET CELEBRITE :: OPINIONS (WHY) -- */
+  {
+    q: "What does <em>Divertissant(e)s</em> mean?",
+    options: [
+      "Entertaining",
+      "Ridiculous",
+      "Full of action",
+      "Exciting"
+    ],
+    answer: 0,
+    explain: "<em>divertissant</em> = entertaining."
+  },
+  {
+    q: "How do you say <em>boring</em> in French?",
+    options: [
+      "Ennuyeux",
+      "Ridicules",
+      "Marrants",
+      "Passionnants"
+    ],
+    answer: 0,
+    explain: "<em>ennuyeux/ennuyeuses</em> = boring."
+  },
+  {
+    q: "What does <em>Passionnant(e)s</em> mean?",
+    options: [
+      "Exciting",
+      "Entertaining",
+      "Rubbish",
+      "Boring"
+    ],
+    answer: 0,
+    explain: "<em>passionnant</em> = exciting (a false friend - not 'passionate')."
+  },
+  {
+    q: "How do you say <em>rubbish</em> (bad quality) in French?",
+    options: [
+      "Nuls",
+      "Bêtes",
+      "Ridicules",
+      "Marrants"
+    ],
+    answer: 0,
+    explain: "<em>nul/nulle</em> = rubbish / useless."
+  },
+  {
+    q: "What does <em>Plein(e)s d'action</em> mean?",
+    options: [
+      "Full of action",
+      "Entertaining",
+      "Ridiculous",
+      "Exciting"
+    ],
+    answer: 0,
+    explain: "<em>plein d'action</em> = full of action."
+  },
+  {
+    q: "How do you say <em>ridiculous</em> in French?",
+    options: [
+      "Ridicules",
+      "Ennuyeux",
+      "Marrants",
+      "Passionnants"
+    ],
+    answer: 0,
+    explain: "<em>ridicule</em> = ridiculous."
+  },
+  {
+    q: "What does <em>Marrant(e)s</em> mean?",
+    options: [
+      "Funny",
+      "Boring",
+      "Rubbish",
+      "Stupid"
+    ],
+    answer: 0,
+    explain: "<em>marrant</em> = funny (informal)."
+  },
+  {
+    q: "How do you say <em>stupid</em> (describing shows) in French?",
+    options: [
+      "Bêtes",
+      "Nuls",
+      "Marrants",
+      "Ennuyeux"
+    ],
+    answer: 0,
+    explain: "<em>bête</em> = stupid; plural <em>bêtes</em> to agree with the shows."
+  },
+
+  /* -- CINEMA ET CELEBRITE :: ARRANGING A TRIP -- */
+  {
+    q: "What does <em>Je vais au cinéma</em> mean?",
+    options: [
+      "I'm going to the cinema",
+      "What are you going to see?",
+      "I'm going to see…",
+      "Are you coming?"
+    ],
+    answer: 0,
+    explain: "<em>le cinéma</em> = the cinema; <em>au</em> = to the."
+  },
+  {
+    q: "How do you say <em>Are you coming?</em> in French?",
+    options: [
+      "Tu viens?",
+      "Tu rigoles!",
+      "Je veux bien.",
+      "À plus."
+    ],
+    answer: 0,
+    explain: "<em>Tu viens?</em> = Are you coming?"
+  },
+  {
+    q: "What does <em>Je vais regarder…</em> mean?",
+    options: [
+      "I'm going to see…",
+      "I'm going to the cinema",
+      "Are you coming?",
+      "What are you going to see?"
+    ],
+    answer: 0,
+    explain: "<em>Je vais</em> + an infinitive = I'm going to (do something)."
+  },
+  {
+    q: "What does <em>Ça dépend. Qu'est-ce que tu vas voir?</em> mean?",
+    options: [
+      "It depends. What are you going to see?",
+      "Where and when shall we meet?",
+      "There's a screening at 2 pm.",
+      "I'm going to the cinema."
+    ],
+    answer: 0,
+    explain: "<em>Ça dépend</em> = it depends; <em>voir</em> = to see."
+  },
+
+  /* -- CINEMA ET CELEBRITE :: TYPES OF FILM -- */
+  {
+    q: "What is <em>un film d'horreur</em>?",
+    options: [
+      "A horror film",
+      "An action film",
+      "A sci-fi film",
+      "A romantic film"
+    ],
+    answer: 0,
+    explain: "<em>l'horreur</em> = horror."
+  },
+  {
+    q: "How do you say <em>an animated film</em> in French?",
+    options: [
+      "Un film d'animation",
+      "Un film romantique",
+      "Un film d'horreur",
+      "Un film de super-héros"
+    ],
+    answer: 0,
+    explain: "<em>un film d'animation</em> = an animated film."
+  },
+  {
+    q: "What is <em>un film de super-héros</em>?",
+    options: [
+      "A superhero film",
+      "An animated film",
+      "A romantic film",
+      "An action film"
+    ],
+    answer: 0,
+    explain: "<em>un super-héros</em> = a superhero."
+  },
+  {
+    q: "How do you say <em>a romantic film</em> in French?",
+    options: [
+      "Un film romantique",
+      "Un film d'animation",
+      "Un film d'action",
+      "Un film d'horreur"
+    ],
+    answer: 0,
+    explain: "<em>romantique</em> = romantic."
+  },
+  {
+    q: "What is <em>un film de science-fiction</em>?",
+    options: [
+      "A sci-fi film",
+      "A horror film",
+      "An action film",
+      "A superhero film"
+    ],
+    answer: 0,
+    explain: "<em>la science-fiction</em> = sci-fi."
+  },
+  {
+    q: "How do you say <em>an action film</em> in French?",
+    options: [
+      "Un film d'action",
+      "Un film d'horreur",
+      "Un film romantique",
+      "Un film d'animation"
+    ],
+    answer: 0,
+    explain: "<em>l'action</em> = action."
+  },
+  {
+    q: "What is <em>une comédie</em> (at the cinema)?",
+    options: [
+      "A comedy",
+      "A horror film",
+      "A sci-fi film",
+      "An action film"
+    ],
+    answer: 0,
+    explain: "<em>une comédie</em> = a comedy."
+  },
+
+  /* -- CINEMA ET CELEBRITE :: AT THE CINEMA -- */
+  {
+    q: "What does <em>Je peux vous aider?</em> mean?",
+    options: [
+      "Can I help you?",
+      "How much is it?",
+      "Which screen?",
+      "Are you coming?"
+    ],
+    answer: 0,
+    explain: "<em>aider</em> = to help; <em>Je peux…?</em> = Can I…?"
+  },
+  {
+    q: "How do you say <em>How much is it?</em> in French?",
+    options: [
+      "Ça fait combien?",
+      "C'est quelle salle?",
+      "Je peux vous aider?",
+      "Tu viens?"
+    ],
+    answer: 0,
+    explain: "<em>Ça fait combien?</em> = How much is it?"
+  },
+  {
+    q: "What does <em>C'est quelle salle?</em> mean?",
+    options: [
+      "Which screen?",
+      "How much is it?",
+      "Can I help you?",
+      "Are you coming?"
+    ],
+    answer: 0,
+    explain: "<em>une salle</em> = a screen / room in a cinema."
+  },
+  {
+    q: "How do you say <em>I'd like three tickets for…</em> in French?",
+    options: [
+      "Je voudrais trois billets pour…",
+      "Ça dépend. Qu'est-ce que tu vas voir?",
+      "Rendez-vous où et à quelle heure?",
+      "Deux adultes et un enfant."
+    ],
+    answer: 0,
+    explain: "<em>Je voudrais</em> = I'd like; <em>un billet</em> = a ticket."
+  },
+  {
+    q: "What does <em>Deux adultes et un enfant</em> mean?",
+    options: [
+      "Two adults and one child",
+      "I'd like three tickets for…",
+      "There's a screening at 2 pm.",
+      "Where and when shall we meet?"
+    ],
+    answer: 0,
+    explain: "<em>un enfant</em> = a child; <em>deux adultes</em> = two adults."
+  },
+
+  /* -- CINEMA ET CELEBRITE :: RESPONDING -- */
+  {
+    q: "What does <em>Il y a une séance à 14h</em> mean?",
+    options: [
+      "There's a screening at 2 pm",
+      "Where and when shall we meet?",
+      "Sorry, I can't this evening.",
+      "Two adults and one child."
+    ],
+    answer: 0,
+    explain: "<em>une séance</em> = a screening / showing; <em>14h</em> = 2 pm."
+  },
+  {
+    q: "How do you say <em>You're kidding!</em> in French?",
+    options: [
+      "Tu rigoles!",
+      "Tu viens?",
+      "Je veux bien.",
+      "Bonne idée!"
+    ],
+    answer: 0,
+    explain: "<em>Tu rigoles!</em> = You're kidding / joking!"
+  },
+  {
+    q: "What does <em>Je n'ai pas envie</em> mean?",
+    options: [
+      "I don't want to",
+      "You're kidding!",
+      "See you later.",
+      "I'd like to."
+    ],
+    answer: 0,
+    explain: "<em>avoir envie</em> = to want / fancy; so <em>Je n'ai pas envie</em> = I don't want to."
+  },
+  {
+    q: "How do you say <em>Sorry, I can't this evening</em> in French?",
+    options: [
+      "Désolé(e). Je ne peux pas ce soir.",
+      "Rendez-vous où et à quelle heure?",
+      "Il y a une séance à 14h.",
+      "Je voudrais trois billets pour…"
+    ],
+    answer: 0,
+    explain: "<em>Désolé(e)</em> = sorry; <em>ce soir</em> = this evening."
+  },
+  {
+    q: "What does <em>Rendez-vous où et à quelle heure?</em> mean?",
+    options: [
+      "Where and when shall we meet?",
+      "There's a screening at 2 pm.",
+      "Sorry, I can't this evening.",
+      "Two adults and one child."
+    ],
+    answer: 0,
+    explain: "<em>un rendez-vous</em> = a meeting; <em>à quelle heure</em> = at what time."
+  },
+  {
+    q: "How do you say <em>Good idea! I'd like to.</em> in French?",
+    options: [
+      "Bonne idée! Je veux bien.",
+      "Désolé(e). Je ne peux pas ce soir.",
+      "Rendez-vous où et à quelle heure?",
+      "Il y a une séance à 14h."
+    ],
+    answer: 0,
+    explain: "<em>Bonne idée!</em> = good idea; <em>Je veux bien</em> = I'd like to."
+  },
+  {
+    q: "What does <em>Chez moi</em> mean?",
+    options: [
+      "At my house",
+      "At your house",
+      "See you later",
+      "At 7 pm"
+    ],
+    answer: 0,
+    explain: "<em>chez moi</em> = at my house; <em>chez toi</em> = at your house."
+  },
+  {
+    q: "How do you say <em>At your house</em> in French?",
+    options: [
+      "Chez toi",
+      "Chez moi",
+      "À demain.",
+      "À plus."
+    ],
+    answer: 0,
+    explain: "<em>chez toi</em> = at your house."
+  },
+  {
+    q: "What does <em>À plus</em> mean?",
+    options: [
+      "See you later",
+      "See you tomorrow",
+      "See you on Saturday",
+      "At my house"
+    ],
+    answer: 0,
+    explain: "<em>À plus</em> (À plus tard) = see you later."
+  },
+  {
+    q: "How do you say <em>See you tomorrow</em> in French?",
+    options: [
+      "À demain",
+      "À samedi",
+      "À plus.",
+      "À 19h."
+    ],
+    answer: 0,
+    explain: "<em>demain</em> = tomorrow."
+  },
+  {
+    q: "What does <em>À samedi</em> mean?",
+    options: [
+      "See you on Saturday",
+      "See you tomorrow",
+      "See you later",
+      "At your house"
+    ],
+    answer: 0,
+    explain: "<em>samedi</em> = Saturday."
+  },
+  {
+    q: "What does <em>À 19h</em> mean?",
+    options: [
+      "At 7 pm",
+      "At my house",
+      "See you later",
+      "See you tomorrow"
+    ],
+    answer: 0,
+    explain: "<em>19h</em> = 19:00 = 7 pm. France uses the 24-hour clock."
+  },
 ];
 
 // ── STATE ───────────────────────────────────────────────────────────────────

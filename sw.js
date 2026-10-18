@@ -1,4 +1,4 @@
-const CACHE = 'revision-v2';
+const CACHE = 'revision-v3';
 const ASSETS = [
   '/revision/',
   '/revision/index.html',
