@@ -10,7 +10,7 @@
 <meta name="apple-mobile-web-app-title" content="Revision">
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
-<title>FRANÇAIS.EXE // Ma vie numérique &amp; Cinéma // Yr7</title>
+<title>GEOGRAPHY.EXE // North America // Yr7</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
@@ -488,9 +488,9 @@ header h1{
 
 <div class="wrap">
   <header>
-    <div class="status-bar">// IDENTITY: YEAR_7 &nbsp;|&nbsp; MODULE: FRANÇAIS_UNITS_01-02 &nbsp;|&nbsp; STATUS: ACTIVE //</div>
-    <h1>FRANÇAIS.EXE</h1>
-    <div class="sub">MA VIE NUMÉRIQUE &middot; CINÉMA ET CÉLÉBRITÉ <b>|</b> VOCAB REVISION <b>|</b> YEAR 7</div>
+    <div class="status-bar">// IDENTITY: YEAR_7 &nbsp;|&nbsp; MODULE: GEOGRAPHY_NORTH_AMERICA &nbsp;|&nbsp; STATUS: ACTIVE //</div>
+    <h1>GEOGRAPHY.EXE</h1>
+    <div class="sub">NORTH AMERICA &middot; WORLD CUP 2026 &middot; INEQUALITY <b>|</b> TEST REVISION <b>|</b> YEAR 7</div>
     <div class="hline"></div>
   </header>
   <div id="quiz-area"></div>
@@ -637,1266 +637,720 @@ header h1{
 // ── QUIZ ────────────────────────────────────────────────────────────────────
 const QUESTIONS = [
 
-  /* -- MA VIE NUMERIQUE :: ACTIVITIES -- */
+  /* -- NORTH AMERICA :: PHYSICAL FEATURES -- */
   {
-    q: "How do you say <em>I watch TV</em> in French?",
+    q: "Which of these is the example of a <em>mountain range</em> in North America?",
     options: [
-      "Je regarde la télé",
-      "Je joue sur ma Xbox",
-      "Je crée des playlists",
-      "Je joue en ligne"
+      "The Sonoran Mountains",
+      "The Superior Mountains",
+      "The Rocky Mountains",
+      "The Mississippi Mountains"
     ],
-    answer: 0,
-    explain: "<em>Je regarde</em> = I watch; <em>la télé</em> is short for la télévision."
+    answer: 2,
+    explain: "The Rocky Mountains are the key mountain range example in the key physical features table."
   },
   {
-    q: "What does <em>J'écoute de la musique en streaming</em> mean?",
+    q: "Which desert is given as the key example in North America?",
     options: [
-      "I stream music",
-      "I download songs",
-      "I create playlists",
-      "I buy games"
+      "The Rocky Desert",
+      "The Sonoran Desert",
+      "The Mississippi Desert",
+      "The Superior Desert"
     ],
-    answer: 0,
-    explain: "<em>écouter</em> = to listen; <em>en streaming</em> = streaming."
+    answer: 1,
+    explain: "The Sonoran Desert is the desert example in the key physical features table."
   },
   {
-    q: "How do you say <em>I download songs</em> in French?",
+    q: "Which river is given as the key example in North America?",
     options: [
-      "Je télécharge des chansons",
-      "J'écoute de la musique en streaming",
-      "Je crée des playlists",
-      "Je joue sur ma Xbox"
+      "The Sonoran River",
+      "The Rocky River",
+      "The Superior River",
+      "The Mississippi River"
     ],
-    answer: 0,
-    explain: "<em>télécharger</em> = to download; <em>une chanson</em> = a song."
+    answer: 3,
+    explain: "The Mississippi River is the river example in the key physical features table."
   },
   {
-    q: "What does <em>Je crée des playlists</em> mean?",
+    q: "Which of the Great Lakes is named as the key example?",
     options: [
-      "I create playlists",
-      "I download songs",
-      "I play on my Xbox",
-      "I stream music"
+      "Lake Superior",
+      "Lake Mississippi",
+      "Lake Sonoran",
+      "Lake Hurricane"
     ],
     answer: 0,
-    explain: "<em>créer</em> = to create."
+    explain: "Lake Superior is the Great Lakes example in the key physical features table."
   },
   {
-    q: "How do you say <em>I play online</em> in French?",
+    q: "Which climate hazard is named as the key example for North America?",
     options: [
-      "Je joue en ligne",
-      "Je joue sur ma Xbox",
-      "J'achète des jeux",
-      "Je regarde"
+      "Hurricanes",
+      "Volcanoes",
+      "Tsunamis",
+      "Avalanches"
     ],
     answer: 0,
-    explain: "<em>jouer</em> = to play; <em>en ligne</em> = online."
+    explain: "Hurricanes are the climate hazard example given in the key physical features table."
   },
   {
-    q: "What does <em>J'achète des jeux</em> mean?",
+    q: "Lake Superior is an example of which physical feature?",
     options: [
-      "I buy games",
-      "I play online",
-      "I watch TV",
-      "I play on my Xbox"
+      "One of the Great Lakes",
+      "A mountain range",
+      "A large desert",
+      "A climate hazard"
     ],
     answer: 0,
-    explain: "<em>acheter</em> = to buy; <em>un jeu</em> = a game."
+    explain: "Lake Superior is the example listed next to the Great Lakes."
   },
   {
-    q: "How do you say <em>I play on my Xbox</em> in French?",
+    q: "The Rocky Mountains are an example of which type of physical feature?",
     options: [
-      "Je joue sur ma Xbox",
-      "Je joue en ligne",
-      "J'achète des jeux",
-      "Je crée des playlists"
+      "A great lake",
+      "A desert region",
+      "A mountain range",
+      "A climate hazard"
     ],
-    answer: 0,
-    explain: "<em>jouer sur</em> = to play on."
+    answer: 2,
+    explain: "Mountain range is the feature, and the Rocky Mountains are its example."
   },
   {
-    q: "How do you say <em>YouTube channels</em> in French?",
+    q: "The Sonoran Desert and the Mississippi River are both examples of what?",
     options: [
-      "Des chaînes YouTube",
-      "À la demande sur Netflix",
-      "Sur mon ordinateur",
-      "Sur ma tablette"
+      "Physical features",
+      "Human features",
+      "Types of power",
+      "Host cities"
     ],
     answer: 0,
-    explain: "<em>une chaîne</em> = a channel."
+    explain: "Deserts and rivers are natural, so they are physical features of North America."
   },
   {
-    q: "What does <em>À la demande sur Netflix</em> mean?",
+    q: "A hurricane is best described as which of these?",
     options: [
-      "On demand, on Netflix",
-      "On my smartphone",
-      "YouTube channels",
-      "On my computer"
+      "A mountain range",
+      "A climate hazard",
+      "A type of river",
+      "A kind of lake"
     ],
-    answer: 0,
-    explain: "<em>à la demande</em> = on demand."
-  },
-  {
-    q: "How do you say <em>On my smartphone</em> in French?",
-    options: [
-      "Sur mon smartphone",
-      "Sur mon ordinateur",
-      "Sur ma tablette",
-      "Des chaînes YouTube"
-    ],
-    answer: 0,
-    explain: "<em>sur</em> = on."
-  },
-  {
-    q: "What does <em>Sur mon ordinateur</em> mean?",
-    options: [
-      "On my computer",
-      "On my smartphone",
-      "On my tablet",
-      "On demand, on Netflix"
-    ],
-    answer: 0,
-    explain: "<em>un ordinateur</em> = a computer."
-  },
-  {
-    q: "How do you say <em>On my tablet</em> in French?",
-    options: [
-      "Sur ma tablette",
-      "Sur mon smartphone",
-      "Sur mon ordinateur",
-      "Des chaînes YouTube"
-    ],
-    answer: 0,
-    explain: "<em>une tablette</em> = a tablet."
+    answer: 1,
+    explain: "Hurricanes are the climate hazard listed in the key physical features table."
   },
 
-  /* -- MA VIE NUMERIQUE :: TIME PHRASES -- */
+  /* -- NORTH AMERICA :: MAP OF NORTH AMERICA -- */
   {
-    q: "What does <em>De temps en temps</em> mean?",
+    q: "Which ocean lies to the <em>west</em> of North America on the physical map?",
     options: [
-      "From time to time",
-      "At the weekend",
-      "In the morning",
-      "Before the lessons"
+      "The North Pacific Ocean",
+      "The North Atlantic Ocean",
+      "The Caribbean Ocean",
+      "The Labrador Ocean"
     ],
     answer: 0,
-    explain: "A frequency phrase: <em>de temps en temps</em> = from time to time."
+    explain: "The map labels the North Pacific Ocean on the west coast and the North Atlantic on the east."
   },
   {
-    q: "How do you say <em>Before the lessons</em> in French?",
+    q: "Which ocean lies to the <em>east</em> of North America on the physical map?",
     options: [
-      "Avant les cours",
-      "Après l'école",
-      "Tous les soirs",
-      "De temps en temps"
+      "The North Atlantic Ocean",
+      "The North Pacific Ocean",
+      "The Bering Ocean",
+      "The Beaufort Ocean"
     ],
     answer: 0,
-    explain: "<em>avant</em> = before; <em>les cours</em> = the lessons."
+    explain: "The North Atlantic Ocean is labelled off the east coast of the continent."
   },
   {
-    q: "What does <em>Après l'école</em> mean?",
+    q: "Which body of water is shown to the <em>south</em> of the United States?",
     options: [
-      "After school",
-      "Every evening",
-      "At the moment",
-      "Sometimes"
+      "The Hudson Bay",
+      "The Gulf of Alaska",
+      "The Labrador Sea",
+      "The Gulf of Mexico"
     ],
-    answer: 0,
-    explain: "<em>après</em> = after; <em>l'école</em> = school."
+    answer: 3,
+    explain: "The Gulf of Mexico lies between the southern USA, Mexico and the Caribbean."
   },
   {
-    q: "How do you say <em>Every evening</em> in French?",
+    q: "Which large bay is shown in the north of Canada on the map?",
     options: [
-      "Tous les soirs",
-      "Avant les cours",
-      "Après l'école",
-      "En ce moment"
+      "Bering Bay",
+      "Caribbean Bay",
+      "Mexico Bay",
+      "Hudson Bay"
     ],
-    answer: 0,
-    explain: "<em>tous les soirs</em> = every evening."
+    answer: 3,
+    explain: "Hudson Bay is the large inlet labelled in northern Canada."
   },
   {
-    q: "What does <em>Le matin</em> mean?",
+    q: "Which US state is shown at the far north-west of the continent?",
     options: [
-      "In the morning",
-      "At the weekend",
-      "Every evening",
-      "At the moment"
+      "Alaska",
+      "Hawaii",
+      "Florida",
+      "Texas"
     ],
     answer: 0,
-    explain: "<em>le matin</em> = (in) the morning."
+    explain: "Alaska is the large north-western part of the USA shown next to the Bering Sea."
   },
   {
-    q: "How do you say <em>At the weekend</em> in French?",
+    q: "On the physical map, which colour mostly shows the highest, driest land in the west?",
     options: [
-      "Le weekend",
-      "Le matin",
-      "En ce moment",
-      "D'habitude"
+      "Light blue",
+      "Brown and orange",
+      "Dark green",
+      "Bright white"
     ],
-    answer: 0,
-    explain: "<em>le weekend</em> = at the weekend."
+    answer: 1,
+    explain: "Physical maps use brown and orange for high ground such as the Rocky Mountains; green is lower land."
   },
   {
-    q: "What does <em>Parfois</em> mean?",
+    q: "Which three countries make up the flag map of North America?",
     options: [
-      "Sometimes",
-      "Usually",
-      "Often",
-      "At the moment"
+      "USA, Canada and Mexico",
+      "USA, Cuba and Canada",
+      "Mexico, Brazil and USA",
+      "Canada, Alaska and Mexico"
     ],
     answer: 0,
-    explain: "<em>parfois</em> = sometimes."
+    explain: "The flag map shows the USA, Canada and Mexico, the three host countries of the 2026 World Cup."
   },
   {
-    q: "How do you say <em>Usually</em> in French?",
+    q: "On the flag map, which country has a red and white flag with a maple leaf?",
     options: [
-      "D'habitude",
-      "Souvent",
-      "Parfois",
-      "En ce moment"
+      "Mexico",
+      "The USA",
+      "Alaska",
+      "Canada"
     ],
-    answer: 0,
-    explain: "<em>d'habitude</em> = usually."
+    answer: 3,
+    explain: "The red and white maple leaf flag belongs to Canada, at the top of the map."
   },
   {
-    q: "What does <em>En ce moment</em> mean?",
+    q: "On the flag map, which country is shown at the <em>southern</em> end in green, white and red?",
     options: [
-      "At the moment",
-      "In the morning",
-      "Every evening",
-      "After school"
+      "Mexico",
+      "Canada",
+      "The USA",
+      "Hawaii"
     ],
     answer: 0,
-    explain: "<em>en ce moment</em> = at the moment / right now."
-  },
-  {
-    q: "How do you say <em>Often</em> in French?",
-    options: [
-      "Souvent",
-      "Parfois",
-      "D'habitude",
-      "Le matin"
-    ],
-    answer: 0,
-    explain: "<em>souvent</em> = often."
+    explain: "Mexico's flag is green, white and red and the country lies south of the USA."
   },
 
-  /* -- MA VIE NUMERIQUE :: LOCATION -- */
+  /* -- NORTH AMERICA :: SUPERPOWER -- */
   {
-    q: "How do you say <em>In the living room</em> in French?",
+    q: "What is the best definition of a <em>superpower</em> country?",
     options: [
-      "Dans le salon",
-      "Dans le jardin",
-      "Dans ma chambre",
-      "Dans le train"
+      "A country with great influence across the world",
+      "A country that is the largest by land area in the world",
+      "A country that has the biggest population on Earth",
+      "A country that has no neighbours around its borders"
     ],
     answer: 0,
-    explain: "<em>le salon</em> = the living room."
+    explain: "A superpower has huge influence worldwide through its economy, military, culture, politics and technology."
   },
   {
-    q: "What does <em>Dans le jardin</em> mean?",
+    q: "Which type of power is shown by <em>a huge economy and global companies</em>?",
     options: [
-      "In the garden",
-      "In the living room",
-      "In my bedroom",
-      "On the train"
+      "Military power",
+      "Economic power",
+      "Cultural power",
+      "Political power"
     ],
-    answer: 0,
-    explain: "<em>le jardin</em> = the garden."
+    answer: 1,
+    explain: "A huge economy and global companies are the example of economic power for the USA."
   },
   {
-    q: "How do you say <em>On the bus</em> in French?",
+    q: "Which type of power is shown by <em>one of the strongest militaries in the world</em>?",
     options: [
-      "Dans le bus",
-      "Dans le train",
-      "Dans le salon",
-      "Dans ma chambre"
+      "Military power",
+      "Economic power",
+      "Cultural power",
+      "Technological power"
     ],
     answer: 0,
-    explain: "French uses <em>dans</em> (in) le bus, not sur."
+    explain: "Having one of the strongest militaries is the USA's example of military power."
   },
   {
-    q: "What does <em>Dans le train</em> mean?",
+    q: "Hollywood, music, fashion and sport are examples of which type of power?",
     options: [
-      "On the train",
-      "On the bus",
-      "In the garden",
-      "In my bedroom"
+      "Economic power",
+      "Military power",
+      "Political power",
+      "Cultural power"
     ],
-    answer: 0,
-    explain: "<em>le train</em> = the train."
+    answer: 3,
+    explain: "Hollywood, music, fashion and sport spread American culture around the world."
   },
   {
-    q: "How do you say <em>In my bedroom</em> in French?",
+    q: "Which type of power is shown by <em>strong influence in world politics</em>?",
     options: [
-      "Dans ma chambre",
-      "Dans le salon",
-      "Dans le jardin",
-      "Dans le bus"
+      "Political power",
+      "Cultural power",
+      "Economic power",
+      "Technological power"
     ],
     answer: 0,
-    explain: "<em>ma chambre</em> = my bedroom."
-  },
-
-  /* -- MA VIE NUMERIQUE :: QUESTION WORDS -- */
-  {
-    q: "What does <em>Quand est-ce que tu…?</em> mean?",
-    options: [
-      "When do you…?",
-      "Where do you…?",
-      "Why do you…?",
-      "How do you…?"
-    ],
-    answer: 0,
-    explain: "<em>quand</em> = when."
+    explain: "Strong influence in world politics is the example of political power."
   },
   {
-    q: "How do you say <em>Where do you…?</em> in French?",
+    q: "Apple, Google and Microsoft show which type of power for the USA?",
     options: [
-      "Où est-ce que tu…?",
-      "Quand est-ce que tu…?",
-      "Comment est-ce que tu…?",
-      "Pourquoi est-ce que tu…?"
+      "Military power",
+      "Technological power",
+      "Political power",
+      "Cultural power"
     ],
-    answer: 0,
-    explain: "<em>où</em> = where."
+    answer: 1,
+    explain: "Companies such as Apple, Google and Microsoft are the example of technological power."
   },
   {
-    q: "What does <em>Avec qui est-ce que tu…?</em> mean?",
+    q: "How many types of power does the table use to show why the USA is a superpower?",
     options: [
-      "Who do you… with?",
-      "Why do you…?",
-      "When do you…?",
-      "What do you…?"
+      "Five",
+      "Three",
+      "Four",
+      "Six"
     ],
     answer: 0,
-    explain: "<em>avec qui</em> = with whom."
+    explain: "The five types are economic, military, cultural, political and technological."
   },
   {
-    q: "How do you say <em>Why do you…?</em> in French?",
+    q: "Which of these is <em>not</em> one of the types of power used to describe the USA?",
     options: [
-      "Pourquoi est-ce que tu…?",
-      "Comment est-ce que tu…?",
-      "Quand est-ce que tu…?",
-      "Qu'est-ce que tu…?"
+      "Economic power",
+      "Religious power",
+      "Cultural power",
+      "Technological power"
     ],
-    answer: 0,
-    explain: "<em>pourquoi</em> = why."
-  },
-  {
-    q: "What does <em>Comment est-ce que tu…?</em> mean?",
-    options: [
-      "How do you…?",
-      "Where do you…?",
-      "When do you…?",
-      "Why do you…?"
-    ],
-    answer: 0,
-    explain: "<em>comment</em> = how."
-  },
-  {
-    q: "How do you say <em>What do you…?</em> in French?",
-    options: [
-      "Qu'est-ce que tu…?",
-      "Où est-ce que tu…?",
-      "Comment est-ce que tu…?",
-      "Quand est-ce que tu…?"
-    ],
-    answer: 0,
-    explain: "<em>qu'est-ce que</em> = what."
+    answer: 1,
+    explain: "The table lists economic, military, cultural, political and technological power only."
   },
 
-  /* -- MA VIE NUMERIQUE :: WHO WITH -- */
+  /* -- NORTH AMERICA :: INEQUALITY -- */
   {
-    q: "What does <em>seul(e)</em> mean?",
+    q: "What is the definition of <em>inequality</em>?",
     options: [
-      "Alone",
-      "Also",
-      "Often",
-      "Usually"
+      "When all people in a country earn exactly the same wage",
+      "When a country has far more cities than it has towns",
+      "When resources, opportunities and wealth are shared unfairly",
+      "When some countries are much larger than other countries"
     ],
-    answer: 0,
-    explain: "<em>seul</em> (m) / <em>seule</em> (f) = alone."
+    answer: 2,
+    explain: "Inequality means resources, opportunities and wealth are shared unfairly."
   },
   {
-    q: "How do you say <em>With my friends</em> in French?",
+    q: "Which three things can be shared unequally in a country with inequality?",
     options: [
-      "Avec mes copains",
-      "Avec ma famille",
-      "Dans ma chambre",
-      "Dans le jardin"
+      "Mountains, rivers, lakes and deserts across the land",
+      "Flags, names, languages and songs of each country",
+      "Stadiums, teams, fans and trophies at a tournament",
+      "Resources, opportunities and wealth"
     ],
-    answer: 0,
-    explain: "<em>mes copains</em> = my friends."
+    answer: 3,
+    explain: "The definition of inequality covers unfair sharing of resources, opportunities and wealth."
   },
   {
-    q: "How do you say <em>With my family</em> in French?",
+    q: "In the cartoon, what is the large yacht with a <em>$</em> money bag labelled?",
     options: [
-      "Avec ma famille",
-      "Avec mes copains",
-      "Dans le salon",
-      "Dans ma chambre"
+      "The Dream",
+      "The Rich",
+      "The Poor",
+      "The Power"
     ],
-    answer: 0,
-    explain: "<em>ma famille</em> = my family."
-  },
-
-  /* -- MA VIE NUMERIQUE :: PEOPLE -- */
-  {
-    q: "What does <em>Mon chanteur préféré</em> mean?",
-    options: [
-      "My favourite singer (m)",
-      "My favourite singer (f)",
-      "My favourite actor",
-      "My favourite actress"
-    ],
-    answer: 0,
-    explain: "<em>un chanteur</em> = a (male) singer."
+    answer: 1,
+    explain: "The yacht is labelled THE RICH, showing that wealthy people live in comfort."
   },
   {
-    q: "How do you say <em>My favourite actress</em> in French?",
+    q: "What does the flag on the yacht in the cartoon say?",
     options: [
-      "Mon actrice préférée",
-      "Mon acteur préféré",
-      "Ma chanteuse préférée",
-      "Mon chanteur préféré"
+      "American Dream",
+      "World Cup Dream",
+      "Great Lakes Dream",
+      "Superpower Dream"
     ],
     answer: 0,
-    explain: "<em>une actrice</em> = an actress; note <em>préférée</em> with -ée."
+    explain: "The flag reads American Dream, showing that the dream is not reached by everyone."
   },
   {
-    q: "What does <em>Ma chanteuse préférée</em> mean?",
+    q: "What is the cartoon mainly trying to show about the USA?",
     options: [
-      "My favourite singer (f)",
-      "My favourite singer (m)",
-      "My favourite actress",
-      "My favourite actor"
+      "Everyone has exactly the same chances to succeed",
+      "Boats are the main way that people travel there",
+      "A few people are very rich while many struggle",
+      "Most of the people in the country live on yachts"
     ],
-    answer: 0,
-    explain: "<em>une chanteuse</em> = a (female) singer."
+    answer: 2,
+    explain: "The rich relax on a yacht while others in small boats and on a raft cry for help."
   },
   {
-    q: "How do you say <em>My favourite actor</em> in French?",
+    q: "In the cartoon, what does the sign held by the man on the raft say?",
     options: [
-      "Mon acteur préféré",
-      "Mon actrice préférée",
-      "Mon chanteur préféré",
-      "Ma chanteuse préférée"
+      "Rich!",
+      "Help!",
+      "Welcome!",
+      "Dream!"
     ],
-    answer: 0,
-    explain: "<em>un acteur</em> = a (male) actor."
-  },
-
-  /* -- MA VIE NUMERIQUE :: OPINIONS -- */
-  {
-    q: "What does <em>C'est gratuit</em> mean?",
-    options: [
-      "It is free",
-      "It is easy",
-      "It is fun",
-      "It is varied"
-    ],
-    answer: 0,
-    explain: "<em>gratuit</em> = free (no cost)."
+    answer: 1,
+    explain: "The man on the small raft holds a sign saying HELP, showing people in need."
   },
   {
-    q: "How do you say <em>It is not expensive</em> in French?",
+    q: "The photograph of tents beside a US flag is an example of what in North America?",
     options: [
-      "Ce n'est pas cher",
-      "C'est amusant",
-      "C'est gratuit",
-      "C'est facile"
+      "Homelessness and poverty",
+      "A World Cup fan zone",
+      "A Great Lakes holiday",
+      "A hurricane warning"
     ],
     answer: 0,
-    explain: "<em>cher</em> = expensive; <em>ne…pas</em> makes it negative."
+    explain: "Tent camps next to an American flag show homelessness, a clear sign of inequality."
   },
   {
-    q: "What does <em>C'est varié</em> mean?",
+    q: "Which of these is an example of inequality in North America?",
     options: [
-      "It is varied",
-      "It is easy",
-      "It is free",
-      "It is fun"
+      "All of the cities have exactly identical stadiums",
+      "Some people are homeless while others are very rich",
+      "Every region of the continent has the same weather",
+      "Three separate countries share one large continent"
     ],
-    answer: 0,
-    explain: "<em>varié</em> = varied."
-  },
-  {
-    q: "How do you say <em>It is fun</em> in French?",
-    options: [
-      "C'est amusant",
-      "C'est facile",
-      "C'est gratuit",
-      "C'est varié"
-    ],
-    answer: 0,
-    explain: "<em>amusant</em> = fun / amusing."
-  },
-  {
-    q: "What does <em>C'est facile</em> mean?",
-    options: [
-      "It is easy",
-      "It is varied",
-      "It is free",
-      "It is fun"
-    ],
-    answer: 0,
-    explain: "<em>facile</em> = easy."
-  },
-  {
-    q: "How do you say <em>Also</em> in French?",
-    options: [
-      "Aussi",
-      "Souvent",
-      "Parfois",
-      "Seule"
-    ],
-    answer: 0,
-    explain: "<em>aussi</em> = also / too."
-  },
-  {
-    q: "What does the verb <em>prendre</em> mean?",
-    options: [
-      "To take",
-      "Alone",
-      "Also",
-      "Usually"
-    ],
-    answer: 0,
-    explain: "<em>prendre</em> = to take (an irregular verb)."
+    answer: 1,
+    explain: "People living in tents while others are wealthy shows wealth shared unfairly."
   },
 
-  /* -- CINEMA ET CELEBRITE :: DESCRIBING PEOPLE -- */
+  /* -- NORTH AMERICA :: WORLD CUP -- */
   {
-    q: "What does <em>méchant(e)</em> mean?",
+    q: "In which year will the World Cup shown in the document take place?",
     options: [
-      "Nasty",
-      "Lazy",
-      "Selfish",
-      "Stupid"
+      "2024",
+      "2028",
+      "2026",
+      "2030"
     ],
-    answer: 0,
-    explain: "<em>méchant</em> = nasty / mean."
+    answer: 2,
+    explain: "The document is about the 2026 World Cup."
   },
   {
-    q: "How do you say <em>hard-working</em> in French?",
+    q: "Which three countries will host the 2026 World Cup together?",
     options: [
-      "Travailleur",
-      "Intelligent",
-      "Généreux",
-      "Paresseux"
+      "USA, Mexico and Canada",
+      "USA, Brazil and Mexico",
+      "Canada, Cuba and USA",
+      "Mexico, Canada and Spain"
     ],
     answer: 0,
-    explain: "<em>travailleur/travailleuse</em> = hard-working."
+    explain: "The 2026 edition is the first to take place in three countries: USA, Mexico and Canada."
   },
   {
-    q: "What does <em>paresseux/paresseuse</em> mean?",
+    q: "What makes the 2026 World Cup edition historic?",
     options: [
-      "Lazy",
-      "Ugly",
-      "Kind",
-      "Nasty"
+      "It is the first held in three countries",
+      "It is the first held anywhere in North America",
+      "It is the first ever held in a hot desert region",
+      "It is the first ever to be held during the winter"
     ],
     answer: 0,
-    explain: "<em>paresseux</em> = lazy; the opposite of travailleur."
+    explain: "The document says it will be the first World Cup to take place in three countries."
   },
   {
-    q: "How do you say <em>generous</em> in French?",
+    q: "How many host cities are there in total for the 2026 World Cup?",
     options: [
-      "Généreux",
-      "Sérieux",
-      "Égoïste",
-      "Arrogant"
+      "16",
+      "12",
+      "20",
+      "24"
     ],
     answer: 0,
-    explain: "<em>généreux/généreuse</em> = generous."
+    explain: "A total of 16 cities across the three nations will act as hosts."
   },
   {
-    q: "What does <em>égoïste</em> mean?",
+    q: "Into which three regions are the host cities split on the map?",
     options: [
-      "Selfish",
-      "Serious",
-      "Generous",
-      "Modest"
+      "Northern, Middle and Southern",
+      "Western, Central and Eastern",
+      "Pacific, Gulf and Atlantic",
+      "Coastal, Inland and Island"
     ],
-    answer: 0,
-    explain: "<em>égoïste</em> = selfish."
+    answer: 1,
+    explain: "The host cities map uses blue for Western, green for Central and red for Eastern."
   },
   {
-    q: "How do you say <em>good-looking</em> in French?",
+    q: "Which of these host cities is in <em>Canada</em>?",
     options: [
-      "Beau",
-      "Bête",
-      "Laid",
-      "Drôle"
+      "Seattle",
+      "Monterrey",
+      "Boston",
+      "Vancouver"
     ],
-    answer: 0,
-    explain: "<em>beau/belle</em> = good-looking; the opposite of laid."
+    answer: 3,
+    explain: "Vancouver (BC Place) and Toronto (BMO Field) are the two Canadian host cities."
   },
   {
-    q: "What does <em>laid(e)</em> mean?",
+    q: "Which of these host cities is in <em>Mexico</em>?",
     options: [
-      "Ugly",
-      "Lazy",
-      "Kind",
-      "Funny"
+      "Houston",
+      "Toronto",
+      "Atlanta",
+      "Guadalajara"
     ],
-    answer: 0,
-    explain: "<em>laid</em> = ugly."
+    answer: 3,
+    explain: "Mexico's host cities are Monterrey, Guadalajara and Mexico City."
   },
   {
-    q: "How do you say <em>intelligent</em> in French?",
+    q: "Which of these host cities is in the <em>USA</em>?",
     options: [
-      "Intelligent",
-      "Travailleur",
-      "Paresseux",
-      "Généreux"
+      "Monterrey",
+      "Vancouver",
+      "Kansas City",
+      "Mexico City"
     ],
-    answer: 0,
-    explain: "<em>intelligent(e)</em> is a near-identical cognate."
+    answer: 2,
+    explain: "Kansas City (Arrowhead Stadium) is one of the USA's host cities."
   },
   {
-    q: "What does <em>drôle</em> mean?",
+    q: "Which stadium is in Mexico City?",
     options: [
-      "Funny",
-      "Nasty",
-      "Stupid",
-      "Ugly"
+      "Estadio BBVA",
+      "Estadio Akron",
+      "Hard Rock Stadium",
+      "Estadio Azteca"
     ],
-    answer: 0,
-    explain: "<em>drôle</em> = funny."
+    answer: 3,
+    explain: "Estadio Azteca in Mexico City holds 87,523 people."
   },
   {
-    q: "How do you say <em>kind</em> in French?",
+    q: "Which host city is home to MetLife Stadium?",
     options: [
-      "Gentil",
-      "Modeste",
-      "Méchant",
-      "Égoïste"
+      "Boston",
+      "Miami",
+      "Philadelphia",
+      "New York"
     ],
-    answer: 0,
-    explain: "<em>gentil/gentille</em> = kind; the opposite of méchant."
+    answer: 3,
+    explain: "MetLife Stadium in New York has a capacity of 87,157."
   },
   {
-    q: "What does <em>bête</em> mean?",
+    q: "Which host city is home to SoFi Stadium?",
     options: [
-      "Stupid",
-      "Funny",
-      "Nasty",
-      "Modest"
+      "San Francisco",
+      "Dallas",
+      "Los Angeles",
+      "Houston"
     ],
-    answer: 0,
-    explain: "<em>bête</em> = stupid / silly."
+    answer: 2,
+    explain: "SoFi Stadium is in Los Angeles, in the Western region."
   },
   {
-    q: "How do you say <em>modest</em> in French?",
+    q: "Which host city is home to Hard Rock Stadium?",
     options: [
-      "Modeste",
-      "Gentil",
-      "Sérieux",
-      "Égoïste"
+      "Atlanta",
+      "Houston",
+      "Miami",
+      "Dallas"
     ],
-    answer: 0,
-    explain: "<em>modeste</em> = modest; the opposite of arrogant."
+    answer: 2,
+    explain: "Hard Rock Stadium is in Miami, in the Eastern region."
   },
   {
-    q: "What does <em>sérieux/sérieuse</em> mean?",
+    q: "Which host city plays at AT&amp;T Stadium, the biggest listed at 92,967?",
     options: [
-      "Serious",
-      "Selfish",
-      "Generous",
-      "Modest"
+      "Houston",
+      "Dallas",
+      "Kansas City",
+      "Atlanta"
     ],
-    answer: 0,
-    explain: "<em>sérieux</em> = serious."
+    answer: 1,
+    explain: "AT&amp;T Stadium in Dallas has the largest capacity on the map, at 92,967."
   },
   {
-    q: "How do you say <em>arrogant</em> in French?",
+    q: "Which host city is home to Lumen Field?",
     options: [
-      "Arrogant",
-      "Méchant",
-      "Généreux",
-      "Modeste"
+      "Vancouver",
+      "Seattle",
+      "San Francisco",
+      "Los Angeles"
     ],
-    answer: 0,
-    explain: "<em>arrogant(e)</em> = arrogant; the opposite of modeste."
-  },
-
-  /* -- CINEMA ET CELEBRITE :: CELEBRITY PHRASES -- */
-  {
-    q: "What does <em>Ma célébrité préférée est…</em> mean?",
-    options: [
-      "My favourite celebrity is…",
-      "My favourite actress is her",
-      "My favourite singer (m)",
-      "My favourite actor"
-    ],
-    answer: 0,
-    explain: "<em>une célébrité</em> = a celebrity."
+    answer: 1,
+    explain: "Lumen Field is the stadium in Seattle, in the Western region."
   },
   {
-    q: "How do you say <em>He/She is / is not…</em> in French?",
+    q: "Which host city is home to Arrowhead Stadium?",
     options: [
-      "Il/Elle est / n'est pas…",
-      "Parce qu'ils/elles sont…",
-      "Ma célébrité préférée est…",
-      "Je peux vous aider?"
+      "Dallas",
+      "Kansas City",
+      "Houston",
+      "Atlanta"
     ],
-    answer: 0,
-    explain: "<em>n'est pas</em> = is not."
-  },
-
-  /* -- CINEMA ET CELEBRITE :: TV PROGRAMMES -- */
-  {
-    q: "What are <em>les dessins animés</em>?",
-    options: [
-      "Cartoons",
-      "Comedies",
-      "Soaps",
-      "Gameshows"
-    ],
-    answer: 0,
-    explain: "<em>les dessins animés</em> = cartoons."
+    answer: 1,
+    explain: "Arrowhead Stadium is in Kansas City, in the Central region."
   },
   {
-    q: "How do you say <em>soaps</em> (on TV) in French?",
+    q: "Which host city is home to Mercedes-Benz Stadium?",
     options: [
-      "Les feuilletons",
-      "Les comédies",
-      "Les documentaires",
-      "Les dessins animés"
+      "Atlanta",
+      "Miami",
+      "Boston",
+      "Philadelphia"
     ],
     answer: 0,
-    explain: "<em>les feuilletons</em> = soaps."
+    explain: "Mercedes-Benz Stadium is in Atlanta, in the Eastern region."
   },
   {
-    q: "What does <em>les documentaires</em> mean?",
+    q: "Which host city is home to Gillette Stadium?",
     options: [
-      "Documentaries",
-      "(Police) series",
-      "Gameshows",
-      "Cartoons"
+      "Toronto",
+      "New York",
+      "Boston",
+      "Philadelphia"
     ],
-    answer: 0,
-    explain: "A near-cognate: <em>les documentaires</em> = documentaries."
+    answer: 2,
+    explain: "Gillette Stadium is in Boston, in the Eastern region."
   },
   {
-    q: "How do you say <em>the news</em> in French?",
+    q: "Which of these host cities is in the <em>Western</em> region on the map?",
     options: [
-      "Les infos",
-      "Le sport",
-      "Les comédies",
-      "Les feuilletons"
+      "Houston",
+      "Toronto",
+      "Miami",
+      "San Francisco"
     ],
-    answer: 0,
-    explain: "<em>les infos</em> = the news (short for les informations)."
+    answer: 3,
+    explain: "Vancouver, Seattle, San Francisco and Los Angeles make up the Western region."
   },
   {
-    q: "What are <em>les jeux télévisés</em>?",
+    q: "Which of these host cities is in the <em>Central</em> region on the map?",
     options: [
-      "Gameshows",
-      "Soaps",
-      "Cartoons",
-      "Comedies"
+      "Seattle",
+      "Boston",
+      "Monterrey",
+      "Vancouver"
     ],
-    answer: 0,
-    explain: "<em>les jeux télévisés</em> = gameshows (TV games)."
+    answer: 2,
+    explain: "Kansas City, Dallas, Houston, Monterrey, Guadalajara and Mexico City are the Central cities."
   },
   {
-    q: "How do you say <em>(police) series</em> in French?",
+    q: "Which of these host cities is in the <em>Eastern</em> region on the map?",
     options: [
-      "Les séries policières",
-      "Les dessins animés",
-      "Les documentaires",
-      "Les émissions de…"
+      "Dallas",
+      "Los Angeles",
+      "Guadalajara",
+      "Philadelphia"
     ],
-    answer: 0,
-    explain: "<em>les séries policières</em> = police / detective series."
+    answer: 3,
+    explain: "Toronto, Boston, New York, Philadelphia, Atlanta and Miami are the Eastern cities."
   },
   {
-    q: "What does <em>les comédies</em> mean?",
+    q: "How many of the 16 host cities are in Mexico?",
     options: [
-      "Comedies",
-      "Cartoons",
-      "The news",
-      "Gameshows"
+      "One",
+      "Two",
+      "Three",
+      "Five"
     ],
-    answer: 0,
-    explain: "<em>les comédies</em> = comedies."
+    answer: 2,
+    explain: "Monterrey, Guadalajara and Mexico City are the three Mexican host cities."
   },
   {
-    q: "In <em>les émissions de cuisine</em>, what does <em>cuisine</em> mean?",
+    q: "How many of the 16 host cities are in Canada?",
     options: [
-      "Cookery",
-      "Music",
-      "Reality",
-      "Sport"
+      "Two",
+      "One",
+      "Three",
+      "Four"
     ],
     answer: 0,
-    explain: "<em>la cuisine</em> = cookery / cooking."
-  },
-  {
-    q: "How do you say <em>reality</em> (TV) in French?",
-    options: [
-      "Télé-réalité",
-      "Science-fiction",
-      "Musique",
-      "Cuisine"
-    ],
-    answer: 0,
-    explain: "<em>la télé-réalité</em> = reality TV."
-  },
-  {
-    q: "What does <em>les émissions de…</em> mean?",
-    options: [
-      "…programmes",
-      "Documentaries",
-      "Gameshows",
-      "(Police) series"
-    ],
-    answer: 0,
-    explain: "<em>une émission</em> = a (TV/radio) programme."
-  },
-  {
-    q: "How do you say <em>science fiction</em> in French?",
-    options: [
-      "Science-fiction",
-      "Télé-réalité",
-      "Les feuilletons",
-      "Les séries policières"
-    ],
-    answer: 0,
-    explain: "<em>la science-fiction</em> = science fiction."
-  },
-  {
-    q: "In <em>les émissions de musique</em>, what does <em>musique</em> mean?",
-    options: [
-      "Music",
-      "Sport",
-      "Cookery",
-      "Reality"
-    ],
-    answer: 0,
-    explain: "<em>la musique</em> = music."
-  },
-  {
-    q: "How do you say <em>sport</em> (as a TV topic) in French?",
-    options: [
-      "Sport",
-      "Cuisine",
-      "Musique",
-      "Télé-réalité"
-    ],
-    answer: 0,
-    explain: "<em>le sport</em> = sport (a cognate)."
+    explain: "Vancouver and Toronto are the two Canadian host cities."
   },
 
-  /* -- CINEMA ET CELEBRITE :: OPINIONS (WHY) -- */
+  /* -- NORTH AMERICA :: BENEFITS -- */
   {
-    q: "What does <em>Divertissant(e)s</em> mean?",
+    q: "Which group gains <em>more customers and profits</em> from the World Cup?",
     options: [
-      "Entertaining",
-      "Ridiculous",
-      "Full of action",
-      "Exciting"
+      "Businesses",
+      "Hotels",
+      "Airlines",
+      "Governments"
     ],
     answer: 0,
-    explain: "<em>divertissant</em> = entertaining."
+    explain: "Local businesses gain more customers and profits from visiting fans."
   },
   {
-    q: "How do you say <em>boring</em> in French?",
+    q: "Which group benefits because <em>more tourists stay overnight</em>?",
     options: [
-      "Ennuyeux",
-      "Ridicules",
-      "Marrants",
-      "Passionnants"
+      "Airlines",
+      "Businesses",
+      "FIFA",
+      "Hotels"
     ],
-    answer: 0,
-    explain: "<em>ennuyeux/ennuyeuses</em> = boring."
+    answer: 3,
+    explain: "Hotels benefit as more tourists stay overnight."
   },
   {
-    q: "What does <em>Passionnant(e)s</em> mean?",
+    q: "Which group benefits from <em>increased travel demand</em>?",
     options: [
-      "Exciting",
-      "Entertaining",
-      "Rubbish",
-      "Boring"
+      "Hotels",
+      "Airlines",
+      "Governments",
+      "FIFA"
     ],
-    answer: 0,
-    explain: "<em>passionnant</em> = exciting (a false friend - not 'passionate')."
+    answer: 1,
+    explain: "Airlines gain from the increase in people travelling to matches."
   },
   {
-    q: "How do you say <em>rubbish</em> (bad quality) in French?",
+    q: "Which group makes <em>huge profits from broadcasting and sponsorship</em>?",
     options: [
-      "Nuls",
-      "Bêtes",
-      "Ridicules",
-      "Marrants"
+      "Businesses",
+      "Airlines",
+      "FIFA",
+      "Hotels"
     ],
-    answer: 0,
-    explain: "<em>nul/nulle</em> = rubbish / useless."
+    answer: 2,
+    explain: "FIFA makes huge profits from broadcasting and sponsorship."
   },
   {
-    q: "What does <em>Plein(e)s d'action</em> mean?",
+    q: "Which group gets <em>global publicity and tourism</em> from hosting?",
     options: [
-      "Full of action",
-      "Entertaining",
-      "Ridiculous",
-      "Exciting"
+      "Airlines",
+      "Governments",
+      "FIFA",
+      "Hotels"
     ],
-    answer: 0,
-    explain: "<em>plein d'action</em> = full of action."
+    answer: 1,
+    explain: "Governments gain global publicity and tourism from hosting the World Cup."
   },
   {
-    q: "How do you say <em>ridiculous</em> in French?",
+    q: "How many groups are listed as benefiting from the World Cup?",
     options: [
-      "Ridicules",
-      "Ennuyeux",
-      "Marrants",
-      "Passionnants"
+      "Three",
+      "Four",
+      "Seven",
+      "Five"
     ],
-    answer: 0,
-    explain: "<em>ridicule</em> = ridiculous."
+    answer: 3,
+    explain: "Businesses, hotels, airlines, FIFA and governments are the five groups."
   },
   {
-    q: "What does <em>Marrant(e)s</em> mean?",
+    q: "Which of these is a benefit of the World Cup to North America?",
     options: [
-      "Funny",
-      "Boring",
-      "Rubbish",
-      "Stupid"
+      "Fewer customers go to the shops and businesses",
+      "There is much less demand for flights and hotels",
+      "Governments get less publicity and fewer tourists",
+      "More tourists visit and stay overnight"
     ],
-    answer: 0,
-    explain: "<em>marrant</em> = funny (informal)."
+    answer: 3,
+    explain: "More tourists and global publicity are benefits shown in the Groups That Benefit table."
   },
   {
-    q: "How do you say <em>stupid</em> (describing shows) in French?",
+    q: "Why might the World Cup add to inequality in North America?",
     options: [
-      "Bêtes",
-      "Nuls",
-      "Marrants",
-      "Ennuyeux"
+      "FIFA and big companies may gain the most",
+      "Every single person gets exactly an equal share",
+      "Nobody at all makes any money from the event",
+      "Only the very poorest people make any of the money"
     ],
     answer: 0,
-    explain: "<em>bête</em> = stupid; plural <em>bêtes</em> to agree with the shows."
-  },
-
-  /* -- CINEMA ET CELEBRITE :: ARRANGING A TRIP -- */
-  {
-    q: "What does <em>Je vais au cinéma</em> mean?",
-    options: [
-      "I'm going to the cinema",
-      "What are you going to see?",
-      "I'm going to see…",
-      "Are you coming?"
-    ],
-    answer: 0,
-    explain: "<em>le cinéma</em> = the cinema; <em>au</em> = to the."
-  },
-  {
-    q: "How do you say <em>Are you coming?</em> in French?",
-    options: [
-      "Tu viens?",
-      "Tu rigoles!",
-      "Je veux bien.",
-      "À plus."
-    ],
-    answer: 0,
-    explain: "<em>Tu viens?</em> = Are you coming?"
-  },
-  {
-    q: "What does <em>Je vais regarder…</em> mean?",
-    options: [
-      "I'm going to see…",
-      "I'm going to the cinema",
-      "Are you coming?",
-      "What are you going to see?"
-    ],
-    answer: 0,
-    explain: "<em>Je vais</em> + an infinitive = I'm going to (do something)."
-  },
-  {
-    q: "What does <em>Ça dépend. Qu'est-ce que tu vas voir?</em> mean?",
-    options: [
-      "It depends. What are you going to see?",
-      "Where and when shall we meet?",
-      "There's a screening at 2 pm.",
-      "I'm going to the cinema."
-    ],
-    answer: 0,
-    explain: "<em>Ça dépend</em> = it depends; <em>voir</em> = to see."
-  },
-
-  /* -- CINEMA ET CELEBRITE :: TYPES OF FILM -- */
-  {
-    q: "What is <em>un film d'horreur</em>?",
-    options: [
-      "A horror film",
-      "An action film",
-      "A sci-fi film",
-      "A romantic film"
-    ],
-    answer: 0,
-    explain: "<em>l'horreur</em> = horror."
-  },
-  {
-    q: "How do you say <em>an animated film</em> in French?",
-    options: [
-      "Un film d'animation",
-      "Un film romantique",
-      "Un film d'horreur",
-      "Un film de super-héros"
-    ],
-    answer: 0,
-    explain: "<em>un film d'animation</em> = an animated film."
-  },
-  {
-    q: "What is <em>un film de super-héros</em>?",
-    options: [
-      "A superhero film",
-      "An animated film",
-      "A romantic film",
-      "An action film"
-    ],
-    answer: 0,
-    explain: "<em>un super-héros</em> = a superhero."
-  },
-  {
-    q: "How do you say <em>a romantic film</em> in French?",
-    options: [
-      "Un film romantique",
-      "Un film d'animation",
-      "Un film d'action",
-      "Un film d'horreur"
-    ],
-    answer: 0,
-    explain: "<em>romantique</em> = romantic."
-  },
-  {
-    q: "What is <em>un film de science-fiction</em>?",
-    options: [
-      "A sci-fi film",
-      "A horror film",
-      "An action film",
-      "A superhero film"
-    ],
-    answer: 0,
-    explain: "<em>la science-fiction</em> = sci-fi."
-  },
-  {
-    q: "How do you say <em>an action film</em> in French?",
-    options: [
-      "Un film d'action",
-      "Un film d'horreur",
-      "Un film romantique",
-      "Un film d'animation"
-    ],
-    answer: 0,
-    explain: "<em>l'action</em> = action."
-  },
-  {
-    q: "What is <em>une comédie</em> (at the cinema)?",
-    options: [
-      "A comedy",
-      "A horror film",
-      "A sci-fi film",
-      "An action film"
-    ],
-    answer: 0,
-    explain: "<em>une comédie</em> = a comedy."
-  },
-
-  /* -- CINEMA ET CELEBRITE :: AT THE CINEMA -- */
-  {
-    q: "What does <em>Je peux vous aider?</em> mean?",
-    options: [
-      "Can I help you?",
-      "How much is it?",
-      "Which screen?",
-      "Are you coming?"
-    ],
-    answer: 0,
-    explain: "<em>aider</em> = to help; <em>Je peux…?</em> = Can I…?"
-  },
-  {
-    q: "How do you say <em>How much is it?</em> in French?",
-    options: [
-      "Ça fait combien?",
-      "C'est quelle salle?",
-      "Je peux vous aider?",
-      "Tu viens?"
-    ],
-    answer: 0,
-    explain: "<em>Ça fait combien?</em> = How much is it?"
-  },
-  {
-    q: "What does <em>C'est quelle salle?</em> mean?",
-    options: [
-      "Which screen?",
-      "How much is it?",
-      "Can I help you?",
-      "Are you coming?"
-    ],
-    answer: 0,
-    explain: "<em>une salle</em> = a screen / room in a cinema."
-  },
-  {
-    q: "How do you say <em>I'd like three tickets for…</em> in French?",
-    options: [
-      "Je voudrais trois billets pour…",
-      "Ça dépend. Qu'est-ce que tu vas voir?",
-      "Rendez-vous où et à quelle heure?",
-      "Deux adultes et un enfant."
-    ],
-    answer: 0,
-    explain: "<em>Je voudrais</em> = I'd like; <em>un billet</em> = a ticket."
-  },
-  {
-    q: "What does <em>Deux adultes et un enfant</em> mean?",
-    options: [
-      "Two adults and one child",
-      "I'd like three tickets for…",
-      "There's a screening at 2 pm.",
-      "Where and when shall we meet?"
-    ],
-    answer: 0,
-    explain: "<em>un enfant</em> = a child; <em>deux adultes</em> = two adults."
-  },
-
-  /* -- CINEMA ET CELEBRITE :: RESPONDING -- */
-  {
-    q: "What does <em>Il y a une séance à 14h</em> mean?",
-    options: [
-      "There's a screening at 2 pm",
-      "Where and when shall we meet?",
-      "Sorry, I can't this evening.",
-      "Two adults and one child."
-    ],
-    answer: 0,
-    explain: "<em>une séance</em> = a screening / showing; <em>14h</em> = 2 pm."
-  },
-  {
-    q: "How do you say <em>You're kidding!</em> in French?",
-    options: [
-      "Tu rigoles!",
-      "Tu viens?",
-      "Je veux bien.",
-      "Bonne idée!"
-    ],
-    answer: 0,
-    explain: "<em>Tu rigoles!</em> = You're kidding / joking!"
-  },
-  {
-    q: "What does <em>Je n'ai pas envie</em> mean?",
-    options: [
-      "I don't want to",
-      "You're kidding!",
-      "See you later.",
-      "I'd like to."
-    ],
-    answer: 0,
-    explain: "<em>avoir envie</em> = to want / fancy; so <em>Je n'ai pas envie</em> = I don't want to."
-  },
-  {
-    q: "How do you say <em>Sorry, I can't this evening</em> in French?",
-    options: [
-      "Désolé(e). Je ne peux pas ce soir.",
-      "Rendez-vous où et à quelle heure?",
-      "Il y a une séance à 14h.",
-      "Je voudrais trois billets pour…"
-    ],
-    answer: 0,
-    explain: "<em>Désolé(e)</em> = sorry; <em>ce soir</em> = this evening."
-  },
-  {
-    q: "What does <em>Rendez-vous où et à quelle heure?</em> mean?",
-    options: [
-      "Where and when shall we meet?",
-      "There's a screening at 2 pm.",
-      "Sorry, I can't this evening.",
-      "Two adults and one child."
-    ],
-    answer: 0,
-    explain: "<em>un rendez-vous</em> = a meeting; <em>à quelle heure</em> = at what time."
-  },
-  {
-    q: "How do you say <em>Good idea! I'd like to.</em> in French?",
-    options: [
-      "Bonne idée! Je veux bien.",
-      "Désolé(e). Je ne peux pas ce soir.",
-      "Rendez-vous où et à quelle heure?",
-      "Il y a une séance à 14h."
-    ],
-    answer: 0,
-    explain: "<em>Bonne idée!</em> = good idea; <em>Je veux bien</em> = I'd like to."
-  },
-  {
-    q: "What does <em>Chez moi</em> mean?",
-    options: [
-      "At my house",
-      "At your house",
-      "See you later",
-      "At 7 pm"
-    ],
-    answer: 0,
-    explain: "<em>chez moi</em> = at my house; <em>chez toi</em> = at your house."
-  },
-  {
-    q: "How do you say <em>At your house</em> in French?",
-    options: [
-      "Chez toi",
-      "Chez moi",
-      "À demain.",
-      "À plus."
-    ],
-    answer: 0,
-    explain: "<em>chez toi</em> = at your house."
-  },
-  {
-    q: "What does <em>À plus</em> mean?",
-    options: [
-      "See you later",
-      "See you tomorrow",
-      "See you on Saturday",
-      "At my house"
-    ],
-    answer: 0,
-    explain: "<em>À plus</em> (À plus tard) = see you later."
-  },
-  {
-    q: "How do you say <em>See you tomorrow</em> in French?",
-    options: [
-      "À demain",
-      "À samedi",
-      "À plus.",
-      "À 19h."
-    ],
-    answer: 0,
-    explain: "<em>demain</em> = tomorrow."
-  },
-  {
-    q: "What does <em>À samedi</em> mean?",
-    options: [
-      "See you on Saturday",
-      "See you tomorrow",
-      "See you later",
-      "At your house"
-    ],
-    answer: 0,
-    explain: "<em>samedi</em> = Saturday."
-  },
-  {
-    q: "What does <em>À 19h</em> mean?",
-    options: [
-      "At 7 pm",
-      "At my house",
-      "See you later",
-      "See you tomorrow"
-    ],
-    answer: 0,
-    explain: "<em>19h</em> = 19:00 = 7 pm. France uses the 24-hour clock."
+    explain: "FIFA makes huge profits, so benefits may not be shared fairly: inequality is unfair sharing."
   },
 ];
 
